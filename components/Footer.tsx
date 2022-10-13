@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
         <div className="w-full lg:w-1/2 flex justify-end mt-16 lg:mt-0 ">
             <div className="w-[48rem] z-50 h-full">
-              <h1 className="font-['Ethnocentric'] text-2xl mb-8">Inquire</h1>
+              <h1 className="font-['Ethnocentric'] text-2xl mb-6">CONTACT</h1>
               <div className="w-full h-fit flex flex-col  ">
                 <Stack spacing={16}>
                   <InputGroup>

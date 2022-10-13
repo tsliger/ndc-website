@@ -45,7 +45,7 @@ const SplashView = () => {
                 objectFit='contain'
               />
             </div>
-            <p ref={textRef} className='text-xl px-2 md:w-[682px] text-center	flex-grow flex items-center pb-24 '>
+            <p ref={textRef} className='md:text-xl md:w-[682px] text-center	flex-grow flex items-center pb-24 '>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.
             </p>
           
@@ -167,13 +167,12 @@ const Slideshow = () => {
   return (
     <>
       {isOverlayOpen && (
-        // <animated.div className="h-64 w-64 bg-red-500 fixed z-50" ref={overlay}></animated.div>
         transitions(
           (styles, item) => item && <animated.div style={styles} className="h-screen w-full fixed z-30 flex flex-col" ref={overlay}>
-              <p className="font-['Ethnocentric'] text-2xl md:text-4xl self-center relative top-32 z-30">All Domain Warfare</p>
+              <p className="font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-32 z-30">All Domain Warfare</p>
               <div className="w-32 h-full absolute right-0">
                 <div className="h-full flex items-center">
-                  <div className="h-96 w-full flex flex-col items-end px-8 space-y-2">
+                  <div className="h-96 w-full flex flex-col items-end pr-4 md:pr-8 space-y-2">
                     {[...Array(panelCount)].map((e, i) => <div className={`flex-grow w-[4px] shadow-md ${currentSlide === i ? 'bg-white/70 scale-x-150' : 'bg-white/30 scale-x-100'} transition-all duration-500`}></div>)}
                   </div>
                 </div>
@@ -200,12 +199,12 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/space.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Space</p>
+                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Space</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
               <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content">
+                <div className="flex flex-col justify-end panel-content md:mb-32">
                   <div className="p-8 md:p-32 translate-y-4 justify-self-center">
                     <div className="w-full aspect-square relative mb-8 md:mb-0">
                       <Image
@@ -215,7 +214,7 @@ const Slideshow = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-xl md:text-2xl pb-48 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
+                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
                   <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
                     <Image 
                       src="/light-bar-white.png" 
@@ -232,12 +231,12 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/air.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] w-48 panel-category opacity-0 -translate-x-16  uppercase">Air</p>
+                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Air</p>
               </div> 
             </div>
             <div className='absolute w-full h-full'>
               <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content">
+                <div className="flex flex-col justify-end panel-content md:mb-32">
                   <div className="p-8 md:p-32 translate-y-4 justify-self-center">
                     <div className="w-full aspect-square relative mb-8 md:mb-0">
                       <Image
@@ -247,7 +246,7 @@ const Slideshow = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-xl md:text-2xl pb-48 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
+                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
                   <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
                     <Image 
                       src="/light-bar-white.png" 
@@ -264,12 +263,12 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/cyber.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="absolute z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8 uppercase">Cyber</p>
+                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Cyber</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
               <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content">
+                <div className="flex flex-col justify-end panel-content md:mb-32">
                   <div className="p-8 md:p-32 translate-y-4 justify-self-center">
                     <div className="w-full aspect-square relative mb-8 md:mb-0">
                       <Image
@@ -279,7 +278,7 @@ const Slideshow = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-xl md:text-2xl pb-48 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
+                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
                   <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
                     <Image 
                       src="/light-bar-white.png" 
@@ -296,12 +295,12 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/land.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="absolute z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8  uppercase">Land</p>
+                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Land</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
               <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content">
+                <div className="flex flex-col justify-end panel-content md:mb-32">
                   <div className="p-8 md:p-32 translate-y-4 justify-self-center">
                     <div className="w-full aspect-square relative mb-8 md:mb-0">
                       <Image
@@ -311,7 +310,7 @@ const Slideshow = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-xl md:text-2xl pb-48 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
+                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
                   <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
                     <Image 
                       src="/light-bar-white.png" 
@@ -328,12 +327,12 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/maritime.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="absolute z-30 h-full w-full flex justify-start  items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8 w-48  uppercase">Maritime</p>
+                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16 w-28  uppercase">Maritime</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
               <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content">
+                <div className="flex flex-col justify-end panel-content md:mb-32">
                   <div className="p-8 md:p-32 translate-y-4 justify-self-center">
                     <div className="w-full aspect-square relative mb-8 md:mb-0">
                       <Image
@@ -343,7 +342,7 @@ const Slideshow = () => {
                       />
                     </div>
                   </div>
-                  <div className="text-xl md:text-2xl pb-48 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
+                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
                   <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
                     <Image 
                       src="/light-bar-white.png" 

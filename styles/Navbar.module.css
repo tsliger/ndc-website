@@ -3,10 +3,19 @@
   @apply flex h-full items-center
 }
 
-.navList > li {
+.navListDrawer {
+  @apply font-['Ethnocentric'] backdrop-blur-md bg-ndcDark/75 h-full flex flex-col items-center space-y-12 pt-24
+}
+
+
+.navListDrawer  li {
+  @apply items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-300 active:scale-95
+}
+
+.navList  li {
   @apply px-8 h-full flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-300 active:scale-95
 }
 
-/* .navList > li:hover {
-  @apply text-red-500 transition-all cursor-pointer ease-in-out 
-} */
+.drawer {
+  @apply fixed w-full h-full z-50 flex flex-col lg:hidden translate-y-1
+}

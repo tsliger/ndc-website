@@ -89,7 +89,8 @@ const Slideshow = () => {
     function goToSection(i, anim) {
       gsap.to(window, {
         scrollTo: {y: i*innerHeight + panels[0].offsetTop, autoKill: false},
-        duration: 1
+        duration: 1,
+        ease: "inout"
       });
 
       setSlide(i)
@@ -108,7 +109,7 @@ const Slideshow = () => {
             trigger: panel,
             start: "top-=50 bottom-=200",
             end: "bottom+=100 top-=100",
-            markers: true,
+            // markers: true,
             onEnter: (self) => goToSection(i),
           }
         })
@@ -117,7 +118,6 @@ const Slideshow = () => {
           trigger: panels[0],
           start: "top-=50 top",
           end: "bottom+=50 bottom",
-          // markers: true,
           endTrigger: panels[[panels.length - 1]],
           onEnter: () => {
             setOverlay(true)
@@ -132,7 +132,8 @@ const Slideshow = () => {
             setOverlay(false)
             gsap.to(window, {
               scrollTo: {y: 0, autoKill: false},
-              duration: 0.2
+              duration: 0.8,
+              ease: "inout"
             });
           }
         }})
@@ -156,7 +157,6 @@ const Slideshow = () => {
             trigger: panel,
             start: "bottom bottom",
             end: "bottom top+=100",
-            // markers: true,
             onEnterBack: () => goToSection(i),
           },
         })
@@ -176,14 +176,14 @@ const Slideshow = () => {
               <div className="w-32 h-full absolute right-0">
                 <div className="h-full flex items-center">
                   <div className="h-96 w-full flex flex-col items-end px-8 space-y-2">
-                    {[...Array(panelCount)].map((e, i) => <div className={`flex-grow w-[4px] shadow-md ${currentSlide === i ? 'bg-white/70 ' : 'bg-white/30'} transition-all duration-500`}></div>)}
+                    {[...Array(panelCount)].map((e, i) => <div className={`flex-grow w-[4px] shadow-md ${currentSlide === i ? 'bg-white/70 scale-x-150' : 'bg-white/30 scale-x-100'} transition-all duration-500`}></div>)}
                   </div>
                 </div>
               </div>
               <div className='absolute w-full h-full'>
-                <div className="mx-auto w-[64rem] h-full flex flex-col justify-end">
+                <div className="mx-auto h-full flex flex-col justify-end">
                   <div className="flex flex-col justify-end panel-content">
-                    <div className='h-4 w-12 animate-bounce cursor-pointer self-center mb-8'>
+                    <div className='h-4 animate-bounce cursor-pointer w-full mb-8'>
                       <Image
                         src="/arrow-down.png"
                         layout='fill'
@@ -202,7 +202,7 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/space.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16">Space</p>
+                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Space</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
@@ -234,7 +234,7 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/air.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] w-48 panel-category opacity-0 -translate-x-16">Air</p>
+                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] w-48 panel-category opacity-0 -translate-x-16  uppercase">Air</p>
               </div> 
             </div>
             <div className='absolute w-full h-full'>
@@ -266,7 +266,7 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/cyber.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="absolute z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8">Cyber</p>
+                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8 uppercase">Cyber</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
@@ -298,7 +298,7 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/land.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="absolute z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8">Land</p>
+                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8  uppercase">Land</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>
@@ -330,7 +330,7 @@ const Slideshow = () => {
           <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/maritime.png')] bg-cover bg-center">
             <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
               <div className="absolute z-30 h-full w-full flex justify-start  items-center">
-                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8 w-48">Maritime</p>
+                <p className="-rotate-90 text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-8 w-48  uppercase">Maritime</p>
               </div> 
             </div> 
             <div className='absolute w-full h-full'>

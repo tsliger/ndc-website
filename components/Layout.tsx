@@ -1,5 +1,5 @@
 // components/Layout.js
-import React, { Component, useRef } from 'react';
+import { Component, useRef } from 'react';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
@@ -13,7 +13,7 @@ export default function Layout(props) {
     <div className='layout'>
       <Navbar />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

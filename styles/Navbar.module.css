@@ -1,14 +1,12 @@
-.navContainer {
-  @apply min-h-[100px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark via-ndcDark/25 to-transparent
-}
+
 .navList {
   @apply flex h-full items-center
 }
 
 .navList > li {
-  @apply px-8 h-full flex items-center
+  @apply px-8 h-full flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-300 active:scale-95
 }
 
-.navList > li:hover {
+/* .navList > li:hover {
   @apply text-red-500 transition-all cursor-pointer ease-in-out 
-}
+} */

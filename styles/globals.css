@@ -31,3 +31,12 @@ a {
   font-weight: 400;
   font-style: normal;
 }
+
+.navbar-container {
+  @apply min-h-[100px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark via-ndcDark/25 to-transparent
+}
+
+.panel-cont {
+  @apply min-h-screen
+}
+

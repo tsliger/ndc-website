@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 
 export default function Footer() {
@@ -8,7 +7,7 @@ export default function Footer() {
             <Image 
                 src={"/ndc-logo-white.png"}
                 width={310}
-                height={93}
+                height={83}
                 className="-translate-x-4"
             />
             <div className="mt-8">

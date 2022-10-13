@@ -8,7 +8,7 @@ import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs"
 
 export default function Footer() {
   return (
-    <div className="min-h-[585px] flex p-8 flex-col lg:flex-row items-center lg:items-start">
+    <div className="min-h-[585px] flex p-8 flex-col lg:flex-row items-center lg:items-start overflow-hidden">
         <div className="flex-grow">
             <Image 
                 src={"/ndc-logo-white.png"}
@@ -16,14 +16,14 @@ export default function Footer() {
                 height={83}
                 className="-translate-x-4"
             />
-            <div className="mt-8 flex">
+            <div className="mt-8 flex flex-col lg:flex-row">
                 <div>
                   <h1 className="font-['Ethnocentric'] text-2xl">Explore</h1>
                   <ul className="footerNavList">
                     <Navlinks />
                   </ul>
                 </div>
-                <div className="relative left-32 space-y-8">
+                <div className="relative lg:left-32 space-y-8 mt-8 lg:mt-0">
                   <h1 className="font-['Ethnocentric'] text-2xl">Connect</h1>
                   <BsFacebook style={{marginTop: 25}} size={35}/>
                   <BsTwitter style={{marginTop: 25}} size={35}/>
@@ -31,10 +31,10 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-        <div className="w-1/2 flex justify-end mt-16 lg:mt-0">
+        <div className="w-full lg:w-1/2 flex justify-end mt-16 lg:mt-0 ">
             <div className="w-[48rem] z-50 h-full">
               <h1 className="font-['Ethnocentric'] text-2xl mb-8">Inquire</h1>
-              <div className="w-full h-fit  flex flex-col ">
+              <div className="w-full h-fit flex flex-col  ">
                 <Stack spacing={16}>
                   <InputGroup>
                     <InputLeftElement

@@ -76,9 +76,7 @@ const Slideshow = () => {
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     reverse: isOverlayOpen,
-    // delay: 200,
     config: config.molasses,
-    // onRest: () => setOverlay(!isOverlayOpen),
   })
 
 

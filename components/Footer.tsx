@@ -10,12 +10,14 @@ export default function Footer() {
   return (
     <div className="min-h-[585px] flex p-8 flex-col lg:flex-row items-center lg:items-start overflow-hidden">
         <div className="flex-grow">
+          <div>
             <Image 
                 src={"/ndc-logo-white.png"}
                 width={310}
                 height={83}
                 className="-translate-x-4"
             />
+            </div>
             <div className="mt-8 flex flex-col lg:flex-row">
                 <div>
                   <h1 className="font-['Ethnocentric'] text-2xl">Explore</h1>
@@ -46,7 +48,7 @@ export default function Footer() {
                         </div>
                       }
                     />
-                    <Input width={'100%'} type='tel' pl='3.5rem' className="bg-white/10 p-4" placeholder='First Name' />
+                    <Input width={'100%'}  pl='3.5rem' className="bg-white/10 p-4" placeholder='First Name' />
                   </InputGroup>
                   <InputGroup>
                     <InputLeftElement
@@ -58,7 +60,7 @@ export default function Footer() {
                         </div>
                       }
                     />
-                    <Input width={'100%'} type='tel' pl='3.5rem' className="bg-white/10 p-4" placeholder='Last Name' />
+                    <Input width={'100%'} pl='3.5rem' className="bg-white/10 p-4" placeholder='Last Name' />
                   </InputGroup>
                   <InputGroup>
                     <InputLeftElement

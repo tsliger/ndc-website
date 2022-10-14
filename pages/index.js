@@ -14,7 +14,6 @@ const SplashView = () => {
   const textRef = useRef(null)
   const comp = useRef();
 
-
   useEffect(() => {
     // Creates text effect on load
     let ctx = gsap.context(() => {
@@ -38,18 +37,18 @@ const SplashView = () => {
         </div>
         <div className="z-10 h-2/6 bg-ndcDark">
          <div className="text-ndcWhite flex flex-col items-center h-full">
-            <div className="h-[120px]  z-50 w-full absolute translate-y-[-64px]">
+            <div className="h-[120px] z-50 w-full absolute translate-y-[-63px]">
               <Image 
                 src="/light-bar.png" 
                 layout='fill'
                 objectFit='contain'
               />
             </div>
-            <p ref={textRef} className='md:text-xl md:w-[682px] text-center	flex-grow flex items-center pb-24 '>
+            <p ref={textRef} className='md:text-xl md:w-[682px] text-center	flex-grow flex items-center px-4 pt-8 pb-24 '>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.
             </p>
           
-            <div className='h-4 w-12 absolute p-2 bottom-12 animate-bounce cursor-pointer'>
+            <div className='h-4 w-12 p-2 relative bottom-12 animate-bounce cursor-pointer'>
               <Image
                 src="/arrow-down.png"
                 layout='fill'
@@ -61,6 +60,55 @@ const SplashView = () => {
           </div>
         </div>
       </div>
+  )
+}
+
+const Panel = ({backgroundImage, symbolImage, sideText}) => {
+  const sideref = useRef(null)
+  const [sideWidth, setWidth] = useState(0)
+  useEffect(() => {
+    setWidth(sideref.current.clientWidth)
+  }, [sideref])
+  return (
+    <div className="panel">
+      <div className="w-full h-full absolute">
+        <Image  src={backgroundImage} layout={"fill"} objectFit={"cover"}/>
+      </div>
+      <div className="w-full h-full absolute">
+        <Image  src={'/panel-imgs/home/vignette.png'} layout={"fill"} objectFit={"cover"}/>
+      </div>
+      <div className="min-h-screen">
+        <div className="absolute w-full h-full flex  items-center">
+          <p ref={sideref} style={{marginTop: sideWidth}} className={`fixed left-0 origin-top-left ml-2 md:ml-8 -translate-x-8  -rotate-90 flex md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase`}>{sideText}</p>
+        </div>
+        <div className='absolute w-full h-full'>
+          <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
+            <div className="flex flex-col justify-end panel-content md:mb-32">
+              <div className="p-16 md:p-48 translate-y-8 md:translate-y-32">
+                <div className="w-full aspect-square relative top-12 md:top-0">
+                  <Image
+                    src={symbolImage}
+                    layout='fill'
+                    objectFit='contain'
+                  />
+                </div>
+              </div>
+              <div className="relative flex flex-col">
+                <div className="text-sm md:text-xl p-4 md:p-0 text-center mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
+                  
+                <div className="z-50 w-full relative pt-8">
+                    <Image 
+                      src="/light-bar-white.png" 
+                      layout='fill'
+                      objectFit='contain'
+                    />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -88,7 +136,7 @@ const Slideshow = () => {
       gsap.to(window, {
         scrollTo: {y: i*innerHeight + panels[0].offsetTop, autoKill: false},
         duration: 1,
-        ease: "inout"
+        ease: "power2"
       });
 
       setSlide(i)
@@ -105,36 +153,12 @@ const Slideshow = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: panel,
-            start: "top-=50 bottom-=200",
+            start: "top-=50 bottom-=100",
             end: "bottom+=100 top-=100",
             // markers: true,
             onEnter: (self) => goToSection(i),
           }
         })
-
-        const overlaytl = gsap.timeline({scrollTrigger: {
-          trigger: panels[0],
-          start: "top-=50 top",
-          end: "bottom+=50 bottom",
-          endTrigger: panels[[panels.length - 1]],
-          onEnter: () => {
-            setOverlay(true)
-          },
-          onLeave: () => {
-            setOverlay(false)
-          },
-          onEnterBack: () => {
-            setOverlay(true)
-          },
-          onLeaveBack: () => {
-            setOverlay(false)
-            gsap.to(window, {
-              scrollTo: {y: 0, autoKill: false},
-              duration: 0.8,
-              ease: "inout"
-            });
-          }
-        }})
 
         tl.fromTo(panel, 
           {x: 0, opacity: 0, duration: 2}, 
@@ -142,7 +166,7 @@ const Slideshow = () => {
           'start'
         ).to(
           panel.querySelector('.panel-category'), 
-          {x: -30, opacity: 1, delay: 0.25, duration: 1}, 
+          {x: 0, opacity: 1, delay: 0.25, duration: 1}, 
           'start'
         ).fromTo(panel.querySelector('.panel-content'), 
           {x: 0, opacity: 0, scale: 0.85, duration: 2}, 
@@ -159,6 +183,32 @@ const Slideshow = () => {
           },
         })
       });
+      
+
+      const overlaytl = gsap.timeline({scrollTrigger: {
+        trigger: panels[0],
+        start: "top-=50 top",
+        end: "bottom+=50 bottom",
+        endTrigger: panels[[panels.length - 1]],
+        onEnter: () => {
+          setOverlay(true)
+        },
+        onLeave: () => {
+          setOverlay(false)
+        },
+        onEnterBack: () => {
+          setOverlay(true)
+        },
+        onLeaveBack: () => {
+          setOverlay(false)
+          // scrolls back to top of screen
+          gsap.to(window, {
+            scrollTo: {y: 0, autoKill: false},
+            duration: 0.8,
+            ease: "expo"
+          });
+        }
+      }})
     }, comp); // <- IMPORTANT! Scopes selector text
     
     return () => ctx.revert(); // cleanup
@@ -168,12 +218,12 @@ const Slideshow = () => {
     <>
       {isOverlayOpen && (
         transitions(
-          (styles, item) => item && <animated.div style={styles} className="h-screen w-full fixed z-30 flex flex-col" ref={overlay}>
-              <p className="font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-32 z-30">All Domain Warfare</p>
+          (styles, item) => item && <animated.div style={styles} className="overlay" ref={overlay}>
+              <p className="overlay-header">All Domain Warfare</p>
               <div className="w-32 h-full absolute right-0">
                 <div className="h-full flex items-center">
-                  <div className="h-96 w-full flex flex-col items-end pr-4 md:pr-8 space-y-2">
-                    {[...Array(panelCount)].map((e, i) => <div className={`flex-grow w-[4px] shadow-md ${currentSlide === i ? 'bg-white/70 scale-x-150' : 'bg-white/30 scale-x-100'} transition-all duration-500`}></div>)}
+                  <div className="panel-page-slider">
+                    {[...Array(panelCount)].map((e, i) => <div key={i} className={`${currentSlide === i ? 'bg-white/70 scale-x-[1.75]' : 'bg-white/30 scale-x-100'} page-slider`}></div>)}
                   </div>
                 </div>
               </div>
@@ -195,166 +245,11 @@ const Slideshow = () => {
           </animated.div>)
       )}
       <section className="trigger">
-        <div className="panel">
-          <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/space.png')] bg-cover bg-center">
-            <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
-              <div className="z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Space</p>
-              </div> 
-            </div> 
-            <div className='absolute w-full h-full'>
-              <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content md:mb-32">
-                  <div className="p-8 md:p-32 translate-y-4 justify-self-center">
-                    <div className="w-full aspect-square relative mb-8 md:mb-0">
-                      <Image
-                        src="/panel-symbols/home/satelite.png"
-                        layout='fill'
-                        objectFit='contain'
-                      />
-                    </div>
-                  </div>
-                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
-                  <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
-                    <Image 
-                      src="/light-bar-white.png" 
-                      layout='fill'
-                      objectFit='contain'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="panel">
-          <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/air.png')] bg-cover bg-center">
-            <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
-              <div className="z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Air</p>
-              </div> 
-            </div>
-            <div className='absolute w-full h-full'>
-              <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content md:mb-32">
-                  <div className="p-8 md:p-32 translate-y-4 justify-self-center">
-                    <div className="w-full aspect-square relative mb-8 md:mb-0">
-                      <Image
-                        src="/panel-symbols/home/drone.png"
-                        layout='fill'
-                        objectFit='contain'
-                      />
-                    </div>
-                  </div>
-                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
-                  <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
-                    <Image 
-                      src="/light-bar-white.png" 
-                      layout='fill'
-                      objectFit='contain'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="panel">
-          <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/cyber.png')] bg-cover bg-center">
-            <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
-              <div className="absolute z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Cyber</p>
-              </div> 
-            </div> 
-            <div className='absolute w-full h-full'>
-              <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content md:mb-32">
-                  <div className="p-8 md:p-32 translate-y-4 justify-self-center">
-                    <div className="w-full aspect-square relative mb-8 md:mb-0">
-                      <Image
-                        src="/panel-symbols/home/cyber.png"
-                        layout='fill'
-                        objectFit='contain'
-                      />
-                    </div>
-                  </div>
-                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
-                  <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
-                    <Image 
-                      src="/light-bar-white.png" 
-                      layout='fill'
-                      objectFit='contain'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="panel">
-          <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/land.png')] bg-cover bg-center">
-            <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
-              <div className="absolute z-30 h-full w-full flex justify-start items-center">
-                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16  uppercase">Land</p>
-              </div> 
-            </div> 
-            <div className='absolute w-full h-full'>
-              <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content md:mb-32">
-                  <div className="p-8 md:p-32 translate-y-4 justify-self-center">
-                    <div className="w-full aspect-square relative mb-8 md:mb-0">
-                      <Image
-                        src="/panel-symbols/home/land.png"
-                        layout='fill'
-                        objectFit='contain'
-                      />
-                    </div>
-                  </div>
-                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
-                  <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
-                    <Image 
-                      src="/light-bar-white.png" 
-                      layout='fill'
-                      objectFit='contain'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="panel">
-          <div className="min-h-screen  bg-yellow-800 bg-[url('/panel-imgs/home/maritime.png')] bg-cover bg-center">
-            <div className="absolute  bg-[url('/panel-imgs/home/vignette.png')] w-full h-full bg-cover flex flex-col">
-              <div className="absolute z-30 h-full w-full flex justify-start  items-center">
-                <p className="-rotate-90 md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 -translate-x-16 w-28  uppercase">Maritime</p>
-              </div> 
-            </div> 
-            <div className='absolute w-full h-full'>
-              <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-end">
-                <div className="flex flex-col justify-end panel-content md:mb-32">
-                  <div className="p-8 md:p-32 translate-y-4 justify-self-center">
-                    <div className="w-full aspect-square relative mb-8 md:mb-0">
-                      <Image
-                        src="/panel-symbols/home/maritime.png"
-                        layout='fill'
-                        objectFit='contain'
-                      />
-                    </div>
-                  </div>
-                  <div className="text-sm md:text-2xl pb-48 p-4 md:p-0 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</div>
-                  <div className="h-[200px]  z-50 w-full absolute -translate-y-12">
-                    <Image 
-                      src="/light-bar-white.png" 
-                      layout='fill'
-                      objectFit='contain'
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Panel sideText={'space'} backgroundImage={'/panel-imgs/home/space.png'} symbolImage={"/panel-symbols/home/satelite.png"}/>
+        <Panel sideText={'air'} backgroundImage={'/panel-imgs/home/air.png'} symbolImage={"/panel-symbols/home/drone.png"}/>
+        <Panel sideText={'cyber'} backgroundImage={'/panel-imgs/home/cyber.png'} symbolImage={"/panel-symbols/home/cyber.png"}/>
+        <Panel sideText={'land'} backgroundImage={'/panel-imgs/home/land.png'} symbolImage={"/panel-symbols/home/land.png"}/>
+        <Panel sideText={'maritime'} backgroundImage={'/panel-imgs/home/maritime.png'} symbolImage={"/panel-symbols/home/maritime.png"}/>
       </section>
     </>
   )

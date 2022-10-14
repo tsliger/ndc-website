@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { HiOutlineMenu, HiX } from 'react-icons/hi';
 import { animated, useSpring, useTransition, config } from 'react-spring'
+import { useRouter } from 'next/router'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -32,7 +33,8 @@ export default function Navbar () {
     const [isDrawerOpen, setDrawer] = useState(false)
     const navRef = useRef(null)
     const drawerStyle = useSpring({ opacity: isDrawerOpen ? 1 : 0 })
-    
+    const router = useRouter()
+ 
 
     useEffect(() => {
         const showAnim = gsap
@@ -51,6 +53,11 @@ export default function Navbar () {
         },
     });
     }, [])
+
+    useEffect(() => {
+        setDrawer(false)
+    }, [router.pathname])
+
     return (
         <>
             <nav className="navbar-container" ref={navRef}>
@@ -70,8 +77,8 @@ export default function Navbar () {
                 </div>
             </nav>
             {isDrawerOpen && (
-                <animated.div   className={styles.drawer}>
-                    <div className="items-center flex h-[100px]  bg-ndcDark">
+                <animated.div className={styles.drawer} style={drawerStyle}>
+                    <div className="items-center flex h-[100px] pt-[9px] bg-ndcDark">
                         <div className="flex flex-col ml-8 z-50">
                             <Image src="/ndc-logo-white.png" width={192} height={53} draggable={false}/>
                         </div>

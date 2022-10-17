@@ -57,11 +57,11 @@ a {
 }
 
 .panel-page-slider {
-  @apply h-48 md:h-96 w-full flex flex-col justify-center items-end pr-4 md:pr-8 space-y-2
+  @apply  w-full flex flex-col justify-center items-end pr-4 md:pr-8 space-y-2
 }
 
 .page-slider {
-  @apply  flex-grow w-[1px] md:w-[4px] shadow-md  transition-all duration-500
+  @apply  flex-grow w-[1px] md:w-[4px] shadow-md h-14  transition-all duration-500
 }
 
 .overlay {

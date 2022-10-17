@@ -11,19 +11,26 @@ import { useRouter } from 'next/router'
 gsap.registerPlugin(ScrollTrigger)
 
 export const Navlinks = ({}) => {
+    const router = useRouter()
     return (
         <>
             <li>
-                <Link href="/">Home</Link>
+                <Link href="/">
+                    <a className={`h-full flex items-center ${router.pathname === '/' ? 'text-blue-500 ' : 'text-inherit'}`}>Home</a>
+                </Link>
             </li>
             <li>
-                <Link href="/capabilites">Capabilites</Link>
+                <Link href="/capabilites">
+                    <a className={`h-full flex items-center ${router.pathname === '/capabilites' ? 'text-blue-500 ' : 'text-inherit'}`}>Capabilities</a>
+                </Link>
             </li>
-            <li>
+            <li onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
                 Contact
             </li>
             <li>
-                <Link href="/about">About</Link>
+                <Link href="/about">
+                    <a className={`h-full flex items-center ${router.pathname === '/about' ? 'text-blue-500 ' : 'text-inherit'}`}>About</a>
+                </Link>
             </li>
         </>
     )
@@ -62,7 +69,7 @@ export default function Navbar () {
         <>
             <nav className="navbar-container" ref={navRef}>
                 <div className="flex flex-col justify-center z-50">
-                    <Image src="/ndc-logo-white.png" width={192} height={53} draggable={false}/>
+                    <Image src="/ndc-logo-white.png" className='drop-shadow-xl' width={192} height={53} draggable={false}/>
                 </div>
                 <div className="flex-grow"/>
                 <div className="items-center hidden lg:flex">

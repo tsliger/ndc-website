@@ -8,3 +8,4 @@
 /package-lock.json filter=lfs diff=lfs merge=lfs -text
 /public/panel-imgs/capabilities/rdte.png filter=lfs diff=lfs merge=lfs -text
 /public/panel-imgs/capabilities/splash.png filter=lfs diff=lfs merge=lfs -text
+/public/panel-imgs/capabilities/rapidcapa.png filter=lfs diff=lfs merge=lfs -text

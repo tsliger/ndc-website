@@ -25,7 +25,7 @@ export default function SplashView({
       gsap.fromTo(
         textRef.current,
         { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 1, ease: "inout" }
+        { opacity: 1, scale: 1, duration: 1.5, ease: "power1" }
       );
     }, comp); // <- IMPORTANT! Scopes selector text
 

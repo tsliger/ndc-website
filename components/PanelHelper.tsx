@@ -12,7 +12,7 @@ return (
         <Image  src={'/panel-imgs/home/vignette.png'} layout={"fill"} objectFit={"cover"}/>
     </div>
     )}
-    <div className="absolute h-full w-full flex flex-col justify-center items-center space-y-8">
+    <div className="absolute h-full w-full flex flex-col justify-center items-center">
         {component}
     </div>
     </div>

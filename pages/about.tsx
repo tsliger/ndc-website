@@ -27,15 +27,15 @@ const Content = () => {
   return (
     <>
       <div className="absolute h-full w-full flex">
-        <div className="h-full relative w-7/12 self-start">
+        <div className="h-full relative w-full md:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/kincheloe.png"}
             objectFit={"cover"}
             layout="fill"
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
-            <p className="font-['Ethnocentric'] text-6xl mb-6">LOCATION</p>
-            <p className="text-center text-xl px-24 ">
+            <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">LOCATION</p>
+            <p className="text-center text-md md:text-xl px-12 md:px-24 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Consectetur adipiscing elit duis tristique sollicitudin. Et tortor
@@ -45,7 +45,7 @@ const Content = () => {
             </p>
           </div>
         </div>
-        <div className="w-5/12 flex flex-col items-center justify-center">
+        <div className="md:w-5/12 md:flex hidden flex-col items-center justify-center">
           <NaturalImage src={"/panel-imgs/about/locationone.png"} />
           <div className="my-4" />
           <NaturalImage src={"/panel-imgs/about/locationtwo.png"} />
@@ -61,22 +61,22 @@ const ClimateContent = () => {
   return (
     <>
       <div className="absolute h-full w-full flex">
-        <div className="w-5/12 flex flex-col items-center justify-center">
+        <div className="w-5/12 hidden md:flex flex-col items-center justify-center">
           <NaturalImage src={"/panel-imgs/about/climateone.png"} />
           <div className="my-4" />
           <NaturalImage src={"/panel-imgs/about/climatetwo.png"} />
           <div className="my-4" />
           <NaturalImage src={"/panel-imgs/about/climatethree.png"} />
         </div>
-        <div className="h-full relative w-7/12 self-start">
+        <div className="h-full relative w-full md:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/climate.png"}
             objectFit={"cover"}
             layout="fill"
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8  panel-content">
-            <p className="font-['Ethnocentric'] text-6xl mb-6">CLIMATE</p>
-            <p className="text-center text-xl px-24">
+            <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">CLIMATE</p>
+            <p className="text-center text-md md:text-xl px-12 md:px-24">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Consectetur adipiscing elit duis tristique sollicitudin. Et tortor
@@ -95,7 +95,7 @@ const MissionContent = () => {
   return (
     <div className="flex flex-col items-center panel-content">
       <div className="font-['Ethnocentric'] text-4xl md:text-8xl">Mission</div>
-      <p className="w-full md:w-[600px] text-md p-4 md:text-xl text-center">
+      <p className="w-full md:w-[600px] text-md p-12 md:text-xl text-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
@@ -110,7 +110,7 @@ const FinalSlide = () => {
   return (
     <div className="flex flex-col items-center panel-content">
       <div className="font-['Ethnocentric'] text-4xl md:text-8xl">THE TEAM</div>
-      <p className="w-full md:w-[600px] text-md p-4 md:text-xl text-center  panel-content">
+      <p className="w-full md:w-[600px] text-md p-12 md:text-xl text-center  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra

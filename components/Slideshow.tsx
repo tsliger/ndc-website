@@ -81,6 +81,8 @@ export default function Slideshow({
             "start"
           );
 
+        
+
         const revtl = gsap.timeline({
           scrollTrigger: {
             trigger: panel,
@@ -170,7 +172,7 @@ export default function Slideshow({
               </animated.div>
             )
         )}
-      <section className="trigger">{panels}</section>
+      <section className="trigger overflow-hidden">{panels}</section>
     </>
   );
 }

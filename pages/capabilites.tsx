@@ -13,10 +13,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Content = ({ panelHeader }) => {
   return (
     <div className="flex flex-col items-center  panel-content">
-      <div className="font-['Ethnocentric'] text-4xl md:text-8xl">
+      <div className="font-['Ethnocentric'] text-4xl md:text-8xl mb-4">
         {panelHeader}
       </div>
-      <p className="w-full md:w-[600px] text-md p-4 md:text-2xl text-center ">
+      <p className="w-full md:w-[600px] text-md p-12 md:p-0 md:text-2xl text-center ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
@@ -30,7 +30,7 @@ const Content = ({ panelHeader }) => {
 const RDTEContent = () => {
   return (
     <>
-      <div className="flex space-x-8">
+      <div className="flex space-x-8 overflow-hidden">
         <div className="flex flex-col items-center space-y-2">
           <div className="relative w-[343px] aspect-square">
             <Image src="/panel-imgs/capabilities/rdteone.png" layout={"fill"} />
@@ -116,7 +116,7 @@ const RapidContent = () => {
 const DevelopmentContent = () => {
   return (
     <>
-      <div className="flex space-x-24">
+      <div className="flex space-x-24 overflow-hidden">
         <div className="flex flex-col items-center space-y-2 justify-end">
           <div className="relative w-[163px] aspect-square ">
             <Image
@@ -175,7 +175,7 @@ const DevelopmentContent = () => {
 const DeliveryContent = () => {
   return (
     <>
-      <div className="flex space-x-24">
+      <div className="flex flex-col md:flex-row md:space-x-24">
         <div className="flex flex-col items-center space-y-2 justify-end">
           <div className="relative w-[266px] aspect-square ">
             <Image

@@ -8,7 +8,7 @@ import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs"
 
 export default function Footer() {
   return (
-    <div className="min-h-[585px] flex p-8 flex-col lg:flex-row items-center lg:items-start overflow-hidden">
+    <div className="min-h-[585px] flex p-8 flex-col lg:flex-row  lg:items-start overflow-hidden">
         <div className="flex-grow">
           <div>
             <Image 

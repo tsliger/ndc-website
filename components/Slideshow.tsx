@@ -11,9 +11,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 type SlideShowProps = {
   panels: any,
   overviewHeader?: string
+  sliderPosition?: string
 }
 
-export default function Slideshow  ({panels, overviewHeader}: SlideShowProps)  {
+export default function Slideshow  ({panels, overviewHeader, sliderPosition="right"}: SlideShowProps)  {
     const ref = useRef(null)
     const comp = useRef();
     const overlay = useRef(null);
@@ -121,7 +122,7 @@ export default function Slideshow  ({panels, overviewHeader}: SlideShowProps)  {
           transitions(
             (styles, item) => item && <animated.div style={styles} className="overlay" ref={overlay}>
                 <p className="overlay-header drop-shadow-md">{overviewHeader}</p>
-                <div className="w-32 h-full absolute right-0">
+                <div className={`w-16 h-full absolute ${sliderPosition === "right" ? 'right-0' : 'left-0'}`}>
                   <div className="h-full flex items-center">
                     <div className="panel-page-slider">
                       {[...Array(panelCount)].map((e, i) => <div key={i} className={`${currentSlide === i ? 'bg-white/70 scale-x-[1.75]' : 'bg-white/30 scale-x-100'} page-slider`}></div>)}

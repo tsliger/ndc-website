@@ -57,7 +57,7 @@ a {
 }
 
 .panel-page-slider {
-  @apply  w-full flex flex-col justify-center items-end pr-4 md:pr-8 space-y-2
+  @apply  w-full flex flex-col justify-center items-center space-y-2
 }
 
 .page-slider {

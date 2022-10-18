@@ -213,7 +213,7 @@ export default function capabilites() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SplashView splashHeader={'Capabilites'} imageSrc={'/panel-imgs/capabilities/splash.png'} />
-      <Slideshow panels={panelList} overviewHeader={'RDT&E'} />
+      <Slideshow panels={panelList} overviewHeader={'RDT&E'} sliderPosition={'left'} />
     </div>
   )
 }

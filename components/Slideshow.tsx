@@ -39,8 +39,6 @@ export default function Slideshow  ({panels, overviewHeader}: SlideShowProps)  {
           duration: 1,
           ease: "power2",
         });
-
-        
   
         setSlide(i)
         
@@ -58,7 +56,6 @@ export default function Slideshow  ({panels, overviewHeader}: SlideShowProps)  {
               trigger: panel,
               start: "top-=50 bottom-=100",
               end: "bottom+=100 top-=100",
-              markers: true,
               onEnter: (self) => goToSection(i),
             }
           })

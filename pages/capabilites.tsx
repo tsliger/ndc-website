@@ -15,7 +15,7 @@ const Content = ({panelHeader}) => {
   return (
     <>
       <div className="font-['Ethnocentric'] text-4xl md:text-8xl">{panelHeader}</div>
-      <p className="w-full md:w-[600px] text-md p-4 md:text-xl text-center  panel-content">
+      <p className="w-full md:w-[600px] text-md p-4 md:text-2xl text-center  panel-content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.
       </p>
     </>

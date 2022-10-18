@@ -1,9 +1,108 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import Slideshow from '../components/Slideshow'
 import SplashView from '../components/SplashView'
+import PanelHelper from '../components/PanelHelper'
+import { ImageProps } from 'next/image'
+
+const NaturalImage = (props: ImageProps) => {
+  const [ratio, setRatio] = useState(16/9) // default to 16:9
+
+  return (
+    <Image
+      {...props}
+      // set the dimension (affected by layout)
+      width={400}
+      height={400 / ratio}
+      layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
+      onLoadingComplete={({ naturalWidth, naturalHeight }) => 
+        setRatio(naturalWidth / naturalHeight)
+      }
+    />
+  )
+}
+
+const Content = () => {
+  return (
+    <>
+    <div className="absolute h-full w-full flex">
+      <div className="h-full relative w-7/12 self-start">
+        <Image src={'/panel-imgs/about/kincheloe.png'} objectFit={"cover"} layout="fill"/>
+        <div className="absolute h-full w-full flex flex-col justify-center items-center p-8">
+          <p className="font-['Ethnocentric'] text-6xl mb-6">LOCATION</p>
+          <p className="text-center text-xl px-24 panel-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</p>
+        </div>        
+      </div>
+      <div className="w-5/12 flex flex-col items-center justify-center">
+        <NaturalImage src={'/panel-imgs/about/locationone.png'} />
+        <div className='my-4'/>
+        <NaturalImage src={'/panel-imgs/about/locationtwo.png'} />
+        <div className='my-4'/>
+        <NaturalImage src={'/panel-imgs/about/locationthree.png'} />
+      </div>
+    </div>
+    </>
+  )
+}
+
+const ClimateContent = () => {
+  return (
+    <>
+    <div className="absolute h-full w-full flex">
+      <div className="w-5/12 flex flex-col items-center justify-center">
+        <NaturalImage src={'/panel-imgs/about/climateone.png'} />
+        <div className='my-4'/>
+        <NaturalImage src={'/panel-imgs/about/climatetwo.png'} />
+        <div className='my-4'/>
+        <NaturalImage src={'/panel-imgs/about/climatethree.png'} />
+      </div>
+      <div className="h-full relative w-7/12 self-start">
+        <Image src={'/panel-imgs/about/climate.png'} objectFit={"cover"} layout="fill"/>
+        <div className="absolute h-full w-full flex flex-col justify-center items-center p-8">
+          <p className="font-['Ethnocentric'] text-6xl mb-6">CLIMATE</p>
+          <p className="text-center text-xl px-24 panel-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.</p>
+        </div>        
+      </div>
+    </div>
+    </>
+  )
+}
+
+const MissionContent = () =>
+{
+  return(
+    <>
+      <div className="font-['Ethnocentric'] text-4xl md:text-8xl">Mission</div>
+      <p className="w-full md:w-[600px] text-md p-4 md:text-xl text-center  panel-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.
+      </p>
+    </>
+  )
+}
+
+const FinalSlide = () =>
+{
+  return(
+    <>
+      <div className="font-['Ethnocentric'] text-4xl md:text-8xl">THE TEAM</div>
+      <p className="w-full md:w-[600px] text-md p-4 md:text-xl text-center  panel-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.
+      </p>
+      <div className="h-12"/>
+      <NaturalImage src={'/anchor-systems-logo-white.png'}/>
+    </>
+  )
+}
+
 
 export default function about() {
+  const panelList = [
+    <PanelHelper key={1} component={<MissionContent />} imageSrc="/panel-imgs/about/about.png"/>,
+    <PanelHelper key={2} component={<Content />} />,
+    <PanelHelper key={3} component={<ClimateContent />} />,
+    <PanelHelper key={4} component={<FinalSlide />} />
+  ]
   return (
     <div className="flex flex-col">
       <Head>
@@ -12,6 +111,7 @@ export default function about() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SplashView splashHeader={'About'} />
+      <Slideshow panels={panelList} overviewHeader={'About'} />
     </div>
   )
 }

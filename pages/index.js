@@ -7,7 +7,13 @@ import SplashView from "../components/SplashView";
 const frontBlurb =
   "The Eastern Upper Peninsula - National Defense Complex (EUP-NDC) is a profound response to the Nation's call for innovation in support of the Warfighter.  The EUP-NDC is a bold, first-of-its-kind Research, Development, Testing and Evaluation (RDT&E) complex and Rapid Capability Development – Delivery (RCD-D) platform, purpose-built for the All-Domain (air, land, maritime, cyber, and space) Warfare fight versus sophisticated adversaries (i.e., China and Russia).";
 
-const Panel = ({ backgroundImage, symbolImage, sideText }) => {
+const spaceBlurb = 
+  "The EUP-NDC sits in a strategic location capable of great capabilities within the space domain. The Chippewa Homestead Antenna and Mission Program (CHAMP) Space Command, Control, and Communication (C3) Mission Operations Center (MOC) directly supports Michigan’s commercial Space-launch program."
+
+const tempBlurb = 
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus."
+
+const Panel = ({ backgroundImage, symbolImage, sideText, blurbText=tempBlurb }) => {
   const sideref = useRef(null);
   const [sideWidth, setWidth] = useState(0);
   useEffect(() => {
@@ -50,12 +56,7 @@ const Panel = ({ backgroundImage, symbolImage, sideText }) => {
               </div>
               <div className="relative flex flex-col mb-24 md:mb-0">
                 <div className="text-sm md:text-xl p-4 md:p-0 text-center mb-4 drop-shadow-md">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Consectetur adipiscing elit duis tristique sollicitudin. Et
-                  tortor at risus viverra adipiscing at in tellus. Suspendisse
-                  sed nisi lacus sed viverra tellus in hac. In hendrerit gravida
-                  rutrum quisque non tellus.
+                  {blurbText}
                 </div>
 
                 <div className="z-50 w-full relative pt-8">
@@ -81,6 +82,7 @@ export default function Home() {
       sideText={"space"}
       backgroundImage={"/panel-imgs/home/space.png"}
       symbolImage={"/panel-symbols/home/satelite.png"}
+      blurbText={spaceBlurb}
     />,
     <Panel
       key={2}

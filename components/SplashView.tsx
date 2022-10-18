@@ -24,8 +24,8 @@ export default function SplashView({
     let ctx = gsap.context(() => {
       gsap.fromTo(
         textRef.current,
-        { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 1.5, ease: "power1" }
+        { opacity: 0 },
+        { opacity: 1, duration: 2, delay: 0.35, ease: "power1" }
       );
     }, comp); // <- IMPORTANT! Scopes selector text
 
@@ -35,13 +35,18 @@ export default function SplashView({
   return (
     <div className="min-h-[840px] h-screen flex flex-col">
       <div className="h-4/6 overflow-hidden z-0 flex flex-col">
+        {(videoSrc || imageSrc) && (
+          <div className="mix-blend-overlay absolute h-full w-full z-2 opacity-30">
+            <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} />
+          </div>
+        )}
         {videoSrc && !imageSrc && (
           <video autoPlay muted loop className={styles.video}>
             <source src={videoSrc} type="video/mp4" />
           </video>
         )}
         {imageSrc && (
-          <div className="w-full h-full absolute">
+          <div className="w-full h-full absolute z-[-1]">
             <Image src={imageSrc} layout={"fill"} objectFit={"cover"} />
           </div>
         )}

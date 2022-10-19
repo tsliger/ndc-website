@@ -36,7 +36,7 @@ export default function SplashView({
     <div className="min-h-[840px] h-screen flex flex-col">
       <div className="h-4/6 overflow-hidden z-0 flex flex-col">
         {(videoSrc || imageSrc) && (
-          <div className="mix-blend-overlay absolute h-full w-full z-2 opacity-30">
+          <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-20">
             <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} />
           </div>
         )}
@@ -61,12 +61,12 @@ export default function SplashView({
           </div>
           <p
             ref={textRef}
-            className="md:text-xl md:w-[682px] text-center	flex-grow flex items-center px-4 pt-8 pb-24 "
+            className="md:text-xl md:w-[800px] text-center	flex-grow flex items-center justify-center px-4 "
           >
             {splashText}
           </p>
 
-          <div className="h-4 w-12 p-2 relative bottom-12 animate-bounce cursor-pointer">
+          <div className="h-4 w-12 p-2 relative bottom-6 animate-bounce cursor-pointer">
             <Image
               src="/arrow-down.png"
               layout="fill"

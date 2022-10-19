@@ -33,7 +33,7 @@ a {
 }
 
 .navbar-container {
-  @apply min-h-[100px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark via-ndcDark/50 to-transparent
+  @apply min-h-[100px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
 }
 
 

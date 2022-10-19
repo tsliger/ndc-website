@@ -87,7 +87,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar-container" ref={navRef}>
-        <div className="flex flex-col justify-center z-50">
+        <div className="flex flex-col justify-center z-50 drop-shadow-md">
           <Image
             src="/ndc-logo-white.png"
             className="drop-shadow-xl"

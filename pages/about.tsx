@@ -13,6 +13,7 @@ const NaturalImage = (props: ImageProps) => {
     <Image
       {...props}
       // set the dimension (affected by layout)
+      alt={'default'}
       width={400}
       height={400 / ratio}
       layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
@@ -35,6 +36,7 @@ const Content = () => {
             src={"/panel-imgs/about/kincheloe.png"}
             objectFit={"cover"}
             layout="fill"
+            alt={'kincheloe on map'}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
@@ -51,11 +53,11 @@ const Content = () => {
           </div>
         </div>
         <div className="md:w-5/12 md:flex hidden flex-col items-center justify-center">
-          <NaturalImage src={"/panel-imgs/about/locationone.png"} />
+          <NaturalImage src={"/panel-imgs/about/locationone.png"} alt={'location'}/>
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/locationtwo.png"} />
+          <NaturalImage src={"/panel-imgs/about/locationtwo.png"} alt={'location'}/>
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/locationthree.png"} />
+          <NaturalImage src={"/panel-imgs/about/locationthree.png"} alt={'location'}/>
         </div>
       </div>
     </>
@@ -67,17 +69,18 @@ const ClimateContent = () => {
     <>
       <div className="absolute h-full w-full flex">
         <div className="w-5/12 hidden md:flex flex-col items-center justify-center">
-          <NaturalImage src={"/panel-imgs/about/climateone.png"} />
+          <NaturalImage src={"/panel-imgs/about/climateone.png"} alt={'climate northern michigan'}/>
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/climatetwo.png"} />
+          <NaturalImage src={"/panel-imgs/about/climatetwo.png"} alt={'climate northern michigan'} />
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/climatethree.png"} />
+          <NaturalImage src={"/panel-imgs/about/climatethree.png"} alt={'climate northern michigan'} />
         </div>
         <div className="h-full relative w-full md:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/climate.png"}
             objectFit={"cover"}
             layout="fill"
+            alt={'climate'}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8  panel-content">
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
@@ -108,13 +111,7 @@ const MissionContent = () => {
     <div className="flex flex-col items-center panel-content">
       <div className="font-['Ethnocentric'] text-4xl md:text-8xl">Mission</div>
       <p className="w-full md:w-[800px] text-md px-12 mt-4 md:mt-16 md:text-xl">
-        &emsp;The Eastern Upper Peninsula - National Defense Complex (EUP-NDC)
-        is a profound response to the Nation's call for innovation in support of
-        the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research,
-        Development, Testing and Evaluation (RDT&E) complex and Rapid Capability
-        Development – Delivery (RCD-D) platform, purpose-built for the
-        All-Domain (air, land, maritime, cyber, and space) Warfare fight versus
-        sophisticated adversaries (i.e., China and Russia).
+        &emsp;{"The Eastern Upper Peninsula - National Defense Complex (EUP-NDC) is a profound response to the Nation's call for innovation in support of the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research, Development, Testing and Evaluation (RDT&E) complex and Rapid Capability Development – Delivery (RCD-D) platform, purpose-built for the All-Domain (air, land, maritime, cyber, and space) Warfare fight versus sophisticated adversaries (i.e., China and Russia)."}
       </p>
       <p className="w-full md:w-[800px] text-md px-12 mt-4 md:text-xl">
         &emsp;{missionBlurb}
@@ -137,7 +134,7 @@ const FinalSlide = () => {
       </p>
       <div className="h-12" />
       <div className="m-16">
-        <NaturalImage src={"/anchor-systems-logo-white.png"} />
+        <NaturalImage src={"/anchor-systems-logo-white.png"} alt={'anchor systems logo'}/>
       </div>
     </div>
   );

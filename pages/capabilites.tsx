@@ -33,13 +33,13 @@ const RDTEContent = () => {
       <div className="flex space-x-8 overflow-hidden">
         <div className="flex flex-col items-center space-y-2">
           <div className="relative w-[343px] aspect-square">
-            <Image src="/panel-imgs/capabilities/rdteone.png" layout={"fill"} />
+            <Image src="/panel-imgs/capabilities/rdteone.png" layout={"fill"} alt={'rtde'} />
           </div>
           <p className="font-['Ethnocentric'] text-xl">Research</p>
         </div>
         <div className="flex flex-col items-center space-y-2">
           <div className="relative w-[343px] aspect-square">
-            <Image src="/panel-imgs/capabilities/rdtetwo.png" layout={"fill"} />
+            <Image src="/panel-imgs/capabilities/rdtetwo.png" layout={"fill"} alt={'rtde'}/>
           </div>
           <p className="font-['Ethnocentric'] text-xl">Development</p>
         </div>
@@ -48,6 +48,7 @@ const RDTEContent = () => {
             <Image
               src="/panel-imgs/capabilities/rdtethree.png"
               layout={"fill"}
+              alt={'rtde'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl">Testing</p>
@@ -57,13 +58,14 @@ const RDTEContent = () => {
             <Image
               src="/panel-imgs/capabilities/rdtefour.png"
               layout={"fill"}
+              alt={'rtde'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl">Evaluation</p>
         </div>
       </div>
       <div className="z-50 h-16 w-full relative pt-8">
-        <Image src="/light-bar-white.png" layout="fill" />
+        <Image src="/light-bar-white.png" layout="fill" alt={'light bar'}/>
       </div>
       <p className="w-[700px] text-lg text-center  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -84,6 +86,7 @@ const RapidContent = () => {
           <div className="relative w-[173px] aspect-square ">
             <Image
               src="/panel-imgs/capabilities/rapidone.png"
+              alt={'Develop'}
               layout={"fill"}
             />
           </div>
@@ -93,6 +96,7 @@ const RapidContent = () => {
           <div className="relative w-[266px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/rapidtwo.png"
+              alt={'Develop'}
               layout={"fill"}
             />
           </div>
@@ -100,7 +104,7 @@ const RapidContent = () => {
         </div>
       </div>
       <div className="z-50 h-16 w-full relative pt-8">
-        <Image src="/light-bar-white.png" layout="fill" />
+        <Image src="/light-bar-white.png" layout="fill" alt={'Develop'}/>
       </div>
       <p className="w-[700px] text-lg text-center  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -122,6 +126,7 @@ const DevelopmentContent = () => {
             <Image
               src="/panel-imgs/capabilities/developone.png"
               layout={"fill"}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
@@ -136,6 +141,7 @@ const DevelopmentContent = () => {
             <Image
               src="/panel-imgs/capabilities/developtwo.png"
               layout={"fill"}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
@@ -150,6 +156,7 @@ const DevelopmentContent = () => {
             <Image
               src="/panel-imgs/capabilities/developthree.png"
               layout={"fill"}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Manufacturing</p>
@@ -165,7 +172,7 @@ const DevelopmentContent = () => {
           DEVELOPMENT
         </p>
         <div className="z-50 h-16 w-full relative pt-8">
-          <Image src="/light-bar.png" layout="fill" />
+          <Image src="/light-bar.png" layout="fill"  alt={'light bar'}/>
         </div>
       </div>
     </>
@@ -180,6 +187,7 @@ const DeliveryContent = () => {
           <div className="relative w-[266px] aspect-square ">
             <Image
               src="/panel-imgs/capabilities/deliveryone.png"
+              alt={'Delivery'}
               layout={"fill"}
             />
           </div>
@@ -194,6 +202,7 @@ const DeliveryContent = () => {
           <div className="relative w-[213px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/deliverytwo.png"
+              alt={'Delivery'}
               layout={"fill"}
             />
           </div>
@@ -208,6 +217,7 @@ const DeliveryContent = () => {
           <div className="relative w-[285px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/deliverythree.png"
+              alt={'Delivery'}
               layout={"fill"}
             />
           </div>
@@ -223,6 +233,7 @@ const DeliveryContent = () => {
             <Image
               src="/panel-imgs/capabilities/deliveryfour.png"
               layout={"fill"}
+              alt={'Delivery'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
@@ -236,7 +247,7 @@ const DeliveryContent = () => {
       <div className="w-full flex flex-col absolute bottom-16">
         <p className="mx-auto text-5xl tracking-widest font-thin">DELIVERY</p>
         <div className="z-50 h-16 w-full relative pt-8">
-          <Image src="/light-bar.png" layout="fill" />
+          <Image src="/light-bar.png" layout="fill" alt={'Light bar'}/>
         </div>
       </div>
     </>

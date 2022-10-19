@@ -20,6 +20,7 @@ export default function Footer() {
             width={310}
             height={83}
             className="-translate-x-4"
+            alt={'ndc logo'}
           />
         </div>
         <div className="mt-8 flex flex-col lg:flex-row">

@@ -22,13 +22,14 @@ const Panel = ({ backgroundImage, symbolImage, sideText, blurbText=tempBlurb }) 
   return (
     <div className="panel">
       <div className="w-full h-full absolute">
-        <Image src={backgroundImage} layout={"fill"} objectFit={"cover"} />
+        <Image src={backgroundImage} layout={"fill"} objectFit={"cover"} alt={'background image'} />
       </div>
       <div className="w-full h-full absolute">
         <Image
           src={"/panel-imgs/home/vignette.png"}
           layout={"fill"}
           objectFit={"cover"}
+          alt={'Vignette'}
         />
       </div>
       <div className="min-h-screen">
@@ -43,18 +44,19 @@ const Panel = ({ backgroundImage, symbolImage, sideText, blurbText=tempBlurb }) 
         </div>
         <div className="absolute w-full h-full ">
           <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center translate-y-16 md:translate-y-0">
-            <div className="flex flex-col panel-content md:mb-32">
-              <div className="p-16 md:p-56 md:translate-y-16">
-                <div className="w-full aspect-square relative top-8 md:top-0">
+            <div className="flex flex-col panel-content md:mb-32 items-center">
+              <div className="p-16 md:p-56 md:translate-y-16 ">
+                <div className="w-96 aspect-square relative top-8 md:top-0 drop-shadow-xl">
                   <Image
                     src={symbolImage}
                     layout="fill"
                     objectFit="contain"
-                    style={{ filter: "drop-shadow(0px 0px 30px #878787)" }}
+                    alt={'Panel Symbol'}
+                    // style={{ filter: "drop-shadow(0px 0px 30px #878787)" }}
                   />
                 </div>
               </div>
-              <div className="relative flex flex-col mb-24 md:mb-0">
+              <div className="relative flex flex-col -translate-y-16">
                 <div className="text-sm md:text-xl p-4 md:p-0 text-center mb-4 drop-shadow-md">
                   {blurbText}
                 </div>
@@ -64,6 +66,7 @@ const Panel = ({ backgroundImage, symbolImage, sideText, blurbText=tempBlurb }) 
                     src="/light-bar-white.png"
                     layout="fill"
                     objectFit="contain"
+                    alt={'Light bar'}
                   />
                 </div>
               </div>

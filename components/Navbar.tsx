@@ -94,6 +94,7 @@ export default function Navbar() {
             width={192}
             height={53}
             draggable={false}
+            alt={'ndc logo'}
           />
         </div>
         <div className="flex-grow" />
@@ -120,6 +121,7 @@ export default function Navbar() {
                 width={192}
                 height={53}
                 draggable={false}
+                alt={'ndc logo'}
               />
             </div>
             <div

@@ -135,7 +135,7 @@ export default function Slideshow({
                   {overviewHeader}
                 </p>
                 <div
-                  className={`w-16 h-full absolute ${
+                  className={`w-6 md:w-16 h-full  absolute ${
                     sliderPosition === "right" ? "right-0" : "left-0"
                   }`}
                 >
@@ -164,6 +164,7 @@ export default function Slideshow({
                           objectFit="contain"
                           draggable={false}
                           className="select-none"
+                          alt={'arrow down'}
                         />
                       </div>
                     </div>

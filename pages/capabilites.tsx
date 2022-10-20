@@ -11,10 +11,11 @@ import Switcher from "../components/Switcher"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+
 const Content = ({ panelHeader }) => {
   return (
     <div className="flex flex-col items-center  panel-content">
-      <div className="font-['Ethnocentric'] text-4xl md:text-8xl mb-4">
+      <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-4">
         {panelHeader}
       </div>
       <p className="w-full md:w-[600px] text-md px-12 md:px-0 md:text-2xl text-center ">
@@ -33,22 +34,22 @@ const Content = ({ panelHeader }) => {
 const RDTEContent = () => {
   return (
     <>
-      <div className="w-full h-96 flex justify-center overflow-hidden">
+      <div className="w-full h-96 flex justify-center overflow-hidden translate-y-20 md:translate-y-0">
         <Switcher>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[343px] aspect-square">
+            <div className="relative w-[256px] md:w-[343px] aspect-square">
               <Image src="/panel-imgs/capabilities/rdteone.png" layout={"fill"} alt={'rtde'} />
             </div>
             <p className="font-['Ethnocentric'] text-xl">Research</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[343px] aspect-square">
+            <div className="relative w-[256px] md:w-[343px] aspect-square">
               <Image src="/panel-imgs/capabilities/rdtetwo.png" layout={"fill"} alt={'rtde'}/>
             </div>
             <p className="font-['Ethnocentric'] text-xl">Development</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[343px] aspect-square">
+            <div className="relative w-[256px] md:w-[343px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
                 layout={"fill"}
@@ -58,7 +59,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Testing</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[343px] aspect-square">
+            <div className="relative w-[256px] md:w-[343px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
                 layout={"fill"}
@@ -72,7 +73,7 @@ const RDTEContent = () => {
       <div className="z-50 h-16 w-full relative pt-8">
         <Image src="/light-bar-white.png" layout="fill" alt={'light bar'}/>
       </div>
-      <p className="w-full md:w-[700px] text-lg text-center px-12 md:px-4  panel-content">
+      <p className="w-full md:w-[700px] mt-8 text-lg md:text-xl text-center px-12 md:px-4  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
@@ -86,34 +87,34 @@ const RDTEContent = () => {
 const RapidContent = () => {
   return (
     <>
-      <div className="flex space-x-24 h-96 md:h-auto">
+      <div className="flex space-x-24 h-96 md:h-auto items-center">
         <Switcher>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
-          <div className="relative w-[173px] aspect-square ">
-            <Image
-              src="/panel-imgs/capabilities/rapidone.png"
-              alt={'Develop'}
-              layout={"fill"}
-            />
+          <div className="switcher-item w-full flex-grow flex flex-col items-center">
+            <div className="relative bottom-0 w-[173px] aspect-square ">
+              <Image
+                src="/panel-imgs/capabilities/rapidone.png"
+                alt={'Develop'}
+                layout={"fill"}
+              />
+            </div>
+            <p className="font-['Ethnocentric'] text-xl">Development</p>
           </div>
-          <p className="font-['Ethnocentric'] text-xl">Development</p>
-        </div>
-        <div className="flex flex-col items-center space-y-2 switcher-item">
-          <div className="relative w-[266px] aspect-square">
-            <Image
-              src="/panel-imgs/capabilities/rapidtwo.png"
-              alt={'Develop'}
-              layout={"fill"}
-            />
+          <div className="switcher-item w-full flex-grow flex flex-col items-center">
+            <div className="relative w-[173px] aspect-square">
+              <Image
+                src="/panel-imgs/capabilities/rapidtwo.png"
+                alt={'Develop'}
+                layout={"fill"}
+              />
+            </div>
+            <p className="font-['Ethnocentric'] text-xl">Delivery</p>
           </div>
-          <p className="font-['Ethnocentric'] text-xl">Delivery</p>
-        </div>
         </Switcher>
       </div>
-      <div className="z-50 h-16 w-full relative pt-8">
+      <div className="z-50 h-16 w-full relative ">
         <Image src="/light-bar-white.png" layout="fill" alt={'Develop'}/>
       </div>
-      <p className="w-full px-12 md:px-4 md:w-[700px] text-lg text-center  panel-content">
+      <p className="w-full px-12 md:px-4 md:w-[700px] text-lg md:text-2xl text-center  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
@@ -128,7 +129,7 @@ const DevelopmentContent = () => {
   return (
     <>
       <div className="flex justify-center space-x-24 overflow-hidden w-full h-[36rem] md:h-auto">
-        <Switcher duration={5000}> 
+        <Switcher duration={4000}> 
         <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
           <div className="relative w-[163px] aspect-square ">
             <Image
@@ -138,7 +139,7 @@ const DevelopmentContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -153,7 +154,7 @@ const DevelopmentContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -168,7 +169,7 @@ const DevelopmentContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Manufacturing</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -191,8 +192,8 @@ const DevelopmentContent = () => {
 const DeliveryContent = () => {
   return (
     <>
-      <div className="flex justify-center space-x-24 overflow-hidden w-full h-[42rem] md:h-auto">
-      <Switcher duration={5000}>
+      <div className="flex justify-center  space-x-24 overflow-hidden w-full h-[42rem] md:h-auto">
+      <Switcher duration={4000}>
         <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
           <div className="relative w-[266px] aspect-square ">
             <Image
@@ -202,7 +203,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -217,7 +218,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -232,7 +233,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -247,7 +248,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-          <p className="w-[250px] text-lg md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-2xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing

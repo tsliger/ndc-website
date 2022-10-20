@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { gsap } from "gsap";
 
+
 type SplashViewTypes = {
   videoSrc?: string;
   imageSrc?: string;
@@ -17,19 +18,14 @@ export default function SplashView({
   splashText,
 }: SplashViewTypes) {
   const textRef = useRef(null);
-  const comp = useRef();
 
   useEffect(() => {
     // Creates text effect on load
-    let ctx = gsap.context(() => {
-      gsap.fromTo(
-        textRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 2, delay: 0.35, ease: "power1" }
-      );
-    }, comp); // <- IMPORTANT! Scopes selector text
-
-    return () => ctx.revert(); // cleanup
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0 },
+      { opacity: 1, duration: 2, delay: 0.35, ease: "power1" }
+    );
   }, []);
 
   return (
@@ -57,7 +53,7 @@ export default function SplashView({
       <div className="z-10 h-2/6 bg-ndcDark">
         <div className="text-ndcWhite flex flex-col items-center h-full">
           <div className="h-[120px] z-50 w-full absolute translate-y-[-63px]">
-            <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={'light bar'}/>
+            <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={'light bar'} priority={true}/>
           </div>
           <p
             ref={textRef}

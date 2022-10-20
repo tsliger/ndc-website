@@ -6,6 +6,9 @@ import { animated, useTransition, config } from "react-spring";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.config({
+  nullTargetWarn: false,
+});
 
 type SlideShowProps = {
   panels: any;
@@ -157,7 +160,7 @@ export default function Slideshow({
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end">
                     <div className="flex flex-col justify-end panel-content">
-                      <div className="h-4 animate-bounce cursor-pointer w-full mb-8">
+                      <div className="h-4 animate-bounce relative cursor-pointer w-full mb-8">
                         <Image
                           src="/arrow-down.png"
                           layout="fill"
@@ -173,7 +176,7 @@ export default function Slideshow({
               </animated.div>
             )
         )}
-      <section className="trigger overflow-hidden">{panels}</section>
+      <section className="trigger overflow-hidden" ref={comp}>{panels}</section>
     </>
   );
 }

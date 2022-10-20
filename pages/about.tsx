@@ -42,7 +42,7 @@ const Content = () => {
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
               LOCATION
             </p>
-            <p className="text-center text-md md:text-xl px-12 md:px-24 ">
+            <p className="text-center text-md md:text-xl px-4 md:px-24 ">
               The Eastern Upper Peninsula of Michigan is home to the Eastern
               Upper Peninsula National Defense Complex. The EUP-NDC sits on
               1700-acres of pre-existing strategic infrastructure and land
@@ -86,7 +86,7 @@ const ClimateContent = () => {
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
               CLIMATE
             </p>
-            <p className="text-center text-md md:text-xl px-12 md:px-24">
+            <p className="text-center text-md md:text-xl px-4 md:px-24">
               The climate of the Eastern Upper Peninsula acts as a
               differentiator amongst all other RDT&E defense enviornments across
               the nation. The temperature of the region scales from -37°F to
@@ -110,10 +110,10 @@ const MissionContent = () => {
   return (
     <div className="flex flex-col items-center panel-content">
       <div className="font-['Ethnocentric'] text-4xl md:text-8xl">Mission</div>
-      <p className="w-full md:w-[800px] text-md px-12 mt-4 md:mt-16 md:text-xl">
+      <p className="w-full md:w-[800px] text-md px-6 mt-4 md:mt-16 md:text-xl text-center md:text-justify">
         &emsp;{"The Eastern Upper Peninsula - National Defense Complex (EUP-NDC) is a profound response to the Nation's call for innovation in support of the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research, Development, Testing and Evaluation (RDT&E) complex and Rapid Capability Development – Delivery (RCD-D) platform, purpose-built for the All-Domain (air, land, maritime, cyber, and space) Warfare fight versus sophisticated adversaries (i.e., China and Russia)."}
       </p>
-      <p className="w-full md:w-[800px] text-md px-12 mt-4 md:text-xl">
+      <p className="w-full md:w-[800px] text-md px-6 mt-4 md:text-xl  text-center md:text-justify">
         &emsp;{missionBlurb}
       </p>
     </div>
@@ -125,15 +125,14 @@ const finalBlurb =
 
 const FinalSlide = () => {
   return (
-    <div className="flex flex-col items-center panel-content">
+    <div className="flex flex-col items-center panel-content translate-y-20">
       <div className="font-['Ethnocentric'] text-4xl md:text-8xl mb-8">
         THE TEAM
       </div>
-      <p className="w-full md:w-[600px] text-md px-24 md:p-0  md:text-xl text-center  panel-content">
+      <p className="w-full md:w-[600px] text-md px-4 md:p-0 mb-8 md:text-xl text-center  panel-content">
         {finalBlurb}
       </p>
-      <div className="h-12" />
-      <div className="m-16">
+      <div>
         <NaturalImage src={"/anchor-systems-logo-white.png"} alt={'anchor systems logo'}/>
       </div>
     </div>

@@ -53,7 +53,7 @@ a {
 }
 
 .overlay-header {
-  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-16 md:top-32 z-30
+  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-24 md:top-32 z-30
 }
 
 .panel-page-slider {
@@ -66,4 +66,8 @@ a {
 
 .overlay {
   @apply h-screen w-full fixed z-30 flex flex-col
+}
+
+.switcher-item {
+  @apply absolute md:relative 
 }

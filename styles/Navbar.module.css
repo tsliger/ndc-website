@@ -13,7 +13,7 @@
 }
 
 .navList  li {
-  @apply px-8 h-full drop-shadow-md hover:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all active:scale-95 duration-150
+  @apply px-8 h-full drop-shadow-md hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-75
 }
 
 .drawer {

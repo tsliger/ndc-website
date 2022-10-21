@@ -39,7 +39,7 @@ a {
 
 
 .footerNavList > li {
-  @apply space-y-6 text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-300
+  @apply space-y-6 text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-150
 }
 
 
@@ -53,7 +53,7 @@ a {
 }
 
 .overlay-header {
-  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-24 md:top-32 z-30
+  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-20 md:top-32 z-30
 }
 
 .panel-page-slider {
@@ -69,5 +69,5 @@ a {
 }
 
 .switcher-item {
-  @apply absolute md:relative 
+  grid-area: 1/1/1;
 }

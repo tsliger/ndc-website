@@ -93,32 +93,32 @@ export default function Home() {
     <Panel
       key={1}
       sideText={"space"}
-      backgroundImage={"/panel-imgs/home/space.png"}
+      backgroundImage={"/panel-imgs/home/spaceupscale.jpg"}
       symbolImage={"/panel-symbols/home/satelite.png"}
       blurbText={spaceBlurb}
     />,
     <Panel
       key={2}
       sideText={"air"}
-      backgroundImage={"/panel-imgs/home/air.png"}
+      backgroundImage={"/panel-imgs/home/airupscale.png"}
       symbolImage={"/panel-symbols/home/drone.png"}
     />,
     <Panel
       key={3}
       sideText={"cyber"}
-      backgroundImage={"/panel-imgs/home/cyber.png"}
+      backgroundImage={"/panel-imgs/home/cyberupscale.png"}
       symbolImage={"/panel-symbols/home/cyber.png"}
     />,
     <Panel
       key={4}
       sideText={"land"}
-      backgroundImage={"/panel-imgs/home/land.png"}
+      backgroundImage={"/panel-imgs/home/landupscale.png"}
       symbolImage={"/panel-symbols/home/land.png"}
     />,
     <Panel
       key={5}
       sideText={"maritime"}
-      backgroundImage={"/panel-imgs/home/maritime.png"}
+      backgroundImage={"/panel-imgs/home/maritimeupscale.png"}
       symbolImage={"/panel-symbols/home/maritime.png"}
     />,
   ];

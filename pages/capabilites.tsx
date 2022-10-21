@@ -18,7 +18,7 @@ const Content = ({ panelHeader }) => {
       <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-4">
         {panelHeader}
       </div>
-      <p className="w-full md:w-[600px] text-md px-12 md:px-0 md:text-2xl text-center ">
+      <p className="w-full md:w-[600px] text-sm px-12 md:px-0 md:text-2xl text-center ">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
@@ -34,22 +34,22 @@ const Content = ({ panelHeader }) => {
 const RDTEContent = () => {
   return (
     <>
-      <div className="w-full h-96 flex justify-center overflow-hidden translate-y-20 md:translate-y-0">
+      <div className="w-full flex justify-center overflow-hidden">
         <Switcher>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[256px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[343px] aspect-square">
               <Image src="/panel-imgs/capabilities/rdteone.png" layout={"fill"} alt={'rtde'} />
             </div>
             <p className="font-['Ethnocentric'] text-xl">Research</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[256px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[343px] aspect-square">
               <Image src="/panel-imgs/capabilities/rdtetwo.png" layout={"fill"} alt={'rtde'}/>
             </div>
             <p className="font-['Ethnocentric'] text-xl">Development</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[256px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[343px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
                 layout={"fill"}
@@ -59,7 +59,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Testing</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[256px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[343px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
                 layout={"fill"}
@@ -70,10 +70,10 @@ const RDTEContent = () => {
           </div>
         </Switcher>
       </div>
-      <div className="z-50 h-16 w-full relative pt-8">
+      <div className="z-50 h-16 w-full relative ">
         <Image src="/light-bar-white.png" layout="fill" alt={'light bar'}/>
       </div>
-      <p className="w-full md:w-[700px] mt-8 text-lg md:text-xl text-center px-12 md:px-4  panel-content">
+      <p className="w-full md:w-[700px] text-md md:text-xl text-center px-12 md:px-4  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
@@ -86,8 +86,8 @@ const RDTEContent = () => {
 
 const RapidContent = () => {
   return (
-    <>
-      <div className="flex space-x-24 h-96 md:h-auto items-center">
+    <div className="self-center">
+      <div className="grid md:flex space-x-24 items-center">
         <Switcher>
           <div className="switcher-item w-full flex-grow flex flex-col items-center">
             <div className="relative bottom-0 w-[173px] aspect-square ">
@@ -114,23 +114,23 @@ const RapidContent = () => {
       <div className="z-50 h-16 w-full relative ">
         <Image src="/light-bar-white.png" layout="fill" alt={'Develop'}/>
       </div>
-      <p className="w-full px-12 md:px-4 md:w-[700px] text-lg md:text-2xl text-center  panel-content">
+      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-2xl text-center  panel-content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Consectetur
         adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra
         adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus
         in hac. In hendrerit gravida rutrum quisque non tellus.
       </p>
-    </>
+    </div>
   );
 };
 
 const DevelopmentContent = () => {
   return (
     <>
-      <div className="flex justify-center space-x-24 overflow-hidden w-full h-[36rem] md:h-auto">
-        <Switcher duration={4000}> 
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
+      <div className="grid md:flex justify-center space-x-24 overflow-hidden w-full h-full ">
+        <Switcher duration={3000}> 
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
           <div className="relative w-[163px] aspect-square ">
             <Image
               src="/panel-imgs/capabilities/developone.png"
@@ -145,7 +145,7 @@ const DevelopmentContent = () => {
             Consectetur adipiscing
           </p>
         </div>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
           <div className="relative w-[203px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/developtwo.png"
@@ -160,7 +160,7 @@ const DevelopmentContent = () => {
             Consectetur adipiscing
           </p>
         </div>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
           <div className="relative w-[173px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/developthree.png"
@@ -177,11 +177,11 @@ const DevelopmentContent = () => {
         </div>
         </Switcher>
       </div>
-      <div className="w-full flex flex-col  absolute bottom-16">
-        <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin">
+      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
+        <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin  translate-y-6 md:translate-y-0">
           DEVELOPMENT
         </p>
-        <div className="z-50 h-16 w-full relative pt-8">
+        <div className="z-50 h-16 w-full relative">
           <Image src="/light-bar.png" layout="fill"  alt={'light bar'}/>
         </div>
       </div>
@@ -192,14 +192,14 @@ const DevelopmentContent = () => {
 const DeliveryContent = () => {
   return (
     <>
-      <div className="flex justify-center  space-x-24 overflow-hidden w-full h-[42rem] md:h-auto">
-      <Switcher duration={4000}>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
-          <div className="relative w-[266px] aspect-square ">
+      <div className="grid md:flex justify-center space-x-24 overflow-hidden w-full h-full ">
+        <Switcher duration={3000}> 
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
+          <div className="relative w-[163px] aspect-square ">
             <Image
               src="/panel-imgs/capabilities/deliveryone.png"
-              alt={'Delivery'}
               layout={"fill"}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
@@ -209,12 +209,12 @@ const DeliveryContent = () => {
             Consectetur adipiscing
           </p>
         </div>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
-          <div className="relative w-[213px] aspect-square">
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
+          <div className="relative w-[203px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/deliverytwo.png"
-              alt={'Delivery'}
               layout={"fill"}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
@@ -224,12 +224,12 @@ const DeliveryContent = () => {
             Consectetur adipiscing
           </p>
         </div>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
-          <div className="relative w-[285px] aspect-square">
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
+          <div className="relative w-[173px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/deliverythree.png"
-              alt={'Delivery'}
               layout={"fill"}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
@@ -239,12 +239,12 @@ const DeliveryContent = () => {
             Consectetur adipiscing
           </p>
         </div>
-        <div className="flex flex-col items-center space-y-2 justify-end switcher-item">
-          <div className="relative w-[341px] aspect-square">
+        <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
+          <div className="relative w-[173px] aspect-square">
             <Image
               src="/panel-imgs/capabilities/deliveryfour.png"
               layout={"fill"}
-              alt={'Delivery'}
+              alt={'Develop'}
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
@@ -254,12 +254,14 @@ const DeliveryContent = () => {
             Consectetur adipiscing
           </p>
         </div>
-      </Switcher>
+        </Switcher>
       </div>
-      <div className="w-full flex flex-col absolute bottom-16">
-        <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin">DELIVERY</p>
-        <div className="z-50 h-16 w-full relative pt-8">
-          <Image src="/light-bar.png" layout="fill" alt={'Light bar'}/>
+      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
+        <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin translate-y-6 md:translate-y-0">
+          Delivery
+        </p>
+        <div className="z-50 h-16 w-full relative">
+          <Image src="/light-bar.png" layout="fill"  alt={'light bar'}/>
         </div>
       </div>
     </>

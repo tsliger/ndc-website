@@ -18,7 +18,7 @@ export const Navlinks = ({}) => {
         <Link href="/">
           <a
             className={`h-full flex items-center ${
-              router.pathname === "/" ? "text-blue-500 " : "text-inherit"
+              router.pathname === "/" ? "text-blue-500 drop-shadow-none" : "text-inherit"
             }`}
           >
             Home
@@ -30,7 +30,7 @@ export const Navlinks = ({}) => {
           <a
             className={`h-full flex items-center ${
               router.pathname === "/capabilites"
-                ? "text-blue-500 "
+                ? "text-blue-500  drop-shadow-none"
                 : "text-inherit"
             }`}
           >
@@ -45,7 +45,7 @@ export const Navlinks = ({}) => {
         <Link href="/about">
           <a
             className={`h-full flex items-center ${
-              router.pathname === "/about" ? "text-blue-500 " : "text-inherit"
+              router.pathname === "/about" ? "text-blue-500 drop-shadow-none" : "text-inherit"
             }`}
           >
             About

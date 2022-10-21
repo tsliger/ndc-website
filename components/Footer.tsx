@@ -30,7 +30,7 @@ const contactSchema = Yup.object().shape({
     .required("Phone Number Required"),
   email: Yup.string().email("Invalid email").required("Email Required"),
   description: Yup.string()
-    .min(5, "Description needs to be longer")
+    .min(25, "Description needs to be longer")
     .max(500, "Description needs to be shorter")
     .required("Description Required"),
 });
@@ -72,7 +72,7 @@ const ContactForm = () => {
         <h1 className="font-['Ethnocentric'] text-2xl mb-6 flex-grow">
           CONTACT
         </h1>
-        <p className="pr-4 text-red-500 uppercase">{currentError}</p>
+        <p className="px-4 text-red-500 text-sm md:text-md uppercase text-center">{currentError}</p>
       </div>
       <div className="w-full h-fit flex flex-col  ">
         <form onSubmit={formik.handleSubmit}>

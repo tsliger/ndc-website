@@ -30,7 +30,7 @@ export default function SplashView({
 
   return (
     <div className="min-h-[840px] h-screen flex flex-col">
-      <div className="h-4/6 overflow-hidden z-0 flex flex-col">
+      <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col">
         {(videoSrc || imageSrc) && (
           <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-20">
             <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} alt={'bg overlay'} />
@@ -50,19 +50,19 @@ export default function SplashView({
           {splashHeader}
         </div>
       </div>
-      <div className="z-10 h-2/6 bg-ndcDark">
+      <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">
         <div className="text-ndcWhite flex flex-col items-center h-full">
-          <div className="h-[120px] z-50 w-full absolute translate-y-[-63px]">
+          <div className="h-[120px] z-50 w-full absolute translate-y-[-59px] md:translate-y-[-63px]">
             <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={'light bar'} priority={true}/>
           </div>
           <p
             ref={textRef}
-            className="md:text-xl md:w-[800px] text-center flex-grow flex mt-4 md:mt-16 px-4 "
+            className="text-sm md:text-xl md:w-[800px]  text-center flex-grow flex mt-6 md:mt-16 px-4 "
           >
             {splashText}
           </p>
 
-          <div className="h-4 w-12 p-2 relative bottom-6 animate-bounce cursor-pointer">
+          <div className="h-4 w-12 p-2 absolute bottom-6 animate-bounce cursor-pointer">
             <Image
               src="/arrow-down.png"
               layout="fill"

@@ -43,7 +43,7 @@ export default function SplashView({
         )}
         {imageSrc && (
           <div className="w-full h-full absolute z-[-1]">
-            <Image src={imageSrc} layout={"fill"} objectFit={"cover"}  alt={'bg image'} />
+            <Image src={imageSrc} quality={50} layout={"fill"} objectFit={"cover"}  alt={'bg image'} />
           </div>
         )}
         <div className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">

@@ -18,3 +18,4 @@
 /public/panel-imgs/home/landupscale.png filter=lfs diff=lfs merge=lfs -text
 /public/panel-imgs/home/maritimeupscale.png filter=lfs diff=lfs merge=lfs -text
 /public/panel-imgs/home/spaceupscale.jpg filter=lfs diff=lfs merge=lfs -text
+/public/panel-imgs/capabilities/splashupscale.png filter=lfs diff=lfs merge=lfs -text

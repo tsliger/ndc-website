@@ -29,6 +29,7 @@ const Panel = ({
       <div className="w-full h-full absolute">
         <Image
           src={backgroundImage}
+          quality={25}
           layout={"fill"}
           objectFit={"cover"}
           alt={"background image"}

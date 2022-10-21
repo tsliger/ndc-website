@@ -257,7 +257,7 @@ const DeliveryContent = () => {
         </Switcher>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
-        <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin translate-y-6 md:translate-y-0">
+        <p className="uppercase mx-auto text-lg md:text-5xl tracking-widest font-thin translate-y-6 md:translate-y-0">
           Delivery
         </p>
         <div className="z-50 h-16 w-full relative">
@@ -315,7 +315,7 @@ export default function capabilites() {
       </Head>
       <SplashView
         splashHeader={"Capabilites"}
-        imageSrc={"/panel-imgs/capabilities/splash.png"}
+        imageSrc={"/panel-imgs/capabilities/splashupscale.png"}
       />
       <Slideshow
         panels={panelList}

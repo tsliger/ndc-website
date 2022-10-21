@@ -57,7 +57,7 @@ export default function SplashView({
           </div>
           <p
             ref={textRef}
-            className="md:text-xl md:w-[800px] text-center	flex-grow flex mt-12 px-4 "
+            className="md:text-xl md:w-[800px] text-center flex-grow flex mt-4 md:mt-16 px-4 "
           >
             {splashText}
           </p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Navlinks } from "./Navbar";
 import {
@@ -12,6 +12,7 @@ import { HiOutlinePhone, HiOutlineMail, HiOutlineUser } from "react-icons/hi";
 import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
 
 // Form validation for the contact form
 const phoneRegExp =
@@ -38,6 +39,7 @@ const contactSchema = Yup.object().shape({
 // Contact form for the footer
 const ContactForm = () => {
   const [currentError, setError] = useState("");
+  const _reCaptchaRef = useRef(null);
 
   const formik = useFormik({
     initialValues: {

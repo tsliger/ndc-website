@@ -23,8 +23,8 @@ export default function SplashView({
     // Creates text effect on load
     gsap.fromTo(
       textRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 2, delay: 0.35, ease: "power1" }
+      { opacity: 0, y: 20 },
+      { opacity: 1, duration: 2, y: 0, delay: 0.35, ease: "sine" }
     );
   }, []);
 

@@ -13,7 +13,7 @@ const NaturalImage = (props: ImageProps) => {
     <Image
       {...props}
       // set the dimension (affected by layout)
-      alt={'default'}
+      alt={"default"}
       width={370}
       height={370 / ratio}
       layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
@@ -25,7 +25,7 @@ const NaturalImage = (props: ImageProps) => {
 };
 
 const missionBlurb =
-  "Unlike other federally-funded RDT&E and RCD-D constructs, the EUP-NDC is unique in that it delivers comprehensive austere-capable All-Domain solutions (i.e., cradle to grave) from one centralized and secure location, dramatically increasing efficiency, maximizing cost effectiveness, while ultimately accelerating the delivery technical and tactical advantage to the Warfighter.";
+  "Designing, developing, and delivering emergent Next-Generation war fighting capabilities able to defeat threats with speed, precision, and lethality across a myriad of complex, austere, and globally contested environments on Earth and beyond.";
 
 const Content = () => {
   return (
@@ -36,7 +36,7 @@ const Content = () => {
             src={"/panel-imgs/about/kincheloe.png"}
             objectFit={"cover"}
             layout="fill"
-            alt={'kincheloe on map'}
+            alt={"kincheloe on map"}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
@@ -53,11 +53,20 @@ const Content = () => {
           </div>
         </div>
         <div className="md:w-5/12 md:flex hidden flex-col items-center justify-center">
-          <NaturalImage src={"/panel-imgs/about/locationone.png"} alt={'location'}/>
+          <NaturalImage
+            src={"/panel-imgs/about/locationone.png"}
+            alt={"location"}
+          />
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/locationtwo.png"} alt={'location'}/>
+          <NaturalImage
+            src={"/panel-imgs/about/locationtwo.png"}
+            alt={"location"}
+          />
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/locationthree.png"} alt={'location'}/>
+          <NaturalImage
+            src={"/panel-imgs/about/locationthree.png"}
+            alt={"location"}
+          />
         </div>
       </div>
     </>
@@ -69,18 +78,27 @@ const ClimateContent = () => {
     <>
       <div className="absolute h-full w-full flex">
         <div className="w-5/12 hidden md:flex flex-col items-center justify-center">
-          <NaturalImage src={"/panel-imgs/about/climateone.png"} alt={'climate northern michigan'}/>
+          <NaturalImage
+            src={"/panel-imgs/about/climateone.png"}
+            alt={"climate northern michigan"}
+          />
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/climatetwo.png"} alt={'climate northern michigan'} />
+          <NaturalImage
+            src={"/panel-imgs/about/climatetwo.png"}
+            alt={"climate northern michigan"}
+          />
           <div className="my-4" />
-          <NaturalImage src={"/panel-imgs/about/climatethree.png"} alt={'climate northern michigan'} />
+          <NaturalImage
+            src={"/panel-imgs/about/climatethree.png"}
+            alt={"climate northern michigan"}
+          />
         </div>
         <div className="h-full relative w-full md:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/climateupscale.png"}
             objectFit={"cover"}
             layout="fill"
-            alt={'climate'}
+            alt={"climate"}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8  panel-content">
             <p className="font-['Ethnocentric'] text-3xl md:text-6xl mb-6">
@@ -111,36 +129,58 @@ const MissionContent = () => {
     <div className="flex flex-col items-center panel-content">
       <div className="font-['Ethnocentric'] text-3xl md:text-8xl">Mission</div>
       <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:mt-16 md:text-xl text-center md:text-justify">
-        &emsp;{"The Eastern Upper Peninsula - National Defense Complex (EUP-NDC) is a profound response to the Nation's call for innovation in support of the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research, Development, Testing and Evaluation (RDT&E) complex and Rapid Capability Development – Delivery (RCD-D) platform, purpose-built for the All-Domain (air, land, maritime, cyber, and space) Warfare fight versus sophisticated adversaries (i.e., China and Russia)."}
+        &emsp;The Eastern Upper Peninsula - National Defense Complex (EUP-NDC)
+        is a profound response to the Nation's call for innovation in support of
+        the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research,
+        Development, Testing and Evaluation (RDT&E) complex and Rapid Capability
+        Development – Delivery (RCD-D) platform, purpose-built for the
+        All-Domain (air, land, maritime, cyber, and space) Warfare fight versus
+        sophisticated adversaries (i.e., China and Russia).
       </p>
       <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:text-xl  text-center md:text-justify">
-        &emsp;{missionBlurb}
+        &emsp;Unlike other federally-funded RDT&E and RCD-D constructs, the
+        EUP-NDC is unique in that it delivers comprehensive austere-capable
+        All-Domain solutions (i.e., cradle to grave) from one centralized and
+        secure location, dramatically increasing efficiency, maximizing cost
+        effectiveness, while ultimately accelerating the delivery technical and
+        tactical advantage to the Warfighter.
       </p>
     </div>
   );
 };
 
-const finalBlurb =
-  "The EUP-NDC is an Anchor Systems Initiative. Anchor Systems is a national defense technology integrator specializing in the integration of emergent technology and applied engineering. Anchor Systems is mission focused on the design development and delivery of next generation war fighting capabilities, specifically in accelerating the critical capabilities necessary for America’s warfighters to fight and win in tomorrow’s battlespace today. ";
-
 const FinalSlide = () => {
   return (
-    <div className="flex flex-col items-center justify-end panel-content">
+    <div className="flex flex-col items-center justify-end panel-content translate-y-8">
       <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-8">
         THE TEAM
       </div>
       <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-xl text-center panel-content">
-        {finalBlurb}
+        The EUP-NDC is an Anchor Systems Initiative. Anchor Systems is a
+        national defense technology integrator specializing in the integration
+        of emergent technology and applied engineering. Anchor Systems is
+        mission focused on the design development and delivery of next
+        generation war fighting capabilities, specifically in accelerating the
+        critical capabilities necessary for America’s warfighters to fight and
+        win in tomorrow’s battlespace today.
       </p>
-      <div className="w-full px-12 h-24">
-        <Image src="/anchor-systems-logo-white.png" alt="" title="" width="100%" height="100%" layout="responsive" objectFit="contain"/>
+      <div className="w-[200px] md:w-[450px] ">
+        <Image
+          src="/anchor-systems-logo-white.png"
+          alt=""
+          title=""
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+        />
       </div>
     </div>
   );
 };
 
 const splashText =
-  "Designing, developing, and delivering emergent Next-Generation war fighting capabilities able to defeat threats with speed, precision, and lethality across a myriad of complex, austere, and globally contested environments on Earth and beyond";
+  "Designing, developing, and delivering emergent Next-Generation war fighting capabilities able to defeat threats with speed, precision, and lethality across a myriad of complex, austere, and globally contested environments on Earth and beyond.";
 
 export default function about() {
   const panelList = [

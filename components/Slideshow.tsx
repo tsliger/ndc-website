@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { animated, useTransition, config } from "react-spring";
 import Image from "next/image";
 
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
   nullTargetWarn: false,
@@ -76,18 +77,17 @@ export default function Slideshow({
           { x: 0, opacity: 1, duration: 2 },
           "start"
         )
-          .to(
-            panel.querySelector(".panel-category"),
-            { x: 0, opacity: 1, delay: 0.25, duration: 1 },
-            "start"
-          )
-          .fromTo(
-            panel.querySelector(".panel-content"),
-            { x: 0, opacity: 0, scale: 0.85, duration: 2 },
-            { x: 0, opacity: 1, scale: 1, duration: 3, delay: 0.5 },
-            "start"
-          );
-
+        .to(
+          panel.querySelector(".panel-category"),
+          { x: 0, opacity: 1, delay: 0.1, duration: 1 },
+          "start"
+        )
+        .fromTo(
+          panel.querySelector(".panel-content"),
+          { x: 0, opacity: 0, scale: 0.90, duration: 2 },
+          { x: 0, opacity: 1, scale: 1, duration: 2.5, delay: 0.5, ease: "sine" },
+          "start"
+        )
 
         const revtl = gsap.timeline({
           scrollTrigger: {

@@ -41,7 +41,7 @@ const Panel = ({
       <div className="w-full h-full absolute">
         <Image
           src={backgroundImage}
-          quality={25}
+          quality={55}
           layout={"fill"}
           objectFit={"cover"}
           alt={"background image"}
@@ -81,7 +81,7 @@ const Panel = ({
               </div>
               <div className="relative flex flex-col -translate-y-16">
                 <div className="text-sm md:text-xl p-4 md:p-0 text-center mb-4 drop-shadow-sm">
-                  {blurbText}
+                  <p>{blurbText}</p>
                 </div>
 
                 <div className="z-50 w-full relative pt-8 panel-light">

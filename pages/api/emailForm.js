@@ -1,36 +1,38 @@
 import * as Yup from "yup";
-import nodemailer from "nodemailer";
+// import nodemailer from "nodemailer";
+import sendgrid from "@sendgrid/mail";
+sendgrid.setApiKey(process.env.SMTP_KEY);
+
 
 // Sends email to the proper account
 const sendEmail = (data) => {
-  const email = data.email
-  
-  var transporter = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: "c7f302ba49776b",
-      pass: "7157736dd171fb"
-    }
-  });
+  // var transporter = nodemailer.createTransport({
+  //   host: 'smtp.sendgrid.net',
+  //   port: 465,
+  //   secure: true,
+  //   auth: {
+  //     user: 'apikey',
+  //     pass: process.env.SMTP_KEY
+  //   }
+  // });
 
-  const mailOption = {
-    from: `${data.email}`,
-    to: `advantage@anchorsystems.tech`,
-    subject: `Contact Request from ${email}, ${data.phoneNumber}`,
-    text: `
-      ${data.firstName + " " + data.lastName} wrote:
-      ${data.description}
-    `
-  }
+  // const mailOption = {
+  //   from: `${data.email}`,
+  //   to: `advantage@anchorsystems.tech`,
+  //   subject: `Contact Request from ${email}, ${data.phoneNumber}`,
+  //   text: `
+  //     ${data.firstName + " " + data.lastName} wrote:
+  //     ${data.description}
+  //   `
+  // }
 
-  transporter.sendMail(mailOption, (err, data) => {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log('Sent mail')
-    }
-  })
+  // transporter.sendMail(mailOption, (err, data) => {
+  //   if (err) {
+  //     console.log(err)
+  //   } else {
+  //     console.log('Sent mail')
+  //   }
+  // })
 };
 
 // Validates the data for a second time on the server,

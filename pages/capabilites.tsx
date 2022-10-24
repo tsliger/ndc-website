@@ -20,7 +20,7 @@ const Content = ({ panelHeader, panelText }) => {
       <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-4">
         {panelHeader}
       </div>
-      <p className="w-full md:w-[600px] text-sm px-12 md:px-0 md:text-2xl text-center ">
+      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_40rem)] text-sm px-12 md:px-8 md:text-2xl text-center ">
         {panelText}
       </p>
     </div>

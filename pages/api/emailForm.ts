@@ -1,7 +1,6 @@
 import * as Yup from "yup";
 // import nodemailer from "nodemailer";
-import sendgrid from "@sendgrid/mail";
-sendgrid.setApiKey(process.env.SMTP_KEY);
+
 
 
 // Sends email to the proper account

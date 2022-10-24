@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { gsap } from "gsap";
+import Typewriter from "typewriter-effect";
+
 
 
 type SplashViewTypes = {
@@ -18,14 +20,21 @@ export default function SplashView({
   splashText,
 }: SplashViewTypes) {
   const textRef = useRef(null);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     // Creates text effect on load
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 20 },
-      { opacity: 1, duration: 2, y: 0, delay: 0.35, ease: "sine" }
+      { opacity: 1, duration: 2, y: 0, delay: 0.45, ease: "sine" }
     );
+
+    gsap.fromTo (
+      headerRef.current,
+      {opacity: 0},
+      {opacity: 1, duration: 1.25, delay: 0.1}
+    )
   }, []);
 
   return (
@@ -46,8 +55,21 @@ export default function SplashView({
             <Image src={imageSrc} quality={50} layout={"fill"} objectFit={"cover"}  alt={'bg image'} />
           </div>
         )}
-        <div className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">
-          {splashHeader}
+        <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">
+          {/* {splashHeader} */}
+          <Typewriter
+            options={{
+              cursor: ' '
+            }}
+
+            onInit={(typewriter)=> {
+              typewriter
+              .typeString(splashHeader)
+              .pauseFor(100)
+              .start();
+              }
+            }
+          />
         </div>
       </div>
       <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">

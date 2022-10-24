@@ -12,6 +12,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Navlinks = ({}) => {
   const router = useRouter();
+
+  const goToContact = () => {
+    gsap.killTweensOf(window);
+    ScrollTrigger.disable()
+
+    // window.scrollTo(0, document.body.scrollHeight)
+    const tween = gsap.to(window, {
+      scrollTo: { y: document.body.scrollHeight, autoKill: false },
+      delay: 0.15,
+      duration: 0.5,
+      ease: "sine",
+      onComplete: () => {
+        ScrollTrigger.enable()
+      }
+    });
+
+  }
+
   return (
     <>
       <li>
@@ -38,7 +56,7 @@ export const Navlinks = ({}) => {
           </a>
         </Link>
       </li>
-      <li onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
+      <li onClick={goToContact}>
         Contact
       </li>
       <li>

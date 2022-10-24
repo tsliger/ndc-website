@@ -40,13 +40,17 @@ export default function Slideshow({
     setPanelCount(panels.length);
 
     function goToSection(i: number, anim?: any) {
-      const tween = gsap.to(window, {
-        scrollTo: { y: i * innerHeight + panels[0].offsetTop, autoKill: false },
-        duration: 1,
-        ease: "power2",
-      });
+      const didScrollToBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)
+      
+      if (!didScrollToBottom) {
+        const tween = gsap.to(window, {
+          scrollTo: { y: i * innerHeight + panels[0].offsetTop, autoKill: false },
+          duration: 1,
+          ease: "power2",
+        });
+        setSlide(i);
+      }
 
-      setSlide(i);
 
       if (anim) {
         anim.restart();
@@ -84,12 +88,11 @@ export default function Slideshow({
             "start"
           );
 
-        
 
         const revtl = gsap.timeline({
           scrollTrigger: {
             trigger: panel,
-            start: "bottom bottom",
+            start: "bottom-=100 bottom-=100",
             end: "bottom top+=100",
             onEnterBack: () => goToSection(i),
           },

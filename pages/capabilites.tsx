@@ -34,22 +34,22 @@ const Content = ({ panelHeader }) => {
 const RDTEContent = () => {
   return (
     <>
-      <div className="w-full flex justify-center overflow-hidden">
+      <div className="w-full flex justify-center overflow-hidden space-x-4 lg:space-x-20">
         <Switcher>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[250px] aspect-square">
               <Image src="/panel-imgs/capabilities/rdteone.png" layout={"fill"} alt={'rtde'} />
             </div>
             <p className="font-['Ethnocentric'] text-xl">Research</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[250px] aspect-square">
               <Image src="/panel-imgs/capabilities/rdtetwo.png" layout={"fill"} alt={'rtde'}/>
             </div>
             <p className="font-['Ethnocentric'] text-xl">Development</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[250px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
                 layout={"fill"}
@@ -59,7 +59,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Testing</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[343px] aspect-square">
+            <div className="relative w-[120px] md:w-[250px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
                 layout={"fill"}
@@ -90,14 +90,16 @@ const RapidContent = () => {
       <div className="grid md:flex space-x-24 items-center">
         <Switcher>
           <div className="switcher-item w-full flex-grow flex flex-col items-center">
-            <div className="relative bottom-0 w-[173px] aspect-square ">
-              <Image
-                src="/panel-imgs/capabilities/rapidone.png"
-                alt={'Develop'}
-                layout={"fill"}
-              />
+            <div className="relative bottom-0 w-[173px] aspect-square flex items-end justify-center">
+              <div className="relative w-1/2 aspect-square">
+                <Image
+                  src="/panel-imgs/capabilities/rapidone.png"
+                  alt={'Develop'}
+                  layout={"fill"}
+                />
+              </div>
             </div>
-            <p className="font-['Ethnocentric'] text-xl">Development</p>
+            <p className="font-['Ethnocentric'] text-xl mt-2">Development</p>
           </div>
           <div className="switcher-item w-full flex-grow flex flex-col items-center">
             <div className="relative w-[173px] aspect-square">
@@ -107,7 +109,7 @@ const RapidContent = () => {
                 layout={"fill"}
               />
             </div>
-            <p className="font-['Ethnocentric'] text-xl">Delivery</p>
+            <p className="font-['Ethnocentric'] text-xl mt-2">Delivery</p>
           </div>
         </Switcher>
       </div>
@@ -139,7 +141,7 @@ const DevelopmentContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -154,7 +156,7 @@ const DevelopmentContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -169,7 +171,7 @@ const DevelopmentContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Manufacturing</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -203,7 +205,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -218,7 +220,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -233,7 +235,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing
@@ -248,7 +250,7 @@ const DeliveryContent = () => {
             />
           </div>
           <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-          <p className="w-[250px] text-md md:text-2xl text-center">
+          <p className="w-[250px] text-md md:text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Consectetur adipiscing

@@ -7,8 +7,8 @@ const Switcher = ({ children, duration = 2500 }) => {
   const [windowSize, setWindow] = useState(0);
   const transitions = useTransition(currPage, {
     key: currPage,
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
+    from: { opacity: 0, scale: 0.85 },
+    enter: { opacity: 1, scale: 1 },
     leave: { opacity: 0 },
     config: { duration: duration },
     onRest: (_a, _b, item) => {

@@ -149,7 +149,10 @@ const DevelopmentContent = () => {
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              Innovation is a mindset at the National Defense Complex. Mixed with technical expertise, deep operational experience and imagination, complex war fighting solutions are solved and capabilities are put into production
+                Innovation is a mindset at the National Defense Complex. Mixed
+                with technical expertise, deep operational experience and
+                imagination, complex war fighting solutions are solved and
+                capabilities are put into production
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
@@ -164,7 +167,10 @@ const DevelopmentContent = () => {
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              Capabilities are engineered to withstand the harsh climate of an austere environment. Engineers from all different backgrounds work to mix creativity and technology to design and prototype capabilities across all domains.  
+                Capabilities are engineered to withstand the harsh climate of an
+                austere environment. Engineers from all different backgrounds
+                work to mix creativity and technology to design and prototype
+                capabilities across all domains.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
@@ -181,7 +187,10 @@ const DevelopmentContent = () => {
                 Manufacturing
               </p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              Manufacturing is the overlap of innovation and engineering. Integration of AI-enabled design and innovative fabrication results in cutting-edge, top of the line capabilities being shipped directly to the war fighter
+                Manufacturing is the overlap of innovation and engineering.
+                Integration of AI-enabled design and innovative fabrication
+                results in cutting-edge, top of the line capabilities being
+                shipped directly to the war fighter
               </p>
             </div>
           </Switcher>
@@ -217,7 +226,10 @@ const DeliveryContent = () => {
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              The EUP-NDC sits directly on the former Kincheloe Air Force Base. With direct access to the existing airport structure the NDC has the capability to land a C-17, load it, and send it back out in a rapid time frame.
+                The EUP-NDC sits directly on the former Kincheloe Air Force
+                Base. With direct access to the existing airport structure the
+                NDC has the capability to land a C-17, load it, and send it back
+                out in a rapid time frame.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
@@ -232,7 +244,9 @@ const DeliveryContent = () => {
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              The EUP-NDC is strategically located just off I-75 in Kincheloe, Michigan, and 22 miles from the US and Canada International Bridge.  
+                The EUP-NDC is strategically located just off I-75 in Kincheloe,
+                Michigan, and 22 miles from the US and Canada International
+                Bridge.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
@@ -247,7 +261,9 @@ const DeliveryContent = () => {
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              Just miles from the shore of Lake Superior, Lake Huron and Lake Michigan  the NDC provides the unique option of delivery utilizing the natural geographic features of the area.  
+                Just miles from the shore of Lake Superior, Lake Huron and Lake
+                Michigan the NDC provides the unique option of delivery
+                utilizing the natural geographic features of the area.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
@@ -262,7 +278,9 @@ const DeliveryContent = () => {
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
               <p className="w-[250px] text-md md:text-xl text-center">
-              Two miles from the NDC sits the Kincheloe Railway Station. With direct access through partners of the NDC this allows for rapid capbaility delivery where ever there is a rail way.
+                Two miles from the NDC sits the Kincheloe Railway Station. With
+                direct access through partners of the NDC this allows for rapid
+                capbaility delivery where ever there is a rail way.
               </p>
             </div>
           </Switcher>

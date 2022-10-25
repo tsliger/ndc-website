@@ -14,4 +14,4 @@ pipelines:
               - node
             script:
               - npm install
-              - npm npm build
+              - npm run build

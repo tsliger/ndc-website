@@ -22,12 +22,16 @@ COPY . .
 
 RUN npm run build
 
+
 # If using npm comment out above and use below instead
 # RUN npm run build
 
 # Production image, copy all the files and run next
 FROM node:16-alpine AS runner
 WORKDIR /app
+
+# Install PM2 to manage node processes
+RUN npm install pm2 --location=global
 
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
@@ -49,4 +53,5 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["node", "server.js"]
+CMD ["pm2-runtime", "node", "--", "server.js"]
+# CMD ["node", "server.js"]

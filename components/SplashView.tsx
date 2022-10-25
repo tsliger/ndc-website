@@ -4,8 +4,6 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import Typewriter from "typewriter-effect";
 
-
-
 type SplashViewTypes = {
   videoSrc?: string;
   imageSrc?: string;
@@ -80,7 +78,7 @@ export default function SplashView({
       </div>
       <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">
         <div className="text-ndcWhite flex flex-col items-center h-full">
-          <div ref={lightRef} className="h-[120px] z-50 w-full absolute translate-y-[-59px] md:translate-y-[-63px]">
+          <div ref={lightRef} className="h-[120px] z-50 w-full absolute translate-y-[-60px] md:translate-y-[-63px]">
             <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={'light bar'} priority={true}/>
           </div>
           <p

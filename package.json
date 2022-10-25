@@ -31,6 +31,8 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/node": "^18.11.5",
+    "@types/react": "^18.0.23",
     "autoprefixer": "^10.4.12",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",

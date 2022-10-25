@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { animated, useTransition, config } from "react-spring";
 import Image from "next/image";
 
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
   nullTargetWarn: false,
@@ -41,17 +40,20 @@ export default function Slideshow({
     setPanelCount(panels.length);
 
     function goToSection(i: number, anim?: any) {
-      const didScrollToBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)
-      
+      const didScrollToBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
       if (!didScrollToBottom) {
         const tween = gsap.to(window, {
-          scrollTo: { y: i * innerHeight + panels[0].offsetTop, autoKill: false },
+          scrollTo: {
+            y: i * innerHeight + panels[0].offsetTop,
+            autoKill: false,
+          },
           duration: 1,
           ease: "power2",
         });
         setSlide(i);
       }
-
 
       if (anim) {
         anim.restart();
@@ -77,23 +79,30 @@ export default function Slideshow({
           { x: 0, opacity: 1, duration: 2 },
           "start"
         )
-        .to(
-          panel.querySelector(".panel-category"),
-          { x: 0, opacity: 1, delay: 0.1, duration: 1 },
-          "start"
-        )
-        .fromTo(
-          panel.querySelector(".panel-content"),
-          { x: 0, opacity: 0, scale: 0.90, duration: 2 },
-          { x: 0, opacity: 1, scale: 1, duration: 2.5, delay: 0.5, ease: "sine" },
-          "start"
-        )
+          .to(
+            panel.querySelector(".panel-category"),
+            { x: 0, opacity: 1, delay: 0.1, duration: 1 },
+            "start"
+          )
+          .fromTo(
+            panel.querySelector(".panel-content"),
+            { x: 0, opacity: 0, scale: 0.9, duration: 2 },
+            {
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 2.5,
+              delay: 0.5,
+              ease: "sine",
+            },
+            "start"
+          );
 
         const revtl = gsap.timeline({
           scrollTrigger: {
             trigger: panel,
-            start: "bottom-=100 bottom-=100",
-            end: "bottom top+=100",
+            start: "top+=50 bottom+=25",
+            end: "bottom-=100 top+=100",
             onEnterBack: () => goToSection(i),
           },
         });
@@ -163,14 +172,14 @@ export default function Slideshow({
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end">
                     <div className="flex flex-col justify-end panel-content">
-                      <div className="h-3 md:h-4 animate-bounce relative cursor-pointer w-full mb-8" >
+                      <div className="h-3 md:h-4 animate-bounce relative cursor-pointer w-full mb-8">
                         <Image
                           src="/arrow-down.png"
                           layout="fill"
                           objectFit="contain"
                           draggable={false}
                           className="select-none"
-                          alt={'arrow down'}
+                          alt={"arrow down"}
                         />
                       </div>
                     </div>
@@ -179,7 +188,9 @@ export default function Slideshow({
               </animated.div>
             )
         )}
-      <section className="trigger overflow-hidden" ref={comp}>{panels}</section>
+      <section className="trigger overflow-hidden" ref={comp}>
+        {panels}
+      </section>
     </>
   );
 }

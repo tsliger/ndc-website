@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
 import gsap from "gsap";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { animated, useSpring, useTransition, config } from "react-spring";
@@ -10,25 +10,25 @@ import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Navlinks = ({}) => {
+export const Navlinks = (props) => {
   const router = useRouter();
 
   const goToContact = () => {
     gsap.killTweensOf(window);
-    ScrollTrigger.disable()
+    ScrollTrigger.disable();
 
-    // window.scrollTo(0, document.body.scrollHeight)
+    if (props.closeDrawer) props.closeDrawer();
+
     const tween = gsap.to(window, {
       scrollTo: { y: document.body.scrollHeight, autoKill: false },
       delay: 0.15,
       duration: 0.5,
       ease: "sine",
       onComplete: () => {
-        ScrollTrigger.enable()
-      }
+        ScrollTrigger.enable();
+      },
     });
-
-  }
+  };
 
   return (
     <>
@@ -36,7 +36,9 @@ export const Navlinks = ({}) => {
         <Link href="/">
           <a
             className={`h-full flex items-center ${
-              router.pathname === "/" ? "text-blue-500 drop-shadow-none" : "text-inherit"
+              router.pathname === "/"
+                ? "text-blue-500 drop-shadow-none"
+                : "text-inherit"
             }`}
           >
             Home
@@ -56,14 +58,14 @@ export const Navlinks = ({}) => {
           </a>
         </Link>
       </li>
-      <li onClick={goToContact}>
-        Contact
-      </li>
+      <li onClick={goToContact}>Contact</li>
       <li>
         <Link href="/about">
           <a
             className={`h-full flex items-center ${
-              router.pathname === "/about" ? "text-blue-500 drop-shadow-none" : "text-inherit"
+              router.pathname === "/about"
+                ? "text-blue-500 drop-shadow-none"
+                : "text-inherit"
             }`}
           >
             About
@@ -86,8 +88,10 @@ export default function Navbar() {
         yPercent: -100,
         paused: true,
         duration: 0.5,
+        ease: 'sine'
       })
       .progress(1);
+
 
     ScrollTrigger.create({
       start: "top -60%",
@@ -103,15 +107,18 @@ export default function Navbar() {
   }, [router.pathname]);
 
   useEffect(() => {
-    if (isDrawerOpen === false)
-    {
-      document.body.style.overflow = 'unset';
+    if (isDrawerOpen === false) {
+      document.body.style.overflow = "unset";
     } else {
-      if (typeof window != 'undefined' && window.document) {
-        document.body.style.overflow = 'hidden';
+      if (typeof window != "undefined" && window.document) {
+        document.body.style.overflow = "hidden";
       }
     }
-  }, [isDrawerOpen])
+  }, [isDrawerOpen]);
+
+  function handleClose() {
+    setDrawer(false);
+  }
 
   return (
     <>
@@ -123,13 +130,13 @@ export default function Navbar() {
             width={192}
             height={53}
             draggable={false}
-            alt={'ndc logo'}
+            alt={"ndc logo"}
           />
         </div>
         <div className="flex-grow" />
         <div className="items-center hidden lg:flex">
           <ul className={styles.navList}>
-            <Navlinks />
+            <Navlinks closeDrawer={handleClose} />
           </ul>
         </div>
         <div className="items-center justify-center flex lg:hidden h-[100px] aspect-square">
@@ -137,19 +144,15 @@ export default function Navbar() {
             className="cursor-pointer select-none translate-x-8 active:scale-95 transition-all"
             onClick={() => setDrawer(!isDrawerOpen)}
           >
-            {isDrawerOpen && (
-              <HiX size={40} />
-            )}
-            {!isDrawerOpen && (
-              <HiOutlineMenu size={40} />
-            )}
+            {isDrawerOpen && <HiX size={40} />}
+            {!isDrawerOpen && <HiOutlineMenu size={40} />}
           </div>
         </div>
       </nav>
       {isDrawerOpen && (
         <animated.div className={styles.drawer} style={drawerStyle}>
           <ul className={styles.navListDrawer}>
-            <Navlinks />
+            <Navlinks closeDrawer={handleClose} />
           </ul>
         </animated.div>
       )}

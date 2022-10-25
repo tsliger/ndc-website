@@ -71,7 +71,7 @@ const ContactForm = () => {
   return (
     <div className="w-[48rem] z-50 h-full">
       <div className="flex">
-        <h1 className="font-['Ethnocentric'] text-2xl mb-6 flex-grow">
+        <h1 className="font-['Ethnocentric'] text-lg md:text-2xl mb-6 flex-grow">
           CONTACT
         </h1>
         <p className="px-4 text-red-500 text-sm md:text-md uppercase text-center">{currentError}</p>
@@ -92,8 +92,8 @@ const ContactForm = () => {
                 />
                 <Input
                   width={"100%"}
-                  pl="3.5rem"
-                  className="bg-white/10 p-4"
+                  pl="3rem"
+                  className="bg-white/10 p-4 text-sm md:text-base"
                   placeholder="First Name"
                   id="firstName"
                   onChange={formik.handleChange}
@@ -113,8 +113,8 @@ const ContactForm = () => {
                 />
                 <Input
                   width={"100%"}
-                  pl="3.5rem"
-                  className="bg-white/10 p-4"
+                  pl="3rem"
+                  className="bg-white/10 p-4 text-sm md:text-base"
                   placeholder="Last Name"
                   id="lastName"
                   onChange={formik.handleChange}
@@ -135,8 +135,8 @@ const ContactForm = () => {
               <Input
                 width={"100%"}
                 type="tel"
-                pl="3.5rem"
-                className="bg-white/10 p-4"
+                pl="3rem"
+                className="bg-white/10 p-4 text-sm md:text-base"
                 placeholder="Phone Number"
                 id="phoneNumber"
                 onChange={formik.handleChange}
@@ -156,8 +156,8 @@ const ContactForm = () => {
               <Input
                 width={"100%"}
                 type="email"
-                pl="3.5rem"
-                className="bg-white/10 p-4"
+                pl="3rem"
+                className="bg-white/10 p-4 text-sm md:text-base"
                 placeholder="Email"
                 id="email"
                 onChange={formik.handleChange}
@@ -176,8 +176,8 @@ const ContactForm = () => {
               />
               <Textarea
                 width={"100%"}
-                pl="3.5rem"
-                className="bg-white/10 p-4"
+                pl="3rem"
+                className="bg-white/10 p-4 text-sm md:text-base"
                 minHeight={100}
                 resize={"none"}
                 id="description"
@@ -188,7 +188,7 @@ const ContactForm = () => {
             </InputGroup>
             <button
               type="submit"
-              className="w-32 rounded-sm bg-ndcBlue text-xl py-2 font-semibold active:scale-95 transition-all"
+              className="w-24 md:w-32 rounded-sm bg-ndcBlue text-base md:text-xl py-1 md:py-2 font-semibold active:scale-95 transition-all"
             >
               Submit
             </button>
@@ -204,27 +204,31 @@ export default function Footer() {
   return (
     <div className="min-h-[585px] flex p-8 flex-col lg:flex-row  lg:items-start overflow-hidden">
       <div className="flex-grow">
-        <div>
-          <Image
-            src={"/ndc-logo-white.png"}
-            width={310}
-            height={83}
-            className="-translate-x-4"
-            alt={"ndc logo"}
-          />
+        <div className="overflow-hidden h-24 flex  items-center">
+          <div className="w-56 md:w-72">
+            <Image
+              src={"/ndc-logo-white.png"}
+              width="100%"
+              height="100%"
+              layout="responsive"
+              objectFit="contain"
+              className="-translate-x-4"
+              alt={"ndc logo"}
+            />
+          </div>
         </div>
         <div className="mt-8 flex flex-col lg:flex-row">
           <div>
-            <h1 className="font-['Ethnocentric'] text-2xl">Explore</h1>
+            <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Explore</h1>
             <ul className="footerNavList">
               <Navlinks />
             </ul>
           </div>
           <div className="relative lg:left-32 space-y-8 mt-8 lg:mt-0">
-            <h1 className="font-['Ethnocentric'] text-2xl">Connect</h1>
-            <BsFacebook style={{ marginTop: 25 }} size={35} />
-            <BsTwitter style={{ marginTop: 25 }} size={35} />
-            <BsLinkedin style={{ marginTop: 25 }} size={35} />
+            <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Connect</h1>
+            <BsFacebook style={{ marginTop: 25 }} size={32} />
+            <BsTwitter style={{ marginTop: 25 }} size={32} />
+            <BsLinkedin style={{ marginTop: 25 }} size={32} />
           </div>
         </div>
       </div>

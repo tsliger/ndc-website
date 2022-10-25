@@ -134,14 +134,17 @@ const RapidContent = () => {
 const DevelopmentContent = () => {
   return (
     <>
-      <div className="grid md:flex justify-center space-x-24 overflow-hidden w-full h-full ">
+      <div className="grid md:flex justify-center items-center space-x-24 overflow-hidden w-full h-full ">
+        <div className="flex space-x-24">
         <Switcher duration={3000}>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[163px] aspect-square ">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-36 md:w-60 aspect-square ">
               <Image
-                src="/panel-imgs/capabilities/developone.png"
-                layout={"fill"}
-                alt={"Develop"}
+                src={"/panel-imgs/capabilities/developone.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
@@ -149,12 +152,14 @@ const DevelopmentContent = () => {
             Innovation is a mindset at the NDC. Mixed with technical expertise, deep operational experience and imagination, complex war fighting solutions are solved and capabilities are put into production.
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[203px] aspect-square">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-36 md:w-60 aspect-square ">
               <Image
-                src="/panel-imgs/capabilities/developtwo.png"
-                layout={"fill"}
-                alt={"Develop"}
+                src={"/panel-imgs/capabilities/developtwo.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
@@ -162,12 +167,14 @@ const DevelopmentContent = () => {
             Engineering brings the innovation to life. Advanced science and math are mixed with creativity and technology to design and prototype capabilities across all domains.
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[173px] aspect-square">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-36 md:w-60 aspect-square ">
               <Image
-                src="/panel-imgs/capabilities/developthree.png"
-                layout={"fill"}
-                alt={"Develop"}
+                src={"/panel-imgs/capabilities/developthree.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mb-2">Manufacturing</p>
@@ -176,6 +183,7 @@ const DevelopmentContent = () => {
             </p>
           </div>
         </Switcher>
+        </div>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
         <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin  translate-y-6 md:translate-y-0">
@@ -192,14 +200,17 @@ const DevelopmentContent = () => {
 const DeliveryContent = () => {
   return (
     <>
-      <div className="grid md:flex justify-center space-x-24 overflow-hidden w-full h-full ">
+      <div className="grid md:flex justify-center  space-x-24 items-center overflow-hidden w-full h-full ">
+        <div className="flex space-x-24">
         <Switcher duration={3000}>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[163px] aspect-square ">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-56 md:w-72 aspect-square ">
               <Image
-                src="/panel-imgs/capabilities/deliveryone.png"
-                layout={"fill"}
-                alt={"Develop"}
+                src={"/panel-imgs/capabilities/deliveryone.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
@@ -207,12 +218,14 @@ const DeliveryContent = () => {
             The EUP-NDC sits directly on the former Kincheloe Air Force Base. With direct access to the existing airport structure the NDC has the capability to land a C-17, load it, and send it back out in a rapid time frame.
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[203px] aspect-square">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-56 md:w-72 aspect-square">
               <Image
-                src="/panel-imgs/capabilities/deliverytwo.png"
-                layout={"fill"}
-                alt={"Develop"}
+                src={"/panel-imgs/capabilities/deliverytwo.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
@@ -220,12 +233,14 @@ const DeliveryContent = () => {
             The EUP-NDC is strategically located just off I-75 in Kincheloe, Michigan. 
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[173px] aspect-square">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-56 md:w-72 aspect-square">
               <Image
-                src="/panel-imgs/capabilities/deliverythree.png"
-                layout={"fill"}
-                alt={"Develop"}
+                src={"/panel-imgs/capabilities/deliverythree.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
@@ -233,20 +248,30 @@ const DeliveryContent = () => {
             Just miles from the shore of Lake Superior the NDC provides the unique option of delivery utilizing the natural geographic features of the area.  
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-2 justify-center switcher-item">
-            <div className="relative w-[173px] aspect-square">
+          <div className="flex flex-col items-center space-y-2 switcher-item">
+            <div className="w-56 md:w-72 aspect-square">
+              <Image
+                src={"/panel-imgs/capabilities/deliveryfour.png"}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="contain"
+              />
+            </div>
+            {/* <div className="relative w-[173px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/deliveryfour.png"
                 layout={"fill"}
                 alt={"Develop"}
               />
-            </div>
+            </div> */}
             <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
             <p className="w-[250px] text-md md:text-xl text-center">
             2 miles from the NDC sits the Kincheloe railway station. With direct access through partners of the NDC this allows for rapid capbaility delivery where ever there is a rail way.
             </p>
           </div>
         </Switcher>
+        </div>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
         <p className="uppercase mx-auto text-lg md:text-5xl tracking-widest font-thin translate-y-6 md:translate-y-0">

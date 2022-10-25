@@ -21,6 +21,7 @@ export default function SplashView({
 }: SplashViewTypes) {
   const textRef = useRef(null);
   const headerRef = useRef(null);
+  const lightRef = useRef(null)
 
   useEffect(() => {
     // Creates text effect on load
@@ -35,13 +36,19 @@ export default function SplashView({
       {opacity: 0},
       {opacity: 1, duration: 1.25, delay: 0.1}
     )
+
+    gsap.fromTo (
+      lightRef.current,
+      {opacity: 0, scaleX: 0.45},
+      {opacity: 1, duration: 3, delay: 0.15, scaleX: 1}
+    )
   }, []);
 
   return (
     <div className="min-h-[840px] h-screen flex flex-col">
       <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col">
         {(videoSrc || imageSrc) && (
-          <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-20">
+          <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-30">
             <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} alt={'bg overlay'} />
           </div>
         )}
@@ -52,7 +59,7 @@ export default function SplashView({
         )}
         {imageSrc && (
           <div className="w-full h-full absolute z-[-1]">
-            <Image src={imageSrc} quality={50} layout={"fill"} objectFit={"cover"}  alt={'bg image'} />
+            <Image src={imageSrc} quality={80} layout={"fill"} objectFit={"cover"}  alt={'bg image'} />
           </div>
         )}
         <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">
@@ -73,7 +80,7 @@ export default function SplashView({
       </div>
       <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">
         <div className="text-ndcWhite flex flex-col items-center h-full">
-          <div className="h-[120px] z-50 w-full absolute translate-y-[-59px] md:translate-y-[-63px]">
+          <div ref={lightRef} className="h-[120px] z-50 w-full absolute translate-y-[-59px] md:translate-y-[-63px]">
             <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={'light bar'} priority={true}/>
           </div>
           <p

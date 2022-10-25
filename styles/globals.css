@@ -39,7 +39,7 @@ a {
 
 
 .footerNavList > li {
-  @apply space-y-6 text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-150
+  @apply space-y-6 md:text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-150
 }
 
 

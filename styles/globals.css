@@ -53,7 +53,7 @@ a {
 }
 
 .overlay-header {
-  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-20 md:top-32 z-30
+  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-20 md:top-32 z-20
 }
 
 .panel-page-slider {
@@ -61,11 +61,11 @@ a {
 }
 
 .page-slider {
-  @apply  flex-grow w-[1px] md:w-[4px] shadow-md h-14  transition-all duration-500
+  @apply  flex-grow w-[1px] md:w-[4px] shadow-md h-8 md:h-14  transition-all duration-500
 }
 
 .overlay {
-  @apply h-screen w-full fixed z-30 flex flex-col
+  @apply h-screen w-full fixed z-10 flex flex-col
 }
 
 .switcher-item {

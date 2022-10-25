@@ -102,6 +102,17 @@ export default function Navbar() {
     setDrawer(false);
   }, [router.pathname]);
 
+  useEffect(() => {
+    if (isDrawerOpen === false)
+    {
+      document.body.style.overflow = 'unset';
+    } else {
+      if (typeof window != 'undefined' && window.document) {
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  }, [isDrawerOpen])
+
   return (
     <>
       <nav className="navbar-container" ref={navRef}>
@@ -126,30 +137,17 @@ export default function Navbar() {
             className="cursor-pointer select-none translate-x-8 active:scale-95 transition-all"
             onClick={() => setDrawer(!isDrawerOpen)}
           >
-            <HiOutlineMenu size={40} />
+            {isDrawerOpen && (
+              <HiX size={40} />
+            )}
+            {!isDrawerOpen && (
+              <HiOutlineMenu size={40} />
+            )}
           </div>
         </div>
       </nav>
       {isDrawerOpen && (
         <animated.div className={styles.drawer} style={drawerStyle}>
-          <div className="items-center flex h-[100px] pt-[9px] bg-ndcDark">
-            <div className="flex flex-col ml-8 z-50">
-              <Image
-                src="/ndc-logo-white.png"
-                width={192}
-                height={53}
-                draggable={false}
-                alt={'ndc logo'}
-              />
-            </div>
-            <div
-              className="cursor-pointer select-none absolute right-0 -translate-x-8 active:scale-95 transition-all"
-              onClick={() => setDrawer(!isDrawerOpen)}
-            >
-              <HiX size={40} />
-            </div>
-          </div>
-
           <ul className={styles.navListDrawer}>
             <Navlinks />
           </ul>

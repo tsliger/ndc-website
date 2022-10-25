@@ -27,7 +27,7 @@ export default function SplashView({
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 20 },
-      { opacity: 1, duration: 2, y: 0, delay: 0.45, ease: "sine" }
+      { opacity: 1, duration: 2, y: 0, delay: 0.65, ease: "sine" }
     );
 
     gsap.fromTo (
@@ -56,7 +56,6 @@ export default function SplashView({
           </div>
         )}
         <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">
-          {/* {splashHeader} */}
           <Typewriter
             options={{
               cursor: ' '
@@ -84,14 +83,14 @@ export default function SplashView({
             {splashText}
           </p>
 
-          <div className="h-4 w-12 p-2 absolute bottom-6 animate-bounce cursor-pointer">
+          <div className="h-3 md:h-4 animate-bounce relative cursor-pointer w-full mb-8" >
             <Image
               src="/arrow-down.png"
               layout="fill"
               objectFit="contain"
               draggable={false}
               className="select-none"
-              alt={'down arrow'}
+              alt={'arrow down'}
             />
           </div>
         </div>

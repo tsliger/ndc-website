@@ -33,7 +33,7 @@ export default function Slideshow({
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     reverse: !isOverlayOpen,
-    config: config.molasses,
+    config: { mass: 0, duration: 150 },
   });
 
   useEffect(() => {
@@ -163,7 +163,7 @@ export default function Slideshow({
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end">
                     <div className="flex flex-col justify-end panel-content">
-                      <div className="h-4 animate-bounce relative cursor-pointer w-full mb-8" >
+                      <div className="h-3 md:h-4 animate-bounce relative cursor-pointer w-full mb-8" >
                         <Image
                           src="/arrow-down.png"
                           layout="fill"

@@ -4,7 +4,7 @@
 }
 
 .navListDrawer {
-  @apply font-['Ethnocentric'] backdrop-blur-md bg-ndcDark/75 h-full flex flex-col items-center space-y-12 pt-24
+  @apply font-['Ethnocentric'] backdrop-blur-md bg-ndcDark/75 h-full flex flex-col items-center space-y-12 pt-36
 }
 
 
@@ -17,5 +17,5 @@
 }
 
 .drawer {
-  @apply fixed w-full h-full z-50 flex flex-col lg:hidden
+  @apply fixed w-full h-full z-20 flex flex-col lg:hidden
 }

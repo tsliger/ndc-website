@@ -12,7 +12,7 @@ import Switcher from "../components/Switcher";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const capabilitesSplash =
-  "The Eastern Upper Peninsula National Defense Complex is a state of the art Research, Design, Testing and Evaluation (RDT&E) center for the next generation of innovative war fighters to come research, design, test and evaluate capabilities in an environment that matches the next war front.";
+  "The Eastern Upper Peninsula National Defense Complex is a bold concept, an advanced All-Domain Warfare Research, Development, Testing, and Evaluation (RDT&E) platform – capable of accelerated DoD Rapid Capability Development and Delivery (RCD-D) support operations. Set-up for the next generation of innovative war fighters to come research, design, test and evaluate capabilities in an environment that matches the next war front. ";
 
 const Content = ({ panelHeader, panelText }) => {
   return (
@@ -120,12 +120,12 @@ const RapidContent = () => {
         <Image src="/light-bar-white.png" layout="fill" alt={"Develop"} />
       </div>
       <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-2xl text-center  panel-content">
-        The EUP-NDC has the ability to evolve, experiment and deliver
-        technologies in real time to address both urgent and emerging threats
-        across the world. RCD-D within the NDC prides itself on innovation,
-        engineering and rapid manufacturing capabilities that allow innovators
-        to take their next generation war fighting capability from cradle to
-        grave.
+        The Eastern Upper Peninsula National Defense Complex has the ability to
+        evolve, experiment and deliver technologies to address both urgent and
+        emerging threats across the world. Rapid Capability Development and
+        Delivery (RCD-D) processes within the National Defense Complex
+        encompasses everything from rapid manufacturing to advanced engineering
+        to take next generation war fighting technologies from cradle to grave.
       </p>
     </div>
   );
@@ -136,53 +136,55 @@ const DevelopmentContent = () => {
     <>
       <div className="grid md:flex justify-center items-center space-x-24 overflow-hidden w-full h-full ">
         <div className="flex space-x-24">
-        <Switcher duration={3000}>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-36 md:w-60 aspect-square ">
-              <Image
-                src={"/panel-imgs/capabilities/developone.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+          <Switcher duration={3000}>
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-36 md:w-60 aspect-square ">
+                <Image
+                  src={"/panel-imgs/capabilities/developone.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              Innovation is a mindset at the National Defense Complex. Mixed with technical expertise, deep operational experience and imagination, complex war fighting solutions are solved and capabilities are put into production
+              </p>
             </div>
-            <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            Innovation is a mindset at the NDC. Mixed with technical expertise, deep operational experience and imagination, complex war fighting solutions are solved and capabilities are put into production.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-36 md:w-60 aspect-square ">
-              <Image
-                src={"/panel-imgs/capabilities/developtwo.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-36 md:w-60 aspect-square ">
+                <Image
+                  src={"/panel-imgs/capabilities/developtwo.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              Capabilities are engineered to withstand the harsh climate of an austere environment. Engineers from all different backgrounds work to mix creativity and technology to design and prototype capabilities across all domains.  
+              </p>
             </div>
-            <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            Engineering brings the innovation to life. Advanced science and math are mixed with creativity and technology to design and prototype capabilities across all domains.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-36 md:w-60 aspect-square ">
-              <Image
-                src={"/panel-imgs/capabilities/developthree.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-36 md:w-60 aspect-square ">
+                <Image
+                  src={"/panel-imgs/capabilities/developthree.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">
+                Manufacturing
+              </p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              Manufacturing is the overlap of innovation and engineering. Integration of AI-enabled design and innovative fabrication results in cutting-edge, top of the line capabilities being shipped directly to the war fighter
+              </p>
             </div>
-            <p className="font-['Ethnocentric'] text-xl mb-2">Manufacturing</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            Manufacturing is where it all comes together.  Integration of AI-enabled design and innovative fabrication results in cutting-edge, top of the line capabilities being shipped directly to the war fighter.
-            </p>
-          </div>
-        </Switcher>
+          </Switcher>
         </div>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
@@ -202,75 +204,68 @@ const DeliveryContent = () => {
     <>
       <div className="grid md:flex justify-center  space-x-24 items-center overflow-hidden w-full h-full ">
         <div className="flex space-x-24">
-        <Switcher duration={3000}>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-56 md:w-72 aspect-square ">
-              <Image
-                src={"/panel-imgs/capabilities/deliveryone.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+          <Switcher duration={3000}>
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-56 md:w-72 aspect-square ">
+                <Image
+                  src={"/panel-imgs/capabilities/deliveryone.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              The EUP-NDC sits directly on the former Kincheloe Air Force Base. With direct access to the existing airport structure the NDC has the capability to land a C-17, load it, and send it back out in a rapid time frame.
+              </p>
             </div>
-            <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            The EUP-NDC sits directly on the former Kincheloe Air Force Base. With direct access to the existing airport structure the NDC has the capability to land a C-17, load it, and send it back out in a rapid time frame.
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-56 md:w-72 aspect-square">
-              <Image
-                src={"/panel-imgs/capabilities/deliverytwo.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-56 md:w-72 aspect-square">
+                <Image
+                  src={"/panel-imgs/capabilities/deliverytwo.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              The EUP-NDC is strategically located just off I-75 in Kincheloe, Michigan, and 22 miles from the US and Canada International Bridge.  
+              </p>
             </div>
-            <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            The EUP-NDC is strategically located just off I-75 in Kincheloe, Michigan. 
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-56 md:w-72 aspect-square">
-              <Image
-                src={"/panel-imgs/capabilities/deliverythree.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-56 md:w-72 aspect-square">
+                <Image
+                  src={"/panel-imgs/capabilities/deliverythree.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              Just miles from the shore of Lake Superior, Lake Huron and Lake Michigan  the NDC provides the unique option of delivery utilizing the natural geographic features of the area.  
+              </p>
             </div>
-            <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            Just miles from the shore of Lake Superior the NDC provides the unique option of delivery utilizing the natural geographic features of the area.  
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="w-56 md:w-72 aspect-square">
-              <Image
-                src={"/panel-imgs/capabilities/deliveryfour.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-              />
+            <div className="flex flex-col items-center space-y-2 switcher-item">
+              <div className="w-56 md:w-72 aspect-square">
+                <Image
+                  src={"/panel-imgs/capabilities/deliveryfour.png"}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
+              <p className="w-[250px] text-md md:text-xl text-center">
+              Two miles from the NDC sits the Kincheloe Railway Station. With direct access through partners of the NDC this allows for rapid capbaility delivery where ever there is a rail way.
+              </p>
             </div>
-            {/* <div className="relative w-[173px] aspect-square">
-              <Image
-                src="/panel-imgs/capabilities/deliveryfour.png"
-                layout={"fill"}
-                alt={"Develop"}
-              />
-            </div> */}
-            <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-            <p className="w-[250px] text-md md:text-xl text-center">
-            2 miles from the NDC sits the Kincheloe railway station. With direct access through partners of the NDC this allows for rapid capbaility delivery where ever there is a rail way.
-            </p>
-          </div>
-        </Switcher>
+          </Switcher>
         </div>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
@@ -345,13 +340,13 @@ export default function capabilites() {
 }
 
 const devBlurb =
-  "Prototyping, designing, and engineering the next generation of war fighting capabilities from the Eastern Upper Peninsula. Development is where the heart of innovation lies at the NDC. Cutting edge solutions are created in a collaborative enviornment backed by extensive research, developed by some of the brightest minds, and with best technology. The NDC provides an environment to rapidly develop capabilities in a domain that closely matches the next war front. ";
+  "Prototyping, designing, and engineering the next generation of war fighting capabilities. Cutting edge solutions are created in a collaborative environment backed by extensive research, developed by some of the brightest minds, and with the best technology. The National Defense Complex provides an environment to rapidly develop capabilities in a domain that closely matches the next war front.";
 
 const testBlurb =
-  "True immitation of the domain of the next war front cannot be accurately created in a artificial environment. The NDC allows for warfighters from all over the world to come to a place where they can test their capabilities in an environment that matches the next fight. ";
+  "True imitation of the next war front domain cannot be accurately created in an artificial environment. The National Defense Complex allows for warfighters from all over the world to come to a place where they can test their capabilities in an organic environment that matches the next fight. ";
 
 const evalBlurb =
-  "Data collection, performance measuring and reflection is essential in the design process. The NDC is deliberately designed for rapid evaluation. Product lines are tested and data is generated, data is parsed and from there conclusions are drawn. Evaluating performance of product lines in an state of the art facility located directly in the testing environment allows for creative minds to make adjustments in the design stange, and then jump right back into the testing phase. ";
+  "Data collection, performance measuring and reflection are essential in the RDT&E process. The National Defense Complex is deliberately designed for rapid evaluation. Product lines are tested, data is generated, data is parsed and from there conclusions are drawn. Evaluating performances of product lines in a state-of-the-art facility located directly in the testing environment allows for creative minds to make adjustments in the design stage, and then jump right back into the testing phase.";
 
 const researchBlurb =
-  "From curiosity comes questions, and from research comes knowledge. Knowledge is the gateway to the rest of the design lifecycle. Building a strong foundation of existing knowledge provides innovators with confidence and clarity of the design space before moving into the design phase. At the NDC research and merit are built into the core by partnerships with several universities and a network of Subject Matter Experts (SME), innovators are challenged to come ask the tough questions here.";
+  "From curiosity comes questions, and from research comes knowledge. Knowledge is the gateway to the rest of the development process. Building a strong foundation of existing knowledge provides innovators with confidence and clarity of the design space before moving into the design phase. At the Eastern Upper Peninsula National Defense Complex research and merit are built into the core by relationships with a network of Subject Matter Experts (SME), and partners from around the country.";

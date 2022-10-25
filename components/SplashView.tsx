@@ -40,7 +40,7 @@ export default function SplashView({
     gsap.fromTo (
       lightRef.current,
       {opacity: 0, scaleX: 0.45},
-      {opacity: 1, duration: 3, delay: 0.15, scaleX: 1}
+      {opacity: 1, duration: 3, delay: 0.15, scaleX: 1, ease: 'sine'}
     )
   }, []);
 

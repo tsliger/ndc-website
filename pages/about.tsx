@@ -151,11 +151,11 @@ const MissionContent = () => {
 
 const FinalSlide = () => {
   return (
-    <div className="flex flex-col items-center justify-end panel-content translate-y-8">
-      <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-8">
+    <div className="flex flex-col items-center justify-end panel-content translate-y-32">
+      <div className="font-['Ethnocentric'] text-3xl md:text-6xl mb-8">
         THE TEAM
       </div>
-      <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-xl text-center panel-content">
+      <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-lg text-center panel-content">
         The EUP-NDC is an Anchor Systems Initiative. Anchor Systems is a
         national defense technology integrator specializing in the integration
         of emergent technology and applied engineering. Anchor Systems is
@@ -164,7 +164,7 @@ const FinalSlide = () => {
         critical capabilities necessary for America’s warfighters to fight and
         win in tomorrow’s battlespace today.
       </p>
-      <div className="w-[200px] md:w-[450px] ">
+      <div className="w-[200px] md:w-[450px] -translate-y-16">
         <Image
           src="/anchor-systems-logo-white.png"
           alt=""

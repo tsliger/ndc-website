@@ -20,7 +20,7 @@ const Content = ({ panelHeader, panelText }) => {
       <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-4">
         {panelHeader}
       </div>
-      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_40rem)] text-sm px-12 md:px-8 md:text-2xl text-center ">
+      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_40rem)] text-sm px-12 md:px-8 md:text-xl text-center ">
         {panelText}
       </p>
     </div>
@@ -119,7 +119,7 @@ const RapidContent = () => {
       <div className="z-50 h-16 w-full relative ">
         <Image src="/light-bar-white.png" layout="fill" alt={"Develop"} />
       </div>
-      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-2xl text-center  panel-content">
+      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center  panel-content">
         The Eastern Upper Peninsula National Defense Complex has the ability to
         evolve, experiment and deliver technologies to address both urgent and
         emerging threats across the world. Rapid Capability Development and
@@ -138,7 +138,7 @@ const DevelopmentContent = () => {
         <div className="flex space-x-24">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-60 aspect-square ">
+              <div className="w-36 md:w-54 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/developone.png"}
                   width="100%"
@@ -148,7 +148,7 @@ const DevelopmentContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 Innovation is a mindset at the National Defense Complex. Mixed
                 with technical expertise, deep operational experience and
                 imagination, complex war fighting solutions are solved and
@@ -156,7 +156,7 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-60 aspect-square ">
+              <div className="w-36 md:w-54 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/developtwo.png"}
                   width="100%"
@@ -166,7 +166,7 @@ const DevelopmentContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 Capabilities are engineered to withstand the harsh climate of an
                 austere environment. Engineers from all different backgrounds
                 work to mix creativity and technology to design and prototype
@@ -174,7 +174,7 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-60 aspect-square ">
+              <div className="w-36 md:w-54 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/developthree.png"}
                   width="100%"
@@ -186,7 +186,7 @@ const DevelopmentContent = () => {
               <p className="font-['Ethnocentric'] text-xl mb-2">
                 Manufacturing
               </p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 Manufacturing is the overlap of innovation and engineering.
                 Integration of AI-enabled design and innovative fabrication
                 results in cutting-edge, top of the line capabilities being
@@ -197,7 +197,7 @@ const DevelopmentContent = () => {
         </div>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
-        <p className="mx-auto text-lg md:text-5xl tracking-widest font-thin  translate-y-6 md:translate-y-0">
+        <p className="mx-auto text-md md:text-3xl tracking-widest font-thin  translate-y-6 md:translate-y-4">
           DEVELOPMENT
         </p>
         <div className="z-50 h-16 w-full relative">
@@ -215,7 +215,7 @@ const DeliveryContent = () => {
         <div className="flex space-x-24">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-72 aspect-square ">
+              <div className="w-56 md:w-64 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/deliveryone.png"}
                   width="100%"
@@ -225,7 +225,7 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 The EUP-NDC sits directly on the former Kincheloe Air Force
                 Base. With direct access to the existing airport structure the
                 NDC has the capability to land a C-17, load it, and send it back
@@ -233,7 +233,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-72 aspect-square">
+              <div className="w-56 md:w-64 aspect-square">
                 <Image
                   src={"/panel-imgs/capabilities/deliverytwo.png"}
                   width="100%"
@@ -243,14 +243,14 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 The EUP-NDC is strategically located just off I-75 in Kincheloe,
                 Michigan, and 22 miles from the US and Canada International
                 Bridge.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-72 aspect-square">
+              <div className="w-56 md:w-64 aspect-square">
                 <Image
                   src={"/panel-imgs/capabilities/deliverythree.png"}
                   width="100%"
@@ -260,14 +260,14 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 Just miles from the shore of Lake Superior, Lake Huron and Lake
                 Michigan the NDC provides the unique option of delivery
                 utilizing the natural geographic features of the area.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-72 aspect-square">
+              <div className="w-56 md:w-64 aspect-square">
                 <Image
                   src={"/panel-imgs/capabilities/deliveryfour.png"}
                   width="100%"
@@ -277,7 +277,7 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-              <p className="w-[250px] text-md md:text-xl text-center">
+              <p className="w-[250px] text-md md:text-lg text-center">
                 Two miles from the NDC sits the Kincheloe Railway Station. With
                 direct access through partners of the NDC this allows for rapid
                 capbaility delivery where ever there is a rail way.
@@ -287,7 +287,7 @@ const DeliveryContent = () => {
         </div>
       </div>
       <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
-        <p className="uppercase mx-auto text-lg md:text-5xl tracking-widest font-thin translate-y-6 md:translate-y-0">
+        <p className="uppercase mx-auto text-md md:text-3xl tracking-widest font-thin translate-y-6 md:translate-y-4">
           Delivery
         </p>
         <div className="z-50 h-16 w-full relative">
@@ -352,6 +352,7 @@ export default function capabilites() {
         panels={panelList}
         overviewHeader={"RDT&E"}
         sliderPosition={"left"}
+        titles={{6: 'Rapid Capability DEVELOPMENT & Delivery'}}
       />
     </div>
   );

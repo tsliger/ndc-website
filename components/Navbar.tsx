@@ -58,7 +58,6 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li onClick={goToContact}>Contact</li>
       <li>
         <Link href="/about">
           <a
@@ -72,6 +71,7 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
+      <li onClick={goToContact}>Contact</li>
     </>
   );
 };

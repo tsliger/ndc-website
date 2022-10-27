@@ -61,7 +61,7 @@ a {
 }
 
 .page-slider {
-  @apply  flex-grow w-[1px] md:w-[4px] shadow-md h-8 md:h-14  transition-all duration-500
+  @apply  flex-grow w-[1px] md:w-[2px] shadow-md h-8 md:h-14  transition-all duration-500
 }
 
 .overlay {

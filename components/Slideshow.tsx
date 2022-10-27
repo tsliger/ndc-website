@@ -14,12 +14,14 @@ type SlideShowProps = {
   panels: any;
   overviewHeader?: string;
   sliderPosition?: string;
+  titles?: Object;
 };
 
 export default function Slideshow({
   panels,
   overviewHeader,
   sliderPosition = "right",
+  titles = null,
 }: SlideShowProps) {
   const ref = useRef(null);
   const comp = useRef();
@@ -27,6 +29,7 @@ export default function Slideshow({
   const [isOverlayOpen, setOverlay] = useState(false);
   const [currentSlide, setSlide] = useState(0);
   const [panelCount, setPanelCount] = useState(0);
+  const [headerState, setHeader] = useState('')
   const transitions = useTransition(isOverlayOpen, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -38,6 +41,7 @@ export default function Slideshow({
   useEffect(() => {
     var panels: any = gsap.utils.toArray(".panel");
     setPanelCount(panels.length);
+    setHeader(overviewHeader)
 
     function goToSection(i: number, anim?: any) {
       const didScrollToBottom =
@@ -139,6 +143,21 @@ export default function Slideshow({
     return () => ctx.revert(); // cleanup
   }, []);
 
+  useEffect(() => {
+    if (titles === null) return
+
+    Object.keys(titles).forEach((key) => {
+      const number = +key
+      if (number <= currentSlide)
+      {
+        const title = titles[key]
+        setHeader(title)
+      } else {
+        setHeader(overviewHeader)
+      }
+    })
+  }, [currentSlide])
+
   return (
     <>
       {isOverlayOpen &&
@@ -146,8 +165,8 @@ export default function Slideshow({
           (styles, item) =>
             item && (
               <animated.div style={styles} className="overlay" ref={overlay}>
-                <p className="overlay-header drop-shadow-md">
-                  {overviewHeader}
+                <p className="overlay-header drop-shadow-md text-center px-2">
+                  {headerState}
                 </p>
                 <div
                   className={`w-6 md:w-16 h-full  absolute ${
@@ -161,7 +180,7 @@ export default function Slideshow({
                           key={i}
                           className={`${
                             currentSlide === i
-                              ? "bg-white/70 scale-x-[1.75]"
+                              ? "bg-white/70 scale-x-[3]"
                               : "bg-white/30 scale-x-100"
                           } page-slider`}
                         ></div>

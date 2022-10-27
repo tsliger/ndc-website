@@ -60,7 +60,7 @@ const Panel = ({
           <p
             ref={sideref}
             style={{ marginTop: sideWidth }}
-            className={`fixed left-0 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-3xl lg:text-5xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
+            className={`fixed left-0 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-2xl lg:text-4xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
           >
             {sideText}
           </p>
@@ -68,8 +68,8 @@ const Panel = ({
         <div className="absolute w-full h-full ">
           <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center">
             <div className="flex flex-col panel-content md:mb-32 items-center">
-              <div className="p-16 md:p-56 -translate-y-8 md:translate-y-16 ">
-                <div className="w-56 md:w-96  aspect-square relative top-8 md:top-0">
+              <div className="p-16 md:p-56 -translate-y-8 md:translate-y-24 ">
+                <div className="w-56 md:w-72  aspect-square relative top-8 md:top-0">
                   <Image
                     src={symbolImage}
                     layout="fill"
@@ -79,8 +79,8 @@ const Panel = ({
                   />
                 </div>
               </div>
-              <div className="relative flex flex-col -translate-y-16">
-                <div className="text-sm md:text-xl p-4 md:p-0 text-center mb-4 drop-shadow-sm">
+              <div className="relative flex flex-col -translate-y-16 md:-translate-y-24">
+                <div className="text-sm md:text-lg p-4 md:p-0 text-center mb-4 drop-shadow-sm">
                   <p>{blurbText}</p>
                 </div>
 
@@ -147,7 +147,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SplashView videoSrc={"/temp-video.mp4"} splashText={frontBlurb} />
-      <Slideshow panels={panelList} overviewHeader={"All Domain Warfare"} />
+      <Slideshow panels={panelList} overviewHeader={"All-Domain Warfare"} />
     </div>
   );
 }

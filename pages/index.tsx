@@ -73,8 +73,8 @@ const Panel = ({
                   <Image
                     src={symbolImage}
                     layout="fill"
+                    quality={25}
                     objectFit="contain"
-                    quality={0.2}
                     alt={"Panel Symbol"}
                     style={{ filter: "drop-shadow(0px 0px 30px #ffffff42)" }}
                   />

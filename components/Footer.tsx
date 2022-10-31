@@ -12,6 +12,8 @@ import { HiOutlinePhone, HiOutlineMail, HiOutlineUser } from "react-icons/hi";
 import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios'
 
 
 // Form validation for the contact form
@@ -34,6 +36,7 @@ const contactSchema = Yup.object().shape({
     .min(25, "Description needs to be longer")
     .max(500, "Description needs to be shorter")
     .required("Description Required"),
+  captcha: Yup.string().required('captcha required'),
 });
 
 // Contact form for the footer
@@ -48,25 +51,45 @@ const ContactForm = () => {
       lastName: "",
       phoneNumber: "",
       description: "",
+      captcha: "",
     },
     onSubmit: (values) => {
-      async function postData() {
-        // Post to backend
-        let res = await fetch("/api/emailForm", {
-          method: "POST",
-          body: JSON.stringify(values),
-        });
-      }
-      postData();
+      submitForm(values)
     },
     validationSchema: contactSchema,
   });
+
+  const submitForm = (values) => {
+    // Post to backend
+    axios.post('/api/emailForm', {
+      data: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+      }
+    }).then(val => {
+      console.log(val.data.success)
+      _reCaptchaRef.current.reset()
+      formik.resetForm()
+    }).catch(e => {
+      console.log(e)
+    })
+  }
 
   // Sets the error message when there are new/changing error states
   useEffect(() => {
     const keys = Object.keys(formik.errors);
     setError(formik.errors[keys[0]]);
   }, [formik.errors]);
+
+  const handleCaptchaChange = (value) => {
+    if(!value) {
+      return;
+    }
+
+    formik.values.captcha = value
+  }
+
 
   return (
     <div className="w-[48rem] z-50 h-full">
@@ -186,6 +209,12 @@ const ContactForm = () => {
                 value={formik.values.description}
               />
             </InputGroup>
+            <ReCAPTCHA 
+              sitekey={'6LdsJ8siAAAAANsR96YeWDkCTUYtYdBksmh5pgFK'}
+              onChange={handleCaptchaChange}
+              ref={_reCaptchaRef}
+              theme="dark"
+            />
             <button
               type="submit"
               className="w-24 md:w-32 rounded-sm bg-ndcBlue text-base md:text-xl py-1 md:py-2 font-semibold active:scale-95 transition-all"

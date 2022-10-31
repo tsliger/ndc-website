@@ -17,7 +17,9 @@ export const Navlinks = (props) => {
     gsap.killTweensOf(window);
     ScrollTrigger.disable();
 
-    if (props.closeDrawer) props.closeDrawer();
+    if (props.closeDrawer) {
+      props.closeDrawer();
+    }
 
     const tween = gsap.to(window, {
       scrollTo: { y: document.body.scrollHeight, autoKill: false },
@@ -25,6 +27,7 @@ export const Navlinks = (props) => {
       duration: 0.5,
       ease: "sine",
       onComplete: () => {
+        gsap.killTweensOf(window)
         ScrollTrigger.enable();
       },
     });

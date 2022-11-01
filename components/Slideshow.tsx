@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { useEffect, useRef, useState } from "react";
-import { animated, useTransition, config } from "react-spring";
+import { animated, useTransition } from "react-spring";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -141,7 +141,7 @@ export default function Slideshow({
     }, comp); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
-  }, []);
+  }, [overviewHeader]);
 
   useEffect(() => {
     if (titles === null) return
@@ -156,7 +156,7 @@ export default function Slideshow({
         setHeader(overviewHeader)
       }
     })
-  }, [currentSlide])
+  }, [currentSlide, overviewHeader, titles])
 
   return (
     <>

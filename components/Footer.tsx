@@ -284,7 +284,7 @@ export default function Footer() {
         </div>
         <div className="flex-grow"/>
         <div className="translate-y-6">
-          <Image src={'/anchor-white.png'} width={119} height={35} draggable={false}/>
+          <Image src={'/anchor-white.png'} width={119} height={35} draggable={false} alt=""/>
         </div>
       </div>
     </div>

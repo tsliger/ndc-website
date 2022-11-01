@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import Slideshow from "../components/Slideshow";
-import SplashView from "../components/SplashView";
+const SplashView = dynamic(() => import('../components/SplashView'))
 import PanelHelper from "../components/PanelHelper";
 import { ImageProps } from "next/image";
 

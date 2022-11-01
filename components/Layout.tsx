@@ -1,8 +1,8 @@
 // components/Layout.js
-import { Component, useRef } from 'react';
-import Navbar from './Navbar'
-import Footer from './Footer'
-
+import { useRef } from 'react';
+import dynamic from 'next/dynamic';
+const Navbar = dynamic(() => import('./Navbar'))
+const Footer = dynamic(() => import('./Footer'))
 
 
 export default function Layout(props) {

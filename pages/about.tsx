@@ -13,7 +13,7 @@ const NaturalImage = (props: ImageProps) => {
     <Image
       {...props}
       // set the dimension (affected by layout)
-      alt={"default"}
+      alt=""
       width={370}
       height={370 / ratio}
       layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
@@ -36,7 +36,7 @@ const Content = () => {
             src={"/panel-imgs/about/kincheloe.png"}
             objectFit={"cover"}
             layout="fill"
-            alt={"kincheloe on map"}
+            alt=""
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
@@ -55,17 +55,17 @@ const Content = () => {
         <div className="md:w-5/12 md:flex hidden flex-col items-center justify-center">
           <NaturalImage
             src={"/panel-imgs/about/locationone.png"}
-            alt={"location"}
+            alt=""
           />
           <div className="my-4" />
           <NaturalImage
             src={"/panel-imgs/about/locationtwo.png"}
-            alt={"location"}
+            alt=""
           />
           <div className="my-4" />
           <NaturalImage
             src={"/panel-imgs/about/locationthree.png"}
-            alt={"location"}
+            alt=""
           />
         </div>
       </div>

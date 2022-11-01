@@ -44,7 +44,7 @@ const Panel = ({
           quality={35}
           layout={"fill"}
           objectFit={"cover"}
-          alt={"background image"}
+          alt=""
         />
       </div>
       <div className="w-full h-full absolute">
@@ -52,7 +52,7 @@ const Panel = ({
           src={"/panel-imgs/home/vignette.png"}
           layout={"fill"}
           objectFit={"cover"}
-          alt={"Vignette"}
+          alt=""
         />
       </div>
       <div className="min-h-screen">
@@ -75,7 +75,7 @@ const Panel = ({
                     layout="fill"
                     quality={25}
                     objectFit="contain"
-                    alt={"Panel Symbol"}
+                    alt=""
                     style={{ filter: "drop-shadow(0px 0px 30px #ffffff42)" }}
                   />
                 </div>
@@ -90,7 +90,7 @@ const Panel = ({
                     src="/light-bar-white.png"
                     layout="fill"
                     objectFit="contain"
-                    alt={"Light bar"}
+                    alt=""
                   />
                 </div>
               </div>

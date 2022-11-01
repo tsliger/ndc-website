@@ -75,7 +75,7 @@ const RDTEContent = () => {
         </Switcher>
       </div>
       <div className="z-50 h-16 w-full relative ">
-        <Image src="/light-bar-white.png" layout="fill" alt={"light bar"} />
+        <Image src="/light-bar-white.png" layout="fill" alt="" />
       </div>
       <p className="w-full md:w-[700px] md:pt-8 text-md md:text-xl text-center px-12 md:px-4  panel-content">
         RDT&E is one of the five major appropriations used by the Department of
@@ -117,7 +117,7 @@ const RapidContent = () => {
         </Switcher>
       </div>
       <div className="z-50 h-16 w-full relative ">
-        <Image src="/light-bar-white.png" layout="fill" alt={"Develop"} />
+        <Image src="/light-bar-white.png" layout="fill" alt=""/>
       </div>
       <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center  panel-content">
         The Eastern Upper Peninsula National Defense Complex has the ability to
@@ -145,6 +145,7 @@ const DevelopmentContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
@@ -163,6 +164,7 @@ const DevelopmentContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
@@ -181,6 +183,7 @@ const DevelopmentContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">
@@ -222,6 +225,7 @@ const DeliveryContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
@@ -240,6 +244,7 @@ const DeliveryContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
@@ -257,6 +262,7 @@ const DeliveryContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
@@ -274,6 +280,7 @@ const DeliveryContent = () => {
                   height="100%"
                   layout="responsive"
                   objectFit="contain"
+                  alt=""
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
@@ -291,7 +298,7 @@ const DeliveryContent = () => {
           Delivery
         </p>
         <div className="z-50 h-16 w-full relative">
-          <Image src="/light-bar.png" layout="fill" alt={"light bar"} />
+          <Image src="/light-bar.png" layout="fill" alt="" />
         </div>
       </div>
     </>

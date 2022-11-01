@@ -47,7 +47,7 @@ export default function SplashView({
       <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col">
         {(videoSrc || imageSrc) && (
           <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-30">
-            <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} alt={'bg overlay'} />
+            <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} alt={""} />
           </div>
         )}
         {videoSrc && !imageSrc && (
@@ -57,7 +57,7 @@ export default function SplashView({
         )}
         {imageSrc && (
           <div className="w-full h-full absolute z-[-1]">
-            <Image src={imageSrc} quality={80} layout={"fill"} objectFit={"cover"}  alt={'bg image'} />
+            <Image src={imageSrc} quality={80} layout={"fill"} objectFit={"cover"}  alt={""} />
           </div>
         )}
         <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">
@@ -79,7 +79,7 @@ export default function SplashView({
       <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">
         <div className="text-ndcWhite flex flex-col items-center h-full">
           <div ref={lightRef} className="h-[120px] z-50 w-full absolute translate-y-[-60px] md:translate-y-[-63px]">
-            <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={'light bar'} priority={true}/>
+            <Image src="/light-bar.png" layout="fill" objectFit="contain" alt={""} priority={true}/>
           </div>
           <p
             ref={textRef}
@@ -95,7 +95,7 @@ export default function SplashView({
               objectFit="contain"
               draggable={false}
               className="select-none"
-              alt={'arrow down'}
+              alt={""}
             />
           </div>
         </div>

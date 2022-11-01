@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Navlinks } from "./Navbar";
 import {
@@ -12,7 +13,8 @@ import { HiOutlinePhone, HiOutlineMail, HiOutlineUser } from "react-icons/hi";
 import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
+const ReCAPTCHA = dynamic(() => import('react-google-recaptcha'));
 import axios from 'axios'
 
 
@@ -43,6 +45,7 @@ const contactSchema = Yup.object().shape({
 const ContactForm = () => {
   const [currentError, setError] = useState("");
   const _reCaptchaRef = useRef(null);
+  const [recaptchaNeeded, setRecaptcha] = useState(false)
 
   const formik = useFormik({
     initialValues: {
@@ -73,6 +76,7 @@ const ContactForm = () => {
       formik.resetForm()
     }).catch(e => {
       console.log(e)
+      formik.resetForm()
     })
   }
 
@@ -86,9 +90,14 @@ const ContactForm = () => {
     if(!value) {
       return;
     }
+    console.log(_reCaptchaRef)
 
     formik.values.captcha = value
-    formik.handleChange
+  }
+
+  const processChange = (elem) => {
+    formik.handleChange(elem)
+    setRecaptcha(true)
   }
 
 
@@ -120,7 +129,7 @@ const ContactForm = () => {
                   className="bg-white/10 p-4 text-sm md:text-base"
                   placeholder="First Name"
                   id="firstName"
-                  onChange={formik.handleChange}
+                  onChange={processChange}
                   value={formik.values.firstName}
                 />
               </InputGroup>
@@ -141,7 +150,7 @@ const ContactForm = () => {
                   className="bg-white/10 p-4 text-sm md:text-base"
                   placeholder="Last Name"
                   id="lastName"
-                  onChange={formik.handleChange}
+                  onChange={processChange}
                   value={formik.values.lastName}
                 />
               </InputGroup>
@@ -163,7 +172,7 @@ const ContactForm = () => {
                 className="bg-white/10 p-4 text-sm md:text-base"
                 placeholder="Phone Number"
                 id="phoneNumber"
-                onChange={formik.handleChange}
+                onChange={processChange}
                 value={formik.values.phoneNumber}
               />
             </InputGroup>
@@ -184,7 +193,7 @@ const ContactForm = () => {
                 className="bg-white/10 p-4 text-sm md:text-base"
                 placeholder="Email"
                 id="email"
-                onChange={formik.handleChange}
+                onChange={processChange}
                 value={formik.values.email}
               />
             </InputGroup>
@@ -206,16 +215,17 @@ const ContactForm = () => {
                 resize={"none"}
                 id="description"
                 placeholder="Let us know how we can help..."
-                onChange={formik.handleChange}
+                onChange={processChange}
                 value={formik.values.description}
               />
             </InputGroup>
-            <ReCAPTCHA 
+            {recaptchaNeeded && <ReCAPTCHA 
               sitekey={'6LdsJ8siAAAAANsR96YeWDkCTUYtYdBksmh5pgFK'}
               onChange={handleCaptchaChange}
               ref={_reCaptchaRef}
               theme="dark"
             />
+            }
             <button
               type="submit"
               className="w-24 md:w-32 rounded-sm bg-ndcBlue text-base md:text-xl py-1 md:py-2 font-semibold active:scale-95 transition-all"
@@ -268,7 +278,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex overflow-hidden px-8 pb-4">
-        <div className="text-[#464646]">
+        <div className="text-[#f5f5f5]">
           <p>4657 Industrial Park Drive</p>
           <p>Kincheloe, MI 49788</p>
           <p>906-240-1180</p>

@@ -198,7 +198,7 @@ export default function Slideshow({
                           objectFit="contain"
                           draggable={false}
                           className="select-none"
-                          alt={"arrow down"}
+                          alt={""}
                         />
                       </div>
                     </div>

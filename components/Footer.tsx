@@ -13,8 +13,7 @@ import { HiOutlinePhone, HiOutlineMail, HiOutlineUser } from "react-icons/hi";
 import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import ReCAPTCHA from "react-google-recaptcha";
-const ReCAPTCHA = dynamic(() => import('react-google-recaptcha'));
+const ReCAPTCHA = dynamic(() => import('react-google-recaptcha')) as any;
 import axios from 'axios'
 
 

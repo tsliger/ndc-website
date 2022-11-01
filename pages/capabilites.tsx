@@ -1,15 +1,11 @@
 import React from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Slideshow from "../components/Slideshow";
-import SplashView from "../components/SplashView";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import gsap from "gsap";
+const Switcher = dynamic(() => import('../components/Switcher'))
+const SplashView = dynamic(() => import('../components/SplashView'))
+import Slideshow from '../components/Slideshow'
 import PanelHelper from "../components/PanelHelper";
-import Switcher from "../components/Switcher";
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const capabilitesSplash =
   "The Eastern Upper Peninsula National Defense Complex is a bold concept, an advanced All-Domain Warfare Research, Development, Testing, and Evaluation (RDT&E) platform – capable of accelerated DoD Rapid Capability Development and Delivery (RCD-D) support operations. Set-up for the next generation of innovative war fighters to come research, design, test and evaluate capabilities in an environment that matches the next war front. ";
@@ -204,7 +200,7 @@ const DevelopmentContent = () => {
           DEVELOPMENT
         </p>
         <div className="z-50 h-16 w-full relative">
-          <Image src="/light-bar.png" layout="fill" alt={"light bar"} />
+          <Image src="/light-bar.png" layout="fill"  alt=""/>
         </div>
       </div>
     </>

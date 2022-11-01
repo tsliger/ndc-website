@@ -47,17 +47,17 @@ export default function SplashView({
       <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col">
         {(videoSrc || imageSrc) && (
           <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-30">
-            <Image src={'/splash-overlay.png'} layout={"fill"} objectFit={"cover"} alt={""} />
+            <Image src={'/splash-overlay.png'} quality={25} layout={"fill"} objectFit={"cover"} alt={""} />
           </div>
         )}
         {videoSrc && !imageSrc && (
-          <video autoPlay muted loop className={styles.video}>
+          <video autoPlay muted loop className={styles.video} playsInline>
             <source src={videoSrc} type="video/mp4" />
           </video>
         )}
         {imageSrc && (
           <div className="w-full h-full absolute z-[-1]">
-            <Image src={imageSrc} quality={80} layout={"fill"} objectFit={"cover"}  alt={""} />
+            <Image src={imageSrc} quality={65} layout={"fill"} objectFit={"cover"}  alt={""} />
           </div>
         )}
         <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-8xl z-50">

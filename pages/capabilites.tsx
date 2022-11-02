@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 const Switcher = dynamic(() => import('../components/Switcher'))
 const SplashView = dynamic(() => import('../components/SplashView'))
-import Slideshow from '../components/Slideshow'
+const Slideshow = dynamic(() => import('../components/Slideshow'))
 import PanelHelper from "../components/PanelHelper";
 
 const capabilitesSplash =
@@ -25,11 +25,11 @@ const Content = ({ panelHeader, panelText }) => {
 
 const RDTEContent = () => {
   return (
-    <>
+    <div className="panel-content w-full  flex flex-col items-center justify-center">
       <div className="w-full flex justify-center overflow-hidden space-x-4 lg:space-x-20">
         <Switcher>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[250px] aspect-square">
+            <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdteone.png"
                 layout={"fill"}
@@ -39,7 +39,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Research</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[250px] aspect-square">
+            <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtetwo.png"
                 layout={"fill"}
@@ -49,7 +49,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Development</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[250px] aspect-square">
+            <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
                 layout={"fill"}
@@ -59,7 +59,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Testing</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[250px] aspect-square">
+            <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
                 layout={"fill"}
@@ -73,19 +73,19 @@ const RDTEContent = () => {
       <div className="z-50 h-16 w-full relative ">
         <Image src="/light-bar-white.png" layout="fill" alt="" />
       </div>
-      <p className="w-full md:w-[700px] md:pt-8 text-md md:text-xl text-center px-12 md:px-4  panel-content">
+      <p className="w-full md:w-[700px] text-md md:text-xl text-center px-12 md:px-4">
         RDT&E is one of the five major appropriations used by the Department of
         Defense. The EUP-NDC allows for research, development, testing and
         evaluation in an austere environment that is capable of all domain
         warfare.
       </p>
-    </>
+    </div>
   );
 };
 
 const RapidContent = () => {
   return (
-    <div className="self-center">
+    <div className="self-center panel-content">
       <div className="grid md:flex space-x-24 items-center">
         <Switcher>
           <div className="switcher-item w-full flex-grow flex flex-col items-center">
@@ -131,7 +131,7 @@ const DevelopmentContent = () => {
   return (
     <>
       <div className="grid md:flex justify-center items-center space-x-24 overflow-hidden w-full h-full ">
-        <div className="flex space-x-24">
+        <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
               <div className="w-36 md:w-54 aspect-square ">
@@ -211,7 +211,7 @@ const DeliveryContent = () => {
   return (
     <>
       <div className="grid md:flex justify-center  space-x-24 items-center overflow-hidden w-full h-full ">
-        <div className="flex space-x-24">
+        <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
               <div className="w-56 md:w-64 aspect-square ">

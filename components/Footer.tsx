@@ -276,15 +276,14 @@ export default function Footer() {
           <ContactForm />
         </div>
       </div>
-      <div className="flex overflow-hidden px-8 pb-4">
-        <div className="text-[#f5f5f5]">
-          <p>4657 Industrial Park Drive</p>
-          <p>Kincheloe, MI 49788</p>
+      <div className="flex pb-4 px-8 items-center overflow-hidden h-20">
+        <div className="text-[#f5f5f5] text-sm">
+          <p>4657 Industrial Park Drive, Kincheloe, MI 49788</p>
           <p>906-240-1180</p>
         </div>
         <div className="flex-grow"/>
-        <div className="translate-y-6">
-          <Image src={'/anchor-white.png'} width={119} height={35} draggable={false} alt=""/>
+        <div className="">
+          <Image src={'/anchor-white.png'} width={136} height={136} draggable={false} alt=""/>
         </div>
       </div>
     </div>

@@ -23,6 +23,10 @@ a {
   .layout {
     @apply min-h-screen bg-ndcDark text-ndcWhite
   }
+
+  .test-filter {
+    filter: invert(54%) sepia(72%) saturate(6421%) hue-rotate(340deg) brightness(98%) contrast(92%);
+  }
 }
 
 @font-face {

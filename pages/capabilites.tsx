@@ -12,7 +12,7 @@ const capabilitesSplash =
 
 const Content = ({ panelHeader, panelText }) => {
   return (
-    <div className="flex flex-col items-center  panel-content overflow-hidden">
+    <div className="flex flex-col items-center  panel-content overflow-hidden opacity-0">
       <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-4">
         {panelHeader}
       </div>

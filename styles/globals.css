@@ -48,17 +48,18 @@ a {
 }
 
 
-
-
-
-
+.panel-content {
+  opacity: 0;
+  /* scale: 0.9; */
+  @apply scale-90
+}
 
 .panel-cont {
   @apply min-h-screen
 }
 
 .overlay-header {
-  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-20 md:top-32 z-20
+  @apply font-['Ethnocentric'] sm:text-2xl md:text-3xl self-center relative top-20 md:top-32 z-20
 }
 
 .panel-page-slider {

@@ -152,8 +152,8 @@ const MissionContent = () => {
 
 const FinalSlide = () => {
   return (
-    <div className="flex flex-col items-center justify-end panel-content translate-y-32">
-      <div className="font-['Ethnocentric'] text-3xl md:text-6xl mb-8">
+    <div className="flex flex-col items-center justify-end panel-content">
+      <div className="font-['Ethnocentric'] text-3xl md:text-6xl my-4">
         THE TEAM
       </div>
       <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-lg text-center panel-content">
@@ -165,16 +165,18 @@ const FinalSlide = () => {
         critical capabilities necessary for America’s warfighters to fight and
         win in tomorrow’s battlespace today.
       </p>
-      <div className="w-[200px] md:w-[450px] -translate-y-16">
-        <Image
-          src="/anchor-systems-logo-white.png"
-          alt=""
-          title=""
-          width="100%"
-          height="100%"
-          layout="responsive"
-          objectFit="contain"
-        />
+      <div className="flex justify-center items-center h-40 overflow-hidden">
+        <div className="w-[200px] md:w-[400px] relative">
+          <Image
+            src="/anchor-systems-logo-white.png"
+            alt=""
+            title=""
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+          />
+        </div>
       </div>
     </div>
   );

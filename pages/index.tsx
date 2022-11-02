@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
-import Slideshow from "../components/Slideshow";
 const SplashView = dynamic(() => import('../components/SplashView'))
+const Slideshow = dynamic(() => import('../components/Slideshow'))
 
 const frontBlurb =
   "Michigan's Eastern Upper Peninsula (EUP) region is unmatched in key discriminators, geographic attributes, and direct mission enablers that unlike the previous decades in the Middle East, make the EUP and Michigan uniquely suited for delivering critical All- Domain warfighting support to the DoD in the Era of Great Power Competition.";

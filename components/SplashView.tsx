@@ -20,13 +20,14 @@ export default function SplashView({
   const textRef = useRef(null);
   const headerRef = useRef(null);
   const lightRef = useRef(null)
+  const arrowRef = useRef(null)
 
   useEffect(() => {
     // Creates text effect on load
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 20 },
-      { opacity: 1, duration: 2, y: 0, delay: 0.65, ease: "sine" }
+      { opacity: 1, duration: 2, y: 0, delay: 0.5, ease: "sine" }
     );
 
     gsap.fromTo (
@@ -40,6 +41,12 @@ export default function SplashView({
       {opacity: 0, scaleX: 0.45},
       {opacity: 1, duration: 3, delay: 0.15, scaleX: 1, ease: 'sine'}
     )
+
+    gsap.fromTo (
+      arrowRef.current,
+      {opacity: 0},
+      { opacity: 1, duration: 1, delay: 0.75, ease: 'sine' }
+    )
   }, []);
 
   return (
@@ -51,7 +58,7 @@ export default function SplashView({
           </div>
         )}
         {videoSrc && !imageSrc && (
-          <video autoPlay muted loop className={styles.video} playsInline>
+          <video muted autoPlay playsInline loop className={styles.video} >
             <source src={videoSrc} type="video/mp4" />
           </video>
         )}
@@ -69,7 +76,7 @@ export default function SplashView({
             onInit={(typewriter)=> {
               typewriter
               .typeString(splashHeader)
-              .pauseFor(100)
+              .pauseFor(500)
               .start();
               }
             }
@@ -88,13 +95,13 @@ export default function SplashView({
             {splashText}
           </p>
 
-          <div className="h-3 md:h-4 animate-bounce relative cursor-pointer w-full mb-8" >
+          <div ref={arrowRef} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6" >
             <Image
               src="/arrow-down.png"
               layout="fill"
               objectFit="contain"
               draggable={false}
-              className="select-none"
+              className="select-none hover:test-filter transition-all duration-300"
               alt={""}
             />
           </div>

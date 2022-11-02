@@ -82,7 +82,7 @@ const Panel = ({
                 </div>
               </div>
               <div className="relative flex flex-col -translate-y-16 md:-translate-y-24">
-                <div className="text-sm md:text-lg p-4 md:p-0 text-center mb-4 drop-shadow-sm">
+                <div className="text-sm md:text-xl p-4 md:p-0 text-center mb-4 drop-shadow-sm">
                   <p>{blurbText}</p>
                 </div>
 

@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import Image from "next/image";
 import { useRouter } from 'next/router'
@@ -40,109 +40,105 @@ export default function Slideshow({
     config: { mass: 0, duration: 150 },
   });
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      var panels: any = gsap.utils.toArray(".panel"), scrollTween;
-      setPanelCount(panels.length);
-      setHeader(overviewHeader)
-  
-      function goToSection(i: number) {
-        const didScrollToBottom =
-          window.innerHeight + window.scrollY >= document.body.offsetHeight;
-  
-        if (!didScrollToBottom) {
-          const tween = gsap.to(window, {
-            scrollTo: {
-              y: i * innerHeight + panels[0].offsetTop,
-              autoKill: false,
-            },
-            duration: 1,
-            ease: "power2",
-            onComplete: () => {
-              scrollTween = null
-            },
-            overwrite: true
-          });
-          setSlide(i);
-        }
+  useLayoutEffect(() => {
+    var panels: any = gsap.utils.toArray(".panel"), scrollTween;
+
+    function goToSection(i: number) {
+      const didScrollToBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+      if (scrollTween != undefined || scrollTween != null) return
+      
+      if (!didScrollToBottom) {
+        scrollTween = true
+        const tween = gsap.to(window, {
+          scrollTo: {
+            y: i * innerHeight + panels[0].offsetTop,
+            autoKill: false,
+          },
+          duration: 1,
+          ease: "power2",
+          onComplete: () => {
+            scrollTween = null
+          },
+          overwrite: true
+        });
+        setSlide(i);
       }
+    }
 
+    setPanelCount(panels.length);
+    setHeader(overviewHeader)
+
+    let ctx = gsap.context(() => {
       panels.forEach((panel: any, i: number) => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: panel,
-            start: "top-=25 bottom-=25",
-            end: "bottom+=100 top-=100",
-            onEnter: (self) => self.isActive && !scrollTween && goToSection(i),
-          },
-        });
-
-        tl.fromTo(
+        gsap.fromTo(
           panel,
-          { x: 0, opacity: 0, duration: 2 },
-          { x: 0, opacity: 1, duration: 2 },
-          "start"
+          { x: 0, opacity: 0},
+          { x: 0, opacity: 1, duration: 2,
+            scrollTrigger: {
+              trigger: panel,
+              start: "top bottom-=50",
+              end: "bottom top+=50",
+              onEnter: (self) => self.isActive && !scrollTween && goToSection(i),
+              onEnterBack: (self) => self.isActive && !scrollTween && goToSection(i),
+            }
+          },
         )
-          .to(
-            panel.querySelector(".panel-category"),
-            { x: 0, opacity: 1, delay: 0.1, duration: 1 },
-            "start"
-          )
-          .fromTo(
-            panel.querySelector(".panel-content"),
-            { x: 0, opacity: 0, scale: 0.9, duration: 2 },
-            {
-              x: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 2.5,
-              delay: 0.5,
-              ease: "sine",
-            },
-            "start"
-          );
 
-        const revtl = gsap.timeline({
-          scrollTrigger: {
+        gsap.to(
+          (".panel-category"),
+          { x: 0, opacity: 1, delay: 0.1, duration: 1,
+            scrollTrigger: {
+              trigger: panel,
+              start: "top bottom-=50",
+              end: "bottom top+=50",
+            }
+          },
+        )
+
+        gsap.to(
+          (".panel-content"),
+          {scrollTrigger: {
             trigger: panel,
-            start: "top+=50 bottom+=25",
-            end: "bottom-=100 top+=100",
-            onEnterBack: self => self.isActive && !scrollTween && goToSection(i)
+            start: "top bottom-=50",
+              end: "bottom top+=50",
           },
-        });
+          x: 0, opacity: 1, y: 0, delay: 0, duration: 2.5, ease: 'sine'
+        },
+        )
       });
 
-    
-      const overlaytl = gsap.timeline({
-        scrollTrigger: {
-          trigger: panels[0],
-          start: "top-=50 top",
-          end: "bottom+=50 bottom",
-          endTrigger: panels[panels.length - 1],
-          onEnter: () => {
-            setOverlay(true);
-          },
-          onLeave: () => {
-            setOverlay(false);
-          },
-          onEnterBack: () => {
-            setOverlay(true);
-          },
-          onLeaveBack: () => {
-            setOverlay(false);
-            // scrolls back to top of screen
-            gsap.to(window, {
-              scrollTo: { y: 0, autoKill: false },
-              duration: 0.8,
-              ease: "expo",
-            });
-          },
+
+      // Overlay trigger
+      ScrollTrigger.create({
+        trigger: panels[0],
+        start: "top-=50 top",
+        end: "bottom+=50 bottom",
+        endTrigger: panels[panels.length - 1],
+        onEnter: () => {
+          setOverlay(true);
         },
-      });
+        onLeave: () => {
+          setOverlay(false);
+        },
+        onEnterBack: () => {
+          setOverlay(true);
+        },
+        onLeaveBack: () => {
+          setOverlay(false);
+          // scrolls back to top of screen
+          gsap.to(window, {
+            scrollTo: { y: 0, autoKill: false },
+            duration: 0.8,
+            ease: "expo",
+          });
+        },
+      })
     }, comp); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
-  }, [router.pathname]);
+  }, []);
 
   useEffect(() => {
     if (titles === null) return
@@ -190,8 +186,8 @@ export default function Slideshow({
                   </div>
                 </div>
                 <div className="absolute w-full h-full">
-                  <div className="mx-auto h-full flex flex-col justify-end">
-                    <div className="flex flex-col justify-end panel-content">
+                  <div className="mx-auto h-full flex flex-col justify-end ">
+                    <div className="flex flex-col justify-end">
                       <div className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
                         <Image
                           src="/arrow-down.png"

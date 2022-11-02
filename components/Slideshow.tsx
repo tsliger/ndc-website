@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import Image from "next/image";
 import { useRouter } from 'next/router'
@@ -40,7 +40,7 @@ export default function Slideshow({
     config: { mass: 0, duration: 150 },
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     var panels: any = gsap.utils.toArray(".panel"), scrollTween;
 
     function goToSection(i: number) {
@@ -104,7 +104,7 @@ export default function Slideshow({
             start: "top bottom-=50",
               end: "bottom top+=50",
           },
-          x: 0, opacity: 1, y: 0, delay: 0, duration: 2.5, ease: 'sine'
+          x: 0, opacity: 1, scale: 1, delay: 0, duration: 2.5, ease: 'sine'
         },
         )
       });
@@ -194,7 +194,7 @@ export default function Slideshow({
                           layout="fill"
                           objectFit="contain"
                           draggable={false}
-                          className="select-none hover:test-filter transition-all duration-300"
+                          className="select-none hover:test-filter"
                           alt={""}
                         />
                       </div>

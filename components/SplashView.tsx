@@ -45,18 +45,13 @@ export default function SplashView({
     gsap.fromTo (
       arrowRef.current,
       {opacity: 0},
-      { opacity: 1, duration: 1, delay: 0.75, ease: 'sine' }
+      { opacity: 1, duration: 0.5, delay: 0.75, ease: 'power1' }
     )
   }, []);
 
   return (
     <div className="min-h-[840px] h-screen flex flex-col">
-      <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col">
-        {(videoSrc || imageSrc) && (
-          <div className="mix-blend-soft-light absolute h-full w-full z-2 opacity-30">
-            <Image src={'/splash-overlay.png'} quality={25} layout={"fill"} objectFit={"cover"} alt={""} />
-          </div>
-        )}
+      <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col overlay-div">
         {videoSrc && !imageSrc && (
           <video muted autoPlay playsInline loop className={styles.video} >
             <source src={videoSrc} type="video/mp4" />
@@ -101,7 +96,7 @@ export default function SplashView({
               layout="fill"
               objectFit="contain"
               draggable={false}
-              className="select-none hover:test-filter transition-all duration-300"
+              className="select-none hover:test-filter"
               alt={""}
             />
           </div>

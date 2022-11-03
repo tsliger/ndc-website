@@ -130,8 +130,8 @@ export default function Navbar() {
           <Image
             src="/ndc-logo-white.png"
             className="drop-shadow-xl"
-            width={178}
-            height={46}
+            width={192}
+            height={53}
             draggable={false}
             alt={""}
           />

@@ -156,7 +156,7 @@ const FinalSlide = () => {
       <div className="font-['Ethnocentric'] text-3xl md:text-6xl my-4">
         THE TEAM
       </div>
-      <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-lg text-center panel-content">
+      <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-lg text-center">
         The EUP-NDC is an Anchor Systems Initiative. Anchor Systems is a
         national defense technology integrator specializing in the integration
         of emergent technology and applied engineering. Anchor Systems is

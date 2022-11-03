@@ -130,8 +130,8 @@ export default function Navbar() {
           <Image
             src="/ndc-logo-white.png"
             className="drop-shadow-xl"
-            width={192}
-            height={53}
+            width={178}
+            height={46}
             draggable={false}
             alt={""}
           />
@@ -142,13 +142,13 @@ export default function Navbar() {
             <Navlinks closeDrawer={handleClose} />
           </ul>
         </div>
-        <div className="items-center justify-center flex lg:hidden h-[100px] aspect-square">
+        <div className="items-center justify-center flex lg:hidden  aspect-square">
           <div
-            className="cursor-pointer select-none translate-x-8 active:scale-95 transition-all"
+            className="cursor-pointer select-none active:scale-95 transition-all"
             onClick={() => setDrawer(!isDrawerOpen)}
           >
-            {isDrawerOpen && <HiX size={40} />}
-            {!isDrawerOpen && <HiOutlineMenu size={40} />}
+            {isDrawerOpen && <HiX size={35} />}
+            {!isDrawerOpen && <HiOutlineMenu size={35} />}
           </div>
         </div>
       </nav>

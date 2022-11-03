@@ -1,10 +1,10 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import Image from "next/image";
 import { useRouter } from 'next/router'
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
@@ -61,7 +61,6 @@ export default function Slideshow({
           onComplete: () => {
             scrollTween = null
           },
-          overwrite: true
         });
         setSlide(i);
       }

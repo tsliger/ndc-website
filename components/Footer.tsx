@@ -89,7 +89,6 @@ const ContactForm = () => {
     if(!value) {
       return;
     }
-    console.log(_reCaptchaRef)
 
     formik.values.captcha = value
   }
@@ -222,6 +221,7 @@ const ContactForm = () => {
               sitekey={'6LdsJ8siAAAAANsR96YeWDkCTUYtYdBksmh5pgFK'}
               onChange={handleCaptchaChange}
               ref={_reCaptchaRef}
+              id="captchaForm"
               theme="dark"
             />
             }

@@ -45,7 +45,7 @@ export default function SplashView({
     gsap.fromTo (
       arrowRef.current,
       {opacity: 0},
-      { opacity: 1, duration: 0.5, delay: 0.75, ease: 'power1' }
+      { opacity: 1, duration: 0.5, delay: 0.75 }
     )
   }, []);
 

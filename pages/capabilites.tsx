@@ -115,7 +115,7 @@ const RapidContent = () => {
       <div className="z-50 h-16 w-full relative ">
         <Image src="/light-bar-white.png" layout="fill" alt=""/>
       </div>
-      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center  panel-content">
+      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center">
         The Eastern Upper Peninsula National Defense Complex has the ability to
         evolve, experiment and deliver technologies to address both urgent and
         emerging threats across the world. Rapid Capability Development and
@@ -134,7 +134,7 @@ const DevelopmentContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-54 aspect-square ">
+              <div className="w-36 md:w-50 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/developone.png"}
                   width="100%"
@@ -153,7 +153,7 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-54 aspect-square ">
+              <div className="w-36 md:w-50 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/developtwo.png"}
                   width="100%"
@@ -172,7 +172,7 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-54 aspect-square ">
+              <div className="w-36 md:w-50 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/developthree.png"}
                   width="100%"
@@ -214,7 +214,7 @@ const DeliveryContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-64 aspect-square ">
+              <div className="w-48 md:w-56 aspect-square ">
                 <Image
                   src={"/panel-imgs/capabilities/deliveryone.png"}
                   width="100%"
@@ -233,7 +233,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-64 aspect-square">
+              <div className="w-48 md:w-56 aspect-square">
                 <Image
                   src={"/panel-imgs/capabilities/deliverytwo.png"}
                   width="100%"
@@ -251,7 +251,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-64 aspect-square">
+              <div className="w-48 md:w-56 aspect-square">
                 <Image
                   src={"/panel-imgs/capabilities/deliverythree.png"}
                   width="100%"
@@ -269,7 +269,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-56 md:w-64 aspect-square">
+              <div className="w-48 md:w-56 aspect-square">
                 <Image
                   src={"/panel-imgs/capabilities/deliveryfour.png"}
                   width="100%"

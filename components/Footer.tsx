@@ -221,13 +221,13 @@ const ContactForm = () => {
               sitekey={'6LdsJ8siAAAAANsR96YeWDkCTUYtYdBksmh5pgFK'}
               onChange={handleCaptchaChange}
               ref={_reCaptchaRef}
-              id="captchaForm"
+              id="captcha"
               theme="dark"
             />
             }
             <button
               type="submit"
-              className="w-24 md:w-32 rounded-sm bg-ndcBlue text-base md:text-xl py-1 md:py-2 font-semibold active:scale-95 transition-all"
+              className="std-button"
             >
               Submit
             </button>

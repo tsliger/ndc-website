@@ -1,32 +1,37 @@
-import { gsap } from "gsap";
+import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
+import { animated, useTransition } from "react-spring";
+import Image from "next/image";
+import { useRouter } from 'next/router'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { useEffect, useRef, useState } from "react";
-import { animated, useTransition, config } from "react-spring";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
   nullTargetWarn: false,
-});
+})
 
 type SlideShowProps = {
   panels: any;
   overviewHeader?: string;
   sliderPosition?: string;
+  titles?: Object;
 };
 
 export default function Slideshow({
   panels,
   overviewHeader,
   sliderPosition = "right",
+  titles = null,
 }: SlideShowProps) {
-  const ref = useRef(null);
   const comp = useRef();
   const overlay = useRef(null);
   const [isOverlayOpen, setOverlay] = useState(false);
   const [currentSlide, setSlide] = useState(0);
   const [panelCount, setPanelCount] = useState(0);
+  const [headerState, setHeader] = useState('')
+  const router = useRouter()
+
   const transitions = useTransition(isOverlayOpen, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -36,14 +41,16 @@ export default function Slideshow({
   });
 
   useEffect(() => {
-    var panels: any = gsap.utils.toArray(".panel");
-    setPanelCount(panels.length);
+    var panels: any = gsap.utils.toArray(".panel"), scrollTween;
 
-    function goToSection(i: number, anim?: any) {
+    function goToSection(i: number) {
       const didScrollToBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
+      if (scrollTween != undefined || scrollTween != null) return
+      
       if (!didScrollToBottom) {
+        scrollTween = true
         const tween = gsap.to(window, {
           scrollTo: {
             y: i * innerHeight + panels[0].offsetTop,
@@ -51,93 +58,101 @@ export default function Slideshow({
           },
           duration: 1,
           ease: "power2",
+          onComplete: () => {
+            scrollTween = null
+          },
         });
         setSlide(i);
       }
-
-      if (anim) {
-        anim.restart();
-      }
     }
 
+    setPanelCount(panels.length);
+    setHeader(overviewHeader)
+
     let ctx = gsap.context(() => {
-      // all our animations can use selector text like ".box"
-      // and it's properly scoped to our component
       panels.forEach((panel: any, i: number) => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: panel,
-            start: "top-=50 bottom-=100",
-            end: "bottom+=100 top-=100",
-            onEnter: (self) => goToSection(i),
-          },
-        });
-
-        tl.fromTo(
+        gsap.fromTo(
           panel,
-          { x: 0, opacity: 0, duration: 2 },
-          { x: 0, opacity: 1, duration: 2 },
-          "start"
+          { x: 0, opacity: 0},
+          { x: 0, opacity: 1, duration: 2,
+            scrollTrigger: {
+              trigger: panel,
+              start: "top bottom-=50",
+              end: "bottom top+=50",
+              onEnter: (self) => self.isActive && !scrollTween && goToSection(i),
+              onEnterBack: (self) => self.isActive && !scrollTween && goToSection(i),
+            }
+          },
         )
-          .to(
-            panel.querySelector(".panel-category"),
-            { x: 0, opacity: 1, delay: 0.1, duration: 1 },
-            "start"
-          )
-          .fromTo(
-            panel.querySelector(".panel-content"),
-            { x: 0, opacity: 0, scale: 0.9, duration: 2 },
-            {
-              x: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 2.5,
-              delay: 0.5,
-              ease: "sine",
-            },
-            "start"
-          );
 
-        const revtl = gsap.timeline({
-          scrollTrigger: {
+        gsap.to(
+          (".panel-category"),
+          { x: 0, opacity: 1, delay: 0.1, duration: 1,
+            scrollTrigger: {
+              trigger: panel,
+              start: "top bottom-=50",
+              end: "bottom top+=50",
+            }
+          },
+        )
+
+        gsap.to(
+          (".panel-content"),
+          {scrollTrigger: {
             trigger: panel,
-            start: "top+=50 bottom+=25",
-            end: "bottom-=100 top+=100",
-            onEnterBack: () => goToSection(i),
+            start: "top bottom-=50",
+              end: "bottom top+=50",
           },
-        });
+          x: 0, opacity: 1, scale: 1, delay: 0, duration: 2.5, ease: 'sine'
+        },
+        )
       });
 
-      const overlaytl = gsap.timeline({
-        scrollTrigger: {
-          trigger: panels[0],
-          start: "top-=50 top",
-          end: "bottom+=50 bottom",
-          endTrigger: panels[panels.length - 1],
-          onEnter: () => {
-            setOverlay(true);
-          },
-          onLeave: () => {
-            setOverlay(false);
-          },
-          onEnterBack: () => {
-            setOverlay(true);
-          },
-          onLeaveBack: () => {
-            setOverlay(false);
-            // scrolls back to top of screen
-            gsap.to(window, {
-              scrollTo: { y: 0, autoKill: false },
-              duration: 0.8,
-              ease: "expo",
-            });
-          },
+
+      // Overlay trigger
+      ScrollTrigger.create({
+        trigger: panels[0],
+        start: "top-=50 top",
+        end: "bottom+=50 bottom",
+        endTrigger: panels[panels.length - 1],
+        onEnter: () => {
+          setOverlay(true);
         },
-      });
+        onLeave: () => {
+          setOverlay(false);
+        },
+        onEnterBack: () => {
+          setOverlay(true);
+        },
+        onLeaveBack: () => {
+          setOverlay(false);
+          // scrolls back to top of screen
+          gsap.to(window, {
+            scrollTo: { y: 0, autoKill: false },
+            duration: 0.8,
+            ease: "expo",
+          });
+        },
+      })
     }, comp); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
   }, []);
+
+  useEffect(() => {
+    if (titles === null) return
+
+    Object.keys(titles).forEach((key) => {
+      const number = +key
+      if (number <= currentSlide)
+      {
+        const title = titles[key]
+        setHeader(title)
+      } else {
+        setHeader(overviewHeader)
+      }
+    })
+  }, [currentSlide, overviewHeader, titles])
 
   return (
     <>
@@ -146,8 +161,8 @@ export default function Slideshow({
           (styles, item) =>
             item && (
               <animated.div style={styles} className="overlay" ref={overlay}>
-                <p className="overlay-header drop-shadow-md">
-                  {overviewHeader}
+                <p className="overlay-header drop-shadow-md text-center px-2">
+                  {headerState}
                 </p>
                 <div
                   className={`w-6 md:w-16 h-full  absolute ${
@@ -161,7 +176,7 @@ export default function Slideshow({
                           key={i}
                           className={`${
                             currentSlide === i
-                              ? "bg-white/70 scale-x-[1.75]"
+                              ? "bg-white/70 scale-x-[3]"
                               : "bg-white/30 scale-x-100"
                           } page-slider`}
                         ></div>
@@ -170,16 +185,16 @@ export default function Slideshow({
                   </div>
                 </div>
                 <div className="absolute w-full h-full">
-                  <div className="mx-auto h-full flex flex-col justify-end">
-                    <div className="flex flex-col justify-end panel-content">
-                      <div className="h-3 md:h-4 animate-bounce relative cursor-pointer w-full mb-8">
+                  <div className="mx-auto h-full flex flex-col justify-end ">
+                    <div className="flex flex-col justify-end">
+                      <div className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
                         <Image
                           src="/arrow-down.png"
                           layout="fill"
                           objectFit="contain"
                           draggable={false}
-                          className="select-none"
-                          alt={"arrow down"}
+                          className="select-none hover:test-filter"
+                          alt={""}
                         />
                       </div>
                     </div>

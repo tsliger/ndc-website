@@ -23,6 +23,10 @@ a {
   .layout {
     @apply min-h-screen bg-ndcDark text-ndcWhite
   }
+
+  .test-filter {
+    filter: invert(68%) sepia(79%) saturate(6268%) hue-rotate(204deg) brightness(102%) contrast(93%);
+  }
 }
 
 @font-face {
@@ -30,10 +34,11 @@ a {
   src: url('../asset/ethnocentric.otf');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 .navbar-container {
-  @apply min-h-[100px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
+  @apply min-h-[85px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
 }
 
 
@@ -43,17 +48,17 @@ a {
 }
 
 
-
-
-
-
+.panel-content {
+  opacity: 0;
+  @apply scale-90
+}
 
 .panel-cont {
   @apply min-h-screen
 }
 
 .overlay-header {
-  @apply font-['Ethnocentric'] sm:text-2xl md:text-4xl self-center relative top-20 md:top-32 z-20
+  @apply font-['Ethnocentric'] text-sm sm:text-2xl md:text-3xl self-center relative top-20 md:top-32 z-20
 }
 
 .panel-page-slider {
@@ -61,7 +66,7 @@ a {
 }
 
 .page-slider {
-  @apply  flex-grow w-[1px] md:w-[4px] shadow-md h-8 md:h-14  transition-all duration-500
+  @apply  flex-grow w-[1px] md:w-[2px] shadow-md h-8 md:h-14  transition-all duration-500
 }
 
 .overlay {
@@ -70,4 +75,19 @@ a {
 
 .switcher-item {
   grid-area: 1/1/1;
+}
+
+.overlay-div::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgb(48, 48, 48) 1px, transparent 0);
+  background-size: 2.75px 2.75px;
+  background-position: -19px -19px;
+  opacity: .65;
+  z-index: 20;
+  mix-blend-mode: difference;
 }

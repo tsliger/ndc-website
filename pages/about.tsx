@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
-import Slideshow from "../components/Slideshow";
-import SplashView from "../components/SplashView";
+const Slideshow = dynamic(() => import('../components/Slideshow'))
+const SplashView = dynamic(() => import('../components/SplashView'))
 import PanelHelper from "../components/PanelHelper";
 import { ImageProps } from "next/image";
 
@@ -13,7 +14,7 @@ const NaturalImage = (props: ImageProps) => {
     <Image
       {...props}
       // set the dimension (affected by layout)
-      alt={"default"}
+      alt=""
       width={370}
       height={370 / ratio}
       layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
@@ -36,7 +37,7 @@ const Content = () => {
             src={"/panel-imgs/about/kincheloe.png"}
             objectFit={"cover"}
             layout="fill"
-            alt={"kincheloe on map"}
+            alt=""
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
@@ -55,17 +56,17 @@ const Content = () => {
         <div className="md:w-5/12 md:flex hidden flex-col items-center justify-center">
           <NaturalImage
             src={"/panel-imgs/about/locationone.png"}
-            alt={"location"}
+            alt=""
           />
           <div className="my-4" />
           <NaturalImage
             src={"/panel-imgs/about/locationtwo.png"}
-            alt={"location"}
+            alt=""
           />
           <div className="my-4" />
           <NaturalImage
             src={"/panel-imgs/about/locationthree.png"}
-            alt={"location"}
+            alt=""
           />
         </div>
       </div>
@@ -151,11 +152,11 @@ const MissionContent = () => {
 
 const FinalSlide = () => {
   return (
-    <div className="flex flex-col items-center justify-end panel-content translate-y-8">
-      <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-8">
+    <div className="flex flex-col items-center justify-end panel-content">
+      <div className="font-['Ethnocentric'] text-3xl md:text-6xl my-4">
         THE TEAM
       </div>
-      <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-xl text-center panel-content">
+      <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-lg text-center">
         The EUP-NDC is an Anchor Systems Initiative. Anchor Systems is a
         national defense technology integrator specializing in the integration
         of emergent technology and applied engineering. Anchor Systems is
@@ -164,16 +165,18 @@ const FinalSlide = () => {
         critical capabilities necessary for America’s warfighters to fight and
         win in tomorrow’s battlespace today.
       </p>
-      <div className="w-[200px] md:w-[450px] ">
-        <Image
-          src="/anchor-systems-logo-white.png"
-          alt=""
-          title=""
-          width="100%"
-          height="100%"
-          layout="responsive"
-          objectFit="contain"
-        />
+      <div className="flex justify-center items-center h-40 overflow-hidden">
+        <div className="w-[200px] md:w-[400px] relative">
+          <Image
+            src="/anchor-systems-logo-white.png"
+            alt=""
+            title=""
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+          />
+        </div>
       </div>
     </div>
   );

@@ -17,7 +17,9 @@ export const Navlinks = (props) => {
     gsap.killTweensOf(window);
     ScrollTrigger.disable();
 
-    if (props.closeDrawer) props.closeDrawer();
+    if (props.closeDrawer) {
+      props.closeDrawer();
+    }
 
     const tween = gsap.to(window, {
       scrollTo: { y: document.body.scrollHeight, autoKill: false },
@@ -25,6 +27,7 @@ export const Navlinks = (props) => {
       duration: 0.5,
       ease: "sine",
       onComplete: () => {
+        gsap.killTweensOf(window)
         ScrollTrigger.enable();
       },
     });
@@ -58,7 +61,6 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li onClick={goToContact}>Contact</li>
       <li>
         <Link href="/about">
           <a
@@ -72,6 +74,7 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
+      <li onClick={goToContact}>Contact</li>
     </>
   );
 };
@@ -130,7 +133,7 @@ export default function Navbar() {
             width={192}
             height={53}
             draggable={false}
-            alt={"ndc logo"}
+            alt={""}
           />
         </div>
         <div className="flex-grow" />
@@ -139,13 +142,13 @@ export default function Navbar() {
             <Navlinks closeDrawer={handleClose} />
           </ul>
         </div>
-        <div className="items-center justify-center flex lg:hidden h-[100px] aspect-square">
+        <div className="items-center justify-center flex lg:hidden  aspect-square">
           <div
-            className="cursor-pointer select-none translate-x-8 active:scale-95 transition-all"
+            className="cursor-pointer select-none active:scale-95 transition-all"
             onClick={() => setDrawer(!isDrawerOpen)}
           >
-            {isDrawerOpen && <HiX size={40} />}
-            {!isDrawerOpen && <HiOutlineMenu size={40} />}
+            {isDrawerOpen && <HiX size={35} />}
+            {!isDrawerOpen && <HiOutlineMenu size={35} />}
           </div>
         </div>
       </nav>

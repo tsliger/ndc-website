@@ -38,7 +38,7 @@ a {
 }
 
 .navbar-container {
-  @apply min-h-[100px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
+  @apply min-h-[80px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
 }
 
 
@@ -58,7 +58,7 @@ a {
 }
 
 .overlay-header {
-  @apply font-['Ethnocentric'] sm:text-2xl md:text-3xl self-center relative top-20 md:top-32 z-20
+  @apply font-['Ethnocentric'] text-sm sm:text-2xl md:text-3xl self-center relative top-20 md:top-32 z-20
 }
 
 .panel-page-slider {

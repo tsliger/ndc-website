@@ -6,7 +6,7 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 function MyApp({ Component, pageProps }) {
   return( 
       <Layout>
-        <GoogleAnalytics trackPageViews strategy="worker" />
+        <GoogleAnalytics trackPageViews/>
         <Component {...pageProps} />
       </Layout>
     )

@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { gsap } from "gsap";
-import Typewriter from "typewriter-effect";
+const Typewriter = dynamic(() => import('typewriter-effect'))
 
 type SplashViewTypes = {
   videoSrc?: string;

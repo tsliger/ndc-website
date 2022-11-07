@@ -31,6 +31,7 @@ export default function Slideshow({
   const [panelCount, setPanelCount] = useState(0);
   const [headerState, setHeader] = useState('')
   const router = useRouter()
+  var scrollTween = null;
 
   const transitions = useTransition(isOverlayOpen, {
     from: { opacity: 0 },
@@ -41,7 +42,7 @@ export default function Slideshow({
   });
 
   useEffect(() => {
-    var panels: any = gsap.utils.toArray(".panel"), scrollTween;
+    var panels: any = gsap.utils.toArray(".panel");
 
     function goToSection(i: number) {
       const didScrollToBottom =
@@ -50,8 +51,7 @@ export default function Slideshow({
       if (scrollTween != undefined || scrollTween != null) return
       
       if (!didScrollToBottom) {
-        scrollTween = true
-        const tween = gsap.to(window, {
+        scrollTween = gsap.to(window, {
           scrollTo: {
             y: i * innerHeight + panels[0].offsetTop,
             autoKill: false,
@@ -70,7 +70,10 @@ export default function Slideshow({
     setHeader(overviewHeader)
 
     let ctx = gsap.context(() => {
-      panels.forEach((panel: any, i: number) => {
+      for (let i = 0; i < panels.length; i++)
+      {
+        const panel = panels[i]
+      
         gsap.fromTo(
           panel,
           { x: 0, opacity: 0},
@@ -79,12 +82,11 @@ export default function Slideshow({
               trigger: panel,
               start: "top bottom-=50",
               end: "bottom top+=50",
-              onEnter: (self) => self.isActive && !scrollTween && goToSection(i),
-              onEnterBack: (self) => self.isActive && !scrollTween && goToSection(i),
+              onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
             }
           },
         )
-
+      
         gsap.to(
           (".panel-category"),
           { x: 0, opacity: 1, delay: 0.1, duration: 1,
@@ -106,8 +108,7 @@ export default function Slideshow({
           x: 0, opacity: 1, scale: 1, delay: 0, duration: 2.5, ease: 'sine'
         },
         )
-      });
-
+      }
 
       // Overlay trigger
       ScrollTrigger.create({

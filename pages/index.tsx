@@ -1,9 +1,9 @@
+import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
 const SplashView = dynamic(() => import('../components/SplashView'))
 const Slideshow = dynamic(() => import('../components/Slideshow'))
+import FrontPanel from "../components/FrontPanel";
 
 const frontBlurb =
   "Michigan's Eastern Upper Peninsula (EUP) region is unmatched in key discriminators, geographic attributes, and direct mission enablers that unlike the previous decades in the Middle East, make the EUP and Michigan uniquely suited for delivering critical All- Domain warfighting support to the DoD in the Era of Great Power Competition.";
@@ -23,116 +23,37 @@ const landBlurb =
 const maritimeBlurb =
   "Lake Superior, located offshore of the Upper Peninsula of Michigan, provides an unmatched Maritime littoral environment (lake effect snow, ice, volatile sea state) that mimics those of the Artic, Baltic and East China Sea. The next generation of capabilities to fight the Great Power Competitions are designed to operate in the most austere conditions. This area imitates the conditions that the US Military will face as the fight moves.";
 
-const tempBlurb =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at in tellus. Suspendisse sed nisi lacus sed viverra tellus in hac. In hendrerit gravida rutrum quisque non tellus.";
-
-const Panel = ({
-  backgroundImage,
-  symbolImage,
-  sideText,
-  blurbText = tempBlurb,
-}) => {
-  const sideref = useRef(null);
-  const [sideWidth, setWidth] = useState(0);
-  useEffect(() => {
-    setWidth(sideref.current.clientWidth);
-  }, [sideref]);
-  return (
-    <div className="panel">
-      <div className="w-full h-full absolute">
-        <Image
-          src={backgroundImage}
-          quality={35}
-          layout={"fill"}
-          objectFit={"cover"}
-          alt=""
-        />
-      </div>
-      <div className="w-full h-full absolute">
-        <Image
-          src={"/panel-imgs/home/vignette.png"}
-          layout={"fill"}
-          objectFit={"cover"}
-          alt=""
-        />
-      </div>
-      <div className="min-h-screen">
-        <div className="absolute w-full h-full flex  items-center">
-          <p
-            ref={sideref}
-            style={{ marginTop: sideWidth }}
-            className={`fixed left-0 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-2xl lg:text-4xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
-          >
-            {sideText}
-          </p>
-        </div>
-        <div className="absolute w-full h-full ">
-          <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center">
-            <div className="flex flex-col panel-content md:mb-32 items-center">
-              <div className="p-16 md:p-56 -translate-y-8 md:translate-y-24 ">
-                <div className="w-40 md:w-64  aspect-square relative top-12 md:top-0">
-                  <Image
-                    src={symbolImage}
-                    layout="fill"
-                    quality={25}
-                    objectFit="contain"
-                    alt=""
-                    style={{ filter: "drop-shadow(0px 0px 30px #ffffff42)" }}
-                  />
-                </div>
-              </div>
-              <div className="relative flex flex-col -translate-y-16 md:-translate-y-24">
-                <div className="text-sm md:text-xl p-4 md:p-0 text-center md:mb-8 drop-shadow-sm">
-                  <p>{blurbText}</p>
-                </div>
-                <div className="z-50 w-full relative h-8 panel-light">
-                  <Image
-                    src="/light-bar-white.png"
-                    layout="fill"
-                    objectFit="contain"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default function Home() {
   const panelList = [
-    <Panel
+    <FrontPanel
       key={1}
       sideText={"space"}
       backgroundImage={"/panel-imgs/home/spaceupscale.jpg"}
       symbolImage={"/panel-symbols/home/satelite.png"}
       blurbText={spaceBlurb}
     />,
-    <Panel
+    <FrontPanel
       key={2}
       sideText={"air"}
       backgroundImage={"/panel-imgs/home/airupscale.png"}
       symbolImage={"/panel-symbols/home/drone.png"}
       blurbText={airBlurb}
     />,
-    <Panel
+    <FrontPanel
       key={3}
       sideText={"cyber"}
       backgroundImage={"/panel-imgs/home/cyberupscale.png"}
       symbolImage={"/panel-symbols/home/cyber.png"}
       blurbText={cyberBlurb}
     />,
-    <Panel
+    <FrontPanel
       key={4}
       sideText={"land"}
       backgroundImage={"/panel-imgs/home/landupscale.png"}
       symbolImage={"/panel-symbols/home/land.png"}
       blurbText={landBlurb}
     />,
-    <Panel
+    <FrontPanel
       key={5}
       sideText={"maritime"}
       backgroundImage={"/panel-imgs/home/maritimeupscale.png"}

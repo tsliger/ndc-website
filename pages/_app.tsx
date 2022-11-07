@@ -1,11 +1,12 @@
 import '../styles/globals.css'
-import Layout from '../components/Layout'
+import dynamic from 'next/dynamic';
+const Layout = dynamic(() => import('../components/Layout'))
 import { GoogleAnalytics } from "nextjs-google-analytics";
 
 function MyApp({ Component, pageProps }) {
   return( 
       <Layout>
-        <GoogleAnalytics trackPageViews strategy="afterInteractive" />
+        <GoogleAnalytics trackPageViews strategy="worker" />
         <Component {...pageProps} />
       </Layout>
     )

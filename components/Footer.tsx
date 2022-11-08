@@ -8,7 +8,7 @@ const ContactForm = dynamic(() => import('./ContactForm'))
 // Defines the footer layout
 export default function Footer() {
   return (
-    <div className="min-h-[585px]">
+    <footer className="min-h-[585px]">
       <div className="flex p-8 flex-col lg:flex-row  lg:items-start overflow-hidden">
         <div className="flex-grow flex flex-col">
           <div className="overflow-hidden h-24 flex  items-center">
@@ -33,9 +33,9 @@ export default function Footer() {
             </div>
             <div className="relative lg:left-32 space-y-8 mt-8 lg:mt-0">
               <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Connect</h1>
-              <BsFacebook style={{ marginTop: 25 }} size={32} />
-              <BsTwitter style={{ marginTop: 25 }} size={32} />
-              <BsLinkedin style={{ marginTop: 25 }} size={32} />
+              <BsFacebook className="social-icon" style={{ marginTop: 25 }} size={32} />
+              <BsTwitter className="social-icon" style={{ marginTop: 25 }} size={32} />
+              <BsLinkedin className="social-icon" style={{ marginTop: 25 }} size={32} />
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Footer() {
           <ContactForm />
         </div>
       </div>
-      <div className="flex pb-4 px-8 items-center overflow-hidden h-20">
+      <div className="flex pb-4 px-8 items-center overflow-hidden h-32 md:h-20">
         <div className="text-[#f5f5f5] text-sm">
           <p>4657 Industrial Park Drive, Kincheloe, MI 49788</p>
           <p>906-240-1180</p>
@@ -54,6 +54,6 @@ export default function Footer() {
           <Image src={'/anchor-white.png'} width={136} height={136} draggable={false} alt=""/>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

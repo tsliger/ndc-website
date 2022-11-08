@@ -41,8 +41,6 @@ a {
   @apply min-h-[85px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
 }
 
-
-
 .footerNavList > li {
   @apply space-y-6 md:text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-150
 }
@@ -59,6 +57,10 @@ a {
 
 .panel-cont {
   @apply min-h-screen
+}
+
+.social-icon {
+  @apply hover:text-blue-500 transition-all duration-150 cursor-pointer
 }
 
 .overlay-header {

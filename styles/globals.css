@@ -27,6 +27,67 @@ a {
   .test-filter {
     filter: invert(68%) sepia(79%) saturate(6268%) hue-rotate(204deg) brightness(102%) contrast(93%);
   }
+
+  .navbar-container {
+    @apply min-h-[85px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
+  }
+  
+  .footerNavList > li {
+    @apply space-y-6 md:text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-150
+  }
+  
+  .std-button {
+    @apply w-24 md:w-32 rounded-sm bg-blue-600 text-base md:text-xl py-1 md:py-2 font-semibold active:scale-95 transition-all duration-300;
+    @apply hover:bg-blue-800
+  }
+  
+  .panel-content {
+    opacity: 0;
+    @apply scale-90
+  }
+  
+  .panel-cont {
+    @apply min-h-screen
+  }
+  
+  .social-icon {
+    @apply hover:text-blue-500 transition-all duration-150 cursor-pointer
+  }
+  
+  .overlay-header {
+    @apply font-['Ethnocentric'] text-sm sm:text-2xl self-center relative top-20 md:top-24 z-20
+  }
+  
+  .panel-page-slider {
+    @apply  w-full flex flex-col justify-center items-center space-y-2
+  }
+  
+  .page-slider {
+    @apply  flex-grow w-[1px] md:w-[2px] shadow-md h-8 md:h-14  transition-all duration-500
+  }
+  
+  .overlay {
+    @apply h-screen w-full fixed z-10 flex flex-col
+  }
+  
+  .switcher-item {
+    grid-area: 1/1/1;
+  }
+  
+  .overlay-div::after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgb(48, 48, 48) 1px, transparent 0);
+    background-size: 2.75px 2.75px;
+    background-position: -19px -19px;
+    opacity: .65;
+    z-index: 20;
+    mix-blend-mode: difference;
+  }
 }
 
 @font-face {
@@ -35,65 +96,4 @@ a {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-.navbar-container {
-  @apply min-h-[85px] flex px-8 text-ndcWhite font-['Ethnocentric'] z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
-}
-
-.footerNavList > li {
-  @apply space-y-6 md:text-xl mt-4 cursor-pointer select-none hover:text-blue-500 transition-all duration-150
-}
-
-.std-button {
-  @apply w-24 md:w-32 rounded-sm bg-ndcBlue text-base md:text-xl py-1 md:py-2 font-semibold active:scale-95 transition-all duration-300;
-  @apply hover:bg-blue-800
-}
-
-.panel-content {
-  opacity: 0;
-  @apply scale-90
-}
-
-.panel-cont {
-  @apply min-h-screen
-}
-
-.social-icon {
-  @apply hover:text-blue-500 transition-all duration-150 cursor-pointer
-}
-
-.overlay-header {
-  @apply font-['Ethnocentric'] text-sm sm:text-2xl self-center relative top-20 md:top-24 z-20
-}
-
-.panel-page-slider {
-  @apply  w-full flex flex-col justify-center items-center space-y-2
-}
-
-.page-slider {
-  @apply  flex-grow w-[1px] md:w-[2px] shadow-md h-8 md:h-14  transition-all duration-500
-}
-
-.overlay {
-  @apply h-screen w-full fixed z-10 flex flex-col
-}
-
-.switcher-item {
-  grid-area: 1/1/1;
-}
-
-.overlay-div::after {
-  content: ""; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgb(48, 48, 48) 1px, transparent 0);
-  background-size: 2.75px 2.75px;
-  background-position: -19px -19px;
-  opacity: .65;
-  z-index: 20;
-  mix-blend-mode: difference;
 }

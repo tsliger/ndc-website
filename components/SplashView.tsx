@@ -91,7 +91,7 @@ export default function SplashView({
             {splashText}
           </p>
 
-          <div ref={arrowRef} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6" >
+          <div ref={arrowRef} onClick={() => window.scrollBy(0, 100)} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6" >
             <Image
               src="/arrow-down.png"
               layout="fill"

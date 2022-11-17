@@ -155,6 +155,15 @@ export default function Slideshow({
     })
   }, [currentSlide, overviewHeader, titles])
 
+  const scrollDown = () => {
+    if ((currentSlide + 1) != panelCount)
+    {
+      window.scrollBy(0, 100)
+    } else {
+      window.scrollBy(0, 800)
+    }
+  }
+
   return (
     <>
       {isOverlayOpen &&
@@ -188,7 +197,7 @@ export default function Slideshow({
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end ">
                     <div className="flex flex-col justify-end">
-                      <div className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
+                      <div onClick={scrollDown} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
                         <Image
                           src="/arrow-down.png"
                           layout="fill"

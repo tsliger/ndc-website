@@ -12,16 +12,22 @@ export default function Footer() {
       <div className="flex p-8 flex-col lg:flex-row  lg:items-start overflow-hidden">
         <div className="flex-grow flex flex-col">
           <div className="overflow-hidden h-24 flex  items-center">
-            <div className="w-56 md:w-72">
+            {/* <div className="w-56 md:w-72">
               <Image
                 src={"/ndc-logo-white.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
+                width={192}
+                height={53}
                 className="-translate-x-4"
                 alt={"ndc logo"}
               />
+            </div> */}
+            <div className="relative w-56 md:w-72 z-50 h-full">
+              <Image
+                  src={"/ndc-logo-white.png"}
+                  alt=""
+                  fill
+                  className="object-contain -translate-x-4"
+                />
             </div>
           </div>
           <div className="mt-8 flex flex-col lg:flex-row">

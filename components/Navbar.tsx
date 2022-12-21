@@ -36,7 +36,7 @@ export const Navlinks = (props) => {
   return (
     <>
       <li>
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a
             className={`h-full flex items-center ${
               router.pathname === "/"
@@ -49,7 +49,7 @@ export const Navlinks = (props) => {
         </Link>
       </li>
       <li>
-        <Link href="/capabilites">
+        <Link href="/capabilites" legacyBehavior>
           <a
             className={`h-full flex items-center ${
               router.pathname === "/capabilites"
@@ -62,7 +62,7 @@ export const Navlinks = (props) => {
         </Link>
       </li>
       <li>
-        <Link href="/about">
+        <Link href="/about" legacyBehavior>
           <a
             className={`h-full flex items-center ${
               router.pathname === "/about"

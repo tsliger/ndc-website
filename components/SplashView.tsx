@@ -27,8 +27,8 @@ export default function SplashView({
     // Creates text effect on load
     gsap.fromTo(
       textRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, duration: 2, y: 0, delay: 0.5, ease: "sine" }
+      { opacity: 0, y: -25, scale: 0.95, },
+      { opacity: 1, duration: 2, y: 0, delay: 0.5, scale: 1, ease: "sine" }
     );
 
     gsap.fromTo (
@@ -90,7 +90,7 @@ export default function SplashView({
           >
             {splashText}
           </p>
-
+          
           <div ref={arrowRef} onClick={() => window.scrollBy(0, 100)} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6" >
             <Image
               src="/arrow-down.png"

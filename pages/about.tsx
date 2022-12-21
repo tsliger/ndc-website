@@ -166,15 +166,13 @@ const FinalSlide = () => {
         win in tomorrow’s battlespace today.
       </p>
       <div className="flex justify-center items-center h-40 overflow-hidden">
-        <div className="w-[200px] md:w-[400px] relative">
+        <div className="w-[200px] md:w-[400px] relative h-20">
           <Image
             src="/anchor-systems-logo-white.png"
             alt=""
             title=""
-            width="100%"
-            height="100%"
-            layout="responsive"
-            objectFit="contain"
+            fill
+            className="object-contain"
           />
         </div>
       </div>

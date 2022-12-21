@@ -134,14 +134,12 @@ const DevelopmentContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square ">
+              <div className="w-36 md:w-50 relative aspect-square">
                 <Image
-                  src={"/panel-imgs/capabilities/developone.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/developone.png"}
+                    alt=""
+                    fill
+                    className="object-contain"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
@@ -153,14 +151,12 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square ">
+              <div className="w-36 md:w-50 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/developtwo.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/developtwo.png"}
+                    alt=""
+                    fill
+                    className="object-contain"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
@@ -172,14 +168,12 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square ">
+              <div className="w-36 md:w-50 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/developthree.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/developthree.png"}
+                    alt=""
+                    fill
+                    className="object-contain"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">
@@ -214,15 +208,13 @@ const DeliveryContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square ">
-                <Image
-                  src={"/panel-imgs/capabilities/deliveryone.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
-                />
+              <div className="w-48 md:w-56 aspect-square relative">
+                  <Image
+                      src={"/panel-imgs/capabilities/deliveryone.png"}
+                      alt=""
+                      fill
+                      className="object-contain"
+                  />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
               <p className="w-[250px] text-md md:text-lg text-center">
@@ -233,14 +225,12 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square">
+              <div className="w-48 md:w-56 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/deliverytwo.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/deliverytwo.png"}
+                    alt=""
+                    fill
+                    className="object-contain"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
@@ -251,14 +241,12 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square">
+              <div className="w-48 md:w-56 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/deliverythree.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/deliverythree.png"}
+                    alt=""
+                    fill
+                    className="object-contain"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
@@ -269,14 +257,12 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square">
+              <div className="w-48 md:w-56 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/deliveryfour.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/deliveryfour.png"}
+                    alt=""
+                    fill
+                    className="object-contain"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>

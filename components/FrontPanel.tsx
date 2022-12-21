@@ -18,16 +18,16 @@ const FrontPanel = ({
           <Image
             src={backgroundImage}
             quality={35}
-            layout={"fill"}
-            objectFit={"cover"}
+            fill
+            className="object-cover"
             alt=""
           />
         </div>
         <div className="w-full h-full absolute">
           <Image
             src={"/panel-imgs/home/vignette.png"}
-            layout={"fill"}
-            objectFit={"cover"}
+            fill
+            className="object-cover"
             alt=""
           />
         </div>
@@ -48,9 +48,9 @@ const FrontPanel = ({
                   <div className="w-40 md:w-64  aspect-square relative top-12 md:top-0">
                     <Image
                       src={symbolImage}
-                      layout="fill"
                       quality={25}
-                      objectFit="contain"
+                      fill
+                      className="object-contain"
                       alt=""
                       style={{ filter: "drop-shadow(0px 0px 30px #ffffff42)" }}
                     />
@@ -63,8 +63,8 @@ const FrontPanel = ({
                   <div className="z-50 w-full relative h-8 panel-light">
                     <Image
                       src="/light-bar-white.png"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      className="object-contain"
                       alt=""
                     />
                   </div>

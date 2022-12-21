@@ -5,9 +5,6 @@ const PanelHelper = ({imageSrc=undefined, component, vignette=false}) => {
 return (
     <div className="min-h-screen panel">
         {imageSrc && (
-        // <div className="w-full h-full absolute">
-        //     <Image quality={50} src={imageSrc} layout={"fill"} objectFit={"cover"} alt="" />
-        // </div>
         <div className="w-full h-full absolute">
             <Image
                 src={imageSrc}

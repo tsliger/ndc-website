@@ -17,7 +17,6 @@ const NaturalImage = (props: ImageProps) => {
       alt=""
       width={370}
       height={370 / ratio}
-      layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
       onLoadingComplete={({ naturalWidth, naturalHeight }) =>
         setRatio(naturalWidth / naturalHeight)
       }
@@ -35,8 +34,8 @@ const Content = () => {
         <div className="h-full relative w-full md:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/kincheloe.png"}
-            objectFit={"cover"}
-            layout="fill"
+            fill
+            className="object-cover"
             alt=""
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
@@ -97,8 +96,8 @@ const ClimateContent = () => {
         <div className="h-full relative w-full md:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/climateupscale.png"}
-            objectFit={"cover"}
-            layout="fill"
+            fill
+            className="object-cover"
             alt={"climate"}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8  panel-content">

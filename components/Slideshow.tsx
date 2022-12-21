@@ -200,10 +200,9 @@ export default function Slideshow({
                       <div onClick={scrollDown} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
                         <Image
                           src="/arrow-down.png"
-                          layout="fill"
-                          objectFit="contain"
+                          fill 
                           draggable={false}
-                          className="select-none hover:test-filter"
+                          className="select-none hover:test-filter object-contain"
                           alt={""}
                         />
                       </div>

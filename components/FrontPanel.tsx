@@ -36,12 +36,12 @@ const FrontPanel = ({
             <p
               ref={sideref}
               style={{ marginTop: sideWidth }}
-              className={`fixed left-0 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-2xl lg:text-4xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
+              className={`fixed left-0 z-50 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-2xl lg:text-4xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
             >
               {sideText}
             </p>
           </div>
-          <div className="absolute w-full h-full ">
+          <div className="absolute w-full h-full backdrop-blur-[2px]">
             <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center">
               <div className="flex flex-col panel-content md:mb-32 items-center">
                 <div className="p-16 md:p-56 -translate-y-8 md:translate-y-24 ">
@@ -56,8 +56,8 @@ const FrontPanel = ({
                     />
                   </div>
                 </div>
-                <div className="relative flex flex-col -translate-y-16 md:-translate-y-24">
-                  <div className="text-sm md:text-xl p-4 md:p-0 text-center md:mb-8 drop-shadow-sm">
+                <div className="relative flex flex-col -translate-y-16 md:-translate-y-24 p-8 to-transparent">
+                  <div className="text-sm md:text-lg p-4 md:p-0 text-center md:mb-8 drop-shadow-sm">
                     <p>{blurbText}</p>
                   </div>
                   <div className="z-50 w-full relative h-8 panel-light">

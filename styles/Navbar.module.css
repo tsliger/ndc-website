@@ -13,7 +13,23 @@
 }
 
 .navList  li {
-  @apply px-8 h-full drop-shadow-md text-sm hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-75
+  @apply px-8 h-full drop-shadow-sm tracking-widest font-semibold uppercase text-base hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-75;
+}
+
+.navList > li {
+  text-decoration: none;
+  transition: text-decoration-color 600ms, text-underline-offset 300ms;
+  transition-timing-function: ease-in-out;
+  text-underline-offset: 0px;
+  text-decoration-color: rgba(0, 0, 0, 0);
+}
+
+.navList > li:hover {
+  text-decoration: underline;
+  text-decoration-thickness: .15em;
+  text-underline-offset: 7px;
+  text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: all;
 }
 
 .drawer {

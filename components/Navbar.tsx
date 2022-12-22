@@ -138,9 +138,11 @@ export default function Navbar() {
         </div>
         <div className="flex-grow" />
         <div className="items-center hidden lg:flex">
-          <ul className={styles.navList}>
-            <Navlinks closeDrawer={handleClose} />
-          </ul>
+          <span className="h-full w-full text-xl">
+            <ul className={styles.navList}>
+              <Navlinks closeDrawer={handleClose} />
+            </ul>
+          </span>
         </div>
         <div className="items-center justify-center flex lg:hidden  aspect-square">
           <div

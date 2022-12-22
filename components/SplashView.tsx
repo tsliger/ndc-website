@@ -59,7 +59,7 @@ export default function SplashView({
           </video>
         )}
         {imageSrc && (
-          <div className="w-full h-full absolute z-[-1]">
+          <div className="w-full h-full absolute z-[-1] saturate-50">
             <Image src={imageSrc} quality={65} fill className="object-cover"  alt={""} />
           </div>
         )}
@@ -86,19 +86,21 @@ export default function SplashView({
           </div>
           <p
             ref={textRef}
-            className="text-sm md:text-xl md:w-[800px]  text-center flex-grow flex mt-6 md:mt-16 px-4 "
+            className="text-md md:text-lg w-full md:w-[700px] lg:w-[850px]  text-center flex-grow flex mt-6 md:mt-16 px-4 "
           >
             {splashText}
           </p>
           
-          <div ref={arrowRef} onClick={() => window.scrollBy(0, 100)} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6" >
-            <Image
-              src="/arrow-down.png"
-              fill 
-              draggable={false}
-              className="select-none hover:test-filter object-contain"
-              alt={""}
-            />
+          <div ref={arrowRef} onClick={() => window.scrollBy(0, 100)} className="transition-all duration-300 animate-bounce hover:animate-none grid place-items-center relative cursor-pointer w-full mb-6" >
+            <div className="aspect-square hover:bg-white/5 active:scale-75 transition-all duration-75 relative h-12 rounded-full">
+              <Image
+                src="/arrow-down.png"
+                fill 
+                draggable={false}
+                className="select-none hover:test-filter object-contain p-3"
+                alt={""}
+              />
+            </div>
           </div>
         </div>
       </div>

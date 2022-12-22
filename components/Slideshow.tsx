@@ -197,14 +197,16 @@ export default function Slideshow({
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end ">
                     <div className="flex flex-col justify-end">
-                      <div onClick={scrollDown} className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
+                      <div onClick={scrollDown} className="grid place-items-center transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
+                      <div className="aspect-square hover:bg-white/5 backdrop-blur-md active:scale-75 transition-all duration-75 relative h-12 rounded-full">
                         <Image
                           src="/arrow-down.png"
                           fill 
                           draggable={false}
-                          className="select-none hover:test-filter object-contain"
+                          className="select-none hover:test-filter object-contain p-3"
                           alt={""}
                         />
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -218,3 +220,4 @@ export default function Slideshow({
     </>
   );
 }
+

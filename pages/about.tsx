@@ -93,7 +93,7 @@ const ClimateContent = () => {
             alt={"climate northern michigan"}
           />
         </div>
-        <div className="h-full relative w-full md:w-7/12 self-start">
+        <div className="h-full relative w-full md:w-7/12 saturate-[0.65] self-start">
           <Image
             src={"/panel-imgs/about/climateupscale.png"}
             fill

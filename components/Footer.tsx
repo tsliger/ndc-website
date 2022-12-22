@@ -8,6 +8,10 @@ const ContactForm = dynamic(() => import('./ContactForm'))
 // Defines the footer layout
 export default function Footer() {
   return (
+    <>
+    <div className="absolute h-16 -translate-y-16 bg-gradient-to-b from-transparent to-[#0b0a0a] w-full">
+      
+    </div>
     <footer className="min-h-[585px]">
       <div className="flex p-8 flex-col lg:flex-row  lg:items-start overflow-hidden">
         <div className="flex-grow flex flex-col">
@@ -52,5 +56,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

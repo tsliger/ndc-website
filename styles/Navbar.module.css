@@ -13,10 +13,18 @@
 }
 
 .navList  li {
-  @apply px-8 h-full drop-shadow-sm tracking-widest font-semibold uppercase text-base hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-500 transition-all duration-75;
+  @apply mx-8 p-1  drop-shadow-sm tracking-widest font-semibold uppercase text-base hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-600 transition-all duration-75;
+  /* @apply border-b-2 border-t-2 border-t-transparent border-b-transparent; */
+  /* @apply hover:border-b-blue-500; */
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(45deg, rgb(0, 119, 255) , rgb(22, 43, 163));
 }
 
-.navList > li {
+.navList > li:hover {
+  border-image-slice: 1;
+}
+
+/* .navList > li {
   text-decoration: none;
   transition: text-decoration-color 600ms, text-underline-offset 300ms;
   transition-timing-function: ease-in-out;
@@ -28,10 +36,10 @@
   text-decoration: underline;
   text-decoration-thickness: .15em;
   text-underline-offset: 7px;
-  text-decoration-skip-ink: auto;
   text-decoration-skip-ink: all;
-}
+} */
 
 .drawer {
   @apply fixed w-full h-full z-20 flex flex-col lg:hidden
 }
+

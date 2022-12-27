@@ -14,7 +14,7 @@ const FrontPanel = ({
     }, [sideref]);
     return (
       <div className="panel">
-        <div className="w-full h-full absolute">
+        <div className="w-full h-full absolute opacity-50">
           <Image
             src={backgroundImage}
             quality={35}
@@ -36,12 +36,12 @@ const FrontPanel = ({
             <p
               ref={sideref}
               style={{ marginTop: sideWidth }}
-              className={`fixed left-0 z-50 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-2xl lg:text-4xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
+              className={`fixed left-0 z-50 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-lg lg:text-3xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
             >
               {sideText}
             </p>
           </div>
-          <div className="absolute w-full h-full backdrop-blur-[2px]">
+          <div className="absolute w-full h-full ">
             <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center">
               <div className="flex flex-col panel-content md:mb-32 items-center">
                 <div className="p-16 md:p-56 -translate-y-8 md:translate-y-24 ">

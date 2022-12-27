@@ -40,9 +40,10 @@ export const Navlinks = (props) => {
           <a
             className={`h-full flex items-center ${
               router.pathname === "/"
-                ? "text-blue-500 drop-shadow-none"
+                ? "text-blue-600 drop-shadow-none"
                 : "text-inherit"
             }`}
+
           >
             Home
           </a>
@@ -51,9 +52,9 @@ export const Navlinks = (props) => {
       <li>
         <Link href="/capabilites" legacyBehavior>
           <a
-            className={`h-full flex items-center ${
+            className={`h-full flex  items-center ${
               router.pathname === "/capabilites"
-                ? "text-blue-500  drop-shadow-none"
+                ? "text-blue-600  drop-shadow-none"
                 : "text-inherit"
             }`}
           >
@@ -66,7 +67,7 @@ export const Navlinks = (props) => {
           <a
             className={`h-full flex items-center ${
               router.pathname === "/about"
-                ? "text-blue-500 drop-shadow-none"
+                ? "text-blue-600 drop-shadow-none"
                 : "text-inherit"
             }`}
           >

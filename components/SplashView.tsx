@@ -52,7 +52,7 @@ export default function SplashView({
 
   return (
     <div className="min-h-[840px] h-screen flex flex-col">
-      <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col overlay-div">
+      <div className="h-1/2 md:h-4/6 overflow-hidden z-0 flex flex-col overlay-div opacity-60">
         {videoSrc && !imageSrc && (
           <video muted autoPlay playsInline loop className={styles.video} >
             <source src={videoSrc} type="video/mp4" />

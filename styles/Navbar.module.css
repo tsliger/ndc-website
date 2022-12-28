@@ -4,7 +4,7 @@
 }
 
 .navListDrawer {
-  @apply font-['Ethnocentric'] backdrop-blur-md bg-ndcDark/75 h-full flex flex-col items-center space-y-12 pt-40
+  @apply font-semibold tracking-widest text-xl uppercase backdrop-blur-md bg-ndcDark/75 h-full flex flex-col items-center space-y-12 pt-40
 }
 
 
@@ -13,31 +13,17 @@
 }
 
 .navList  li {
-  @apply mx-8 p-1  drop-shadow-sm tracking-widest font-semibold uppercase text-base hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-600 transition-all duration-75;
-  /* @apply border-b-2 border-t-2 border-t-transparent border-b-transparent; */
-  /* @apply hover:border-b-blue-500; */
-  border-bottom: 4px solid transparent;
+  --slice-amount: 0;
+  @apply mx-8 p-1 drop-shadow-sm tracking-widest font-semibold uppercase text-base hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-600 transition-all duration-75;
+  border-bottom: 3px solid transparent;
   border-image: linear-gradient(45deg, rgb(0, 119, 255) , rgb(22, 43, 163));
+  border-image-slice: var(--slice-amount);
 }
+
 
 .navList > li:hover {
-  border-image-slice: 1;
+  --slice-amount: 1;
 }
-
-/* .navList > li {
-  text-decoration: none;
-  transition: text-decoration-color 600ms, text-underline-offset 300ms;
-  transition-timing-function: ease-in-out;
-  text-underline-offset: 0px;
-  text-decoration-color: rgba(0, 0, 0, 0);
-}
-
-.navList > li:hover {
-  text-decoration: underline;
-  text-decoration-thickness: .15em;
-  text-underline-offset: 7px;
-  text-decoration-skip-ink: all;
-} */
 
 .drawer {
   @apply fixed w-full h-full z-20 flex flex-col lg:hidden

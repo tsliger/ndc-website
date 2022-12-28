@@ -12,6 +12,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Navlinks = (props) => {
   const router = useRouter();
+  const homeRef = useRef(null)
+  const capaRef = useRef(null)
+  const aboutRef = useRef(null)
+
 
   const goToContact = () => {
     gsap.killTweensOf(window);
@@ -33,6 +37,8 @@ export const Navlinks = (props) => {
     });
   };
 
+  
+
   return (
     <>
       <li>
@@ -40,7 +46,7 @@ export const Navlinks = (props) => {
           <a
             className={`h-full flex items-center ${
               router.pathname === "/"
-                ? "text-blue-600 drop-shadow-none"
+                ? "text-blue-600 active-link drop-shadow-none"
                 : "text-inherit"
             }`}
 
@@ -54,7 +60,7 @@ export const Navlinks = (props) => {
           <a
             className={`h-full flex  items-center ${
               router.pathname === "/capabilites"
-                ? "text-blue-600  drop-shadow-none"
+                ? "text-blue-600 active-link drop-shadow-none"
                 : "text-inherit"
             }`}
           >
@@ -67,7 +73,7 @@ export const Navlinks = (props) => {
           <a
             className={`h-full flex items-center ${
               router.pathname === "/about"
-                ? "text-blue-600 drop-shadow-none"
+                ? "text-blue-600  drop-shadow-none"
                 : "text-inherit"
             }`}
           >

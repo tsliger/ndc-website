@@ -5,6 +5,10 @@ import { Navlinks } from "./Navbar";
 import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 const ContactForm = dynamic(() => import('./ContactForm'))
 
+const redirect = () => {
+  window.location.href = 'https://www.anchorsystems.tech/';
+}
+
 // Defines the footer layout
 export default function Footer() {
   return (
@@ -51,7 +55,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Anchor Systems</p>
         </div>
         <div className="flex-grow"/>
-        <div className="">
+        <div onClick={redirect} className="hover:scale-105 transition-all duration-150 ease-in-out cursor-pointer active:scale-95">
           <Image src={'/anchor-white.png'} width={136} height={136} draggable={false} alt=""/>
         </div>
       </div>

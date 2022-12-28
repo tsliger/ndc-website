@@ -32,7 +32,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdteone.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -42,7 +43,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtetwo.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -52,7 +54,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -62,7 +65,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -94,7 +98,8 @@ const RapidContent = () => {
                 <Image
                   src="/panel-imgs/capabilities/rapidone.png"
                   alt={"Develop"}
-                  layout={"fill"}
+                  fill
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -105,7 +110,8 @@ const RapidContent = () => {
               <Image
                 src="/panel-imgs/capabilities/rapidtwo.png"
                 alt={"Develop"}
-                layout={"fill"}
+                fill
+                className="object-contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mt-2">Delivery</p>

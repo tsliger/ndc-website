@@ -97,7 +97,7 @@ const ClimateContent = () => {
           <Image
             src={"/panel-imgs/about/climateupscale.png"}
             fill
-            className="object-cover"
+            className="object-cover opacity-50"
             alt={"climate"}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8  panel-content">

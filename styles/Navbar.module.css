@@ -29,13 +29,15 @@
   border-image: linear-gradient(45deg, rgb(0, 119, 255) , rgb(22, 43, 163));
   border-image-slice: 1;
   transform: scaleX(0);
-  transition: transform 125ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transform-origin:   100% 0%;
 }
 
 
 
 .navList li:hover:after {
-  transform: scaleX(1);
+  transform: scaleX(1); 
+  transform-origin: 0% 50%;
 }
 
 

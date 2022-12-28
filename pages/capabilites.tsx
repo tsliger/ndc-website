@@ -195,12 +195,12 @@ const DevelopmentContent = () => {
           </Switcher>
         </div>
       </div>
-      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
+      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-20">
         <p className="mx-auto text-md md:text-3xl tracking-widest font-thin  translate-y-6 md:translate-y-4">
           DEVELOPMENT
         </p>
         <div className="z-50 h-16 w-full relative">
-          <Image src="/light-bar.png" layout="fill"  alt=""/>
+          <Image src="/light-bar.png" fill className="object-contain"  alt=""/>
         </div>
       </div>
     </>
@@ -281,12 +281,12 @@ const DeliveryContent = () => {
           </Switcher>
         </div>
       </div>
-      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
+      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-20">
         <p className="uppercase mx-auto text-md md:text-3xl tracking-widest font-thin translate-y-6 md:translate-y-4">
           Delivery
         </p>
         <div className="z-50 h-16 w-full relative">
-          <Image src="/light-bar.png" layout="fill" alt="" />
+          <Image src="/light-bar.png" fill className="object-contain" alt="" />
         </div>
       </div>
     </>

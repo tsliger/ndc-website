@@ -31,13 +31,13 @@ export default function Footer() {
           </div>
           <div className="mt-8 flex flex-col lg:flex-row">
             <div>
-              <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Explore</h1>
+              <h1 className="font-['Ethnocentric'] text-lg md:text-xl">Explore</h1>
               <ul className="footerNavList">
                 <Navlinks />
               </ul>
             </div>
             <div className="relative lg:left-32 space-y-8 mt-8 lg:mt-0">
-              <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Connect</h1>
+              <h1 className="font-['Ethnocentric'] text-lg md:text-xl">Connect</h1>
               <BsFacebook className="social-icon" style={{ marginTop: 25 }} size={32} />
               <BsTwitter className="social-icon" style={{ marginTop: 25 }} size={32} />
               <BsLinkedin className="social-icon" style={{ marginTop: 25 }} size={32} />

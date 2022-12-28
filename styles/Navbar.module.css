@@ -15,10 +15,29 @@
 .navList  li {
   --slice-amount: 0;
   @apply mx-8 p-1 drop-shadow-sm tracking-widest font-semibold uppercase text-base hover:drop-shadow-none active:drop-shadow-none flex items-center hover:cursor-pointer select-none hover:text-blue-600 transition-all duration-75;
+}
+
+.navList li:after {
+  content: '';
+  z-index: 50;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width:100%;
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(45deg, rgb(0, 119, 255) , rgb(22, 43, 163));
-  border-image-slice: var(--slice-amount);
+  border-image-slice: 1;
+  transform: scaleX(0);
+  transition: transform 125ms ease-in-out;
 }
+
+
+
+.navList li:hover:after {
+  transform: scaleX(1);
+}
+
 
 
 .navList > li:hover {

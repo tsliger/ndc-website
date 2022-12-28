@@ -44,7 +44,7 @@ export const Navlinks = (props) => {
       <li>
         <Link href="/" legacyBehavior>
           <a
-            className={`h-full flex items-center ${
+            className={`h-full z-[99] flex items-center ${
               router.pathname === "/"
                 ? "text-blue-600 active-link drop-shadow-none"
                 : "text-inherit"
@@ -58,7 +58,7 @@ export const Navlinks = (props) => {
       <li>
         <Link href="/capabilites" legacyBehavior>
           <a
-            className={`h-full flex  items-center ${
+            className={`h-full z-[99] flex  items-center ${
               router.pathname === "/capabilites"
                 ? "text-blue-600 active-link drop-shadow-none"
                 : "text-inherit"
@@ -71,7 +71,7 @@ export const Navlinks = (props) => {
       <li>
         <Link href="/about" legacyBehavior>
           <a
-            className={`h-full flex items-center ${
+            className={`h-full z-[99] flex items-center ${
               router.pathname === "/about"
                 ? "text-blue-600  drop-shadow-none"
                 : "text-inherit"
@@ -81,7 +81,7 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li onClick={goToContact}>Contact</li>
+      <li className="z-[99]" onClick={goToContact}>Contact</li>
     </>
   );
 };

@@ -198,12 +198,12 @@ export default function Slideshow({
                   <div className="mx-auto h-full flex flex-col justify-end ">
                     <div className="flex flex-col justify-end">
                       <div onClick={scrollDown} className="grid place-items-center transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
-                      <div className="border-b-[2px] hover:border-b-blue-800 aspect-square hover:bg-white/5 backdrop-blur-md active:scale-75 transition-all duration-75 relative h-12 rounded-full">
+                      <div className="border-b-[2px] hover:border-b-blue-800 aspect-square hover:bg-white/5 backdrop-blur-md active:scale-75 transition-all duration-75 ease-in-out relative h-10 rounded-full">
                         <Image
                           src="/arrow-down.png"
                           fill 
                           draggable={false}
-                          className="select-none hover:test-filter object-contain p-[14px]"
+                          className="select-none hover:test-filter object-contain p-[10px]"
                           alt={""}
                         />
                       </div>

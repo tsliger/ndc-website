@@ -92,12 +92,12 @@ export default function SplashView({
           </p>
           
           <div ref={arrowRef} onClick={() => window.scrollBy(0, 100)} className="transition-all duration-300 animate-bounce hover:animate-none grid place-items-center relative cursor-pointer w-full mb-6" >
-            <div className="border-b-[2px] hover:border-b-blue-800 aspect-square hover:bg-white/5 active:scale-75 transition-all duration-75 relative h-12 rounded-full">
+            <div className="border-b-[2px] hover:border-b-blue-800 aspect-square ease-in-out hover:bg-white/5 active:scale-75 transition-all duration-75 relative h-10 rounded-full">
               <Image
                 src="/arrow-down.png"
                 fill 
                 draggable={false}
-                className="select-none hover:test-filter object-contain p-[14px]"
+                className="select-none hover:test-filter object-contain p-[10px]"
                 alt={""}
               />
             </div>

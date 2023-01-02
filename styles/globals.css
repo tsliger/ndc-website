@@ -34,7 +34,7 @@ a {
   }
   
   .footerNavList > li {
-    @apply space-y-6 md:text-lg mt-4 cursor-pointer select-none hover:text-blue-600 transition-all duration-150
+    @apply space-y-6 md:text-lg mt-4 font-semibold cursor-pointer select-none hover:text-blue-600 transition-all duration-150
   }
   
   .std-button {

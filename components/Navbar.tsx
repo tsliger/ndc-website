@@ -37,11 +37,10 @@ export const Navlinks = (props) => {
     });
   };
 
-  
 
   return (
     <>
-      <li>
+      <li className="active-bar">
         <Link href="/" legacyBehavior>
           <a
             className={`h-full z-[99] flex items-center ${

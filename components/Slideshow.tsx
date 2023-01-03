@@ -30,8 +30,6 @@ export default function Slideshow({
   const [currentSlide, setSlide] = useState(0);
   const [panelCount, setPanelCount] = useState(0);
   const [headerState, setHeader] = useState('')
-  const router = useRouter()
-  var scrollTween = null;
 
   const transitions = useTransition(isOverlayOpen, {
     from: { opacity: 0 },
@@ -43,6 +41,7 @@ export default function Slideshow({
 
   useEffect(() => {
     var panels: any = gsap.utils.toArray(".panel");
+    var scrollTween = null;
 
     function goToSection(i: number) {
       const didScrollToBottom =
@@ -138,7 +137,7 @@ export default function Slideshow({
     }, comp); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
-  }, []);
+  }, [overviewHeader]);
 
   useEffect(() => {
     if (titles === null) return

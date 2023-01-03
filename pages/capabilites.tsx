@@ -75,7 +75,8 @@ const RDTEContent = () => {
         </Switcher>
       </div>
       <div className="z-50 h-16 w-full relative ">
-        <Image src="/light-bar-white.png" layout="fill" alt="" />
+        <Image src="/light-bar-white.png" fill
+                      className="object-contain"  alt="" />
       </div>
       <p className="w-full md:w-[700px] text-md md:text-xl text-center px-12 md:px-4">
         RDT&E is one of the five major appropriations used by the Department of
@@ -119,7 +120,8 @@ const RapidContent = () => {
         </Switcher>
       </div>
       <div className="z-50 h-16 w-full relative ">
-        <Image src="/light-bar-white.png" layout="fill" alt=""/>
+        <Image src="/light-bar-white.png" fill
+                      className="object-contain" alt=""/>
       </div>
       <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center">
         The Eastern Upper Peninsula National Defense Complex has the ability to

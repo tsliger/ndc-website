@@ -36,7 +36,7 @@ const FrontPanel = ({
             <p
               ref={sideref}
               style={{ marginTop: sideWidth }}
-              className={`fixed left-0 z-50 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-lg lg:text-3xl font-thin tracking-[1.25rem] panel-category opacity-0 uppercase drop-shadow-md`}
+              className={`fixed left-0 z-50 origin-top-left ml-2 md:ml-8 -translate-x-8 -rotate-90 flex md:text-lg lg:text-3xl font-thin tracking-[0.5rem] panel-category opacity-0 uppercase drop-shadow-md`}
             >
               {sideText}
             </p>
@@ -48,19 +48,18 @@ const FrontPanel = ({
                   <div className="w-40 md:w-64  aspect-square relative top-12 md:top-0">
                     <Image
                       src={symbolImage}
-                      quality={25}
+                      quality={50}
                       fill
-                      className="object-contain"
+                      className="object-contain symbol-shadow"
                       alt=""
-                      style={{ filter: "drop-shadow(0px 0px 30px #ffffff42)" }}
                     />
                   </div>
                 </div>
                 <div className="relative flex flex-col -translate-y-16 md:-translate-y-24 p-8 to-transparent">
-                  <div className="text-sm md:text-lg p-4 md:p-0 text-center md:mb-8 drop-shadow-sm">
+                  <div className="text-sm md:text-lg p-4 md:p-0 text-center lg:mb-4 drop-shadow-sm">
                     <p>{blurbText}</p>
                   </div>
-                  <div className="z-50 w-full relative h-8 panel-light">
+                  <div className="z-50 w-full relative h-12 panel-light">
                     <Image
                       src="/light-bar-white.png"
                       fill

@@ -24,10 +24,13 @@ a {
     @apply min-h-screen bg-ndcDark text-ndcWhite
   }
 
+  .symbol-shadow {
+    filter: invert(70%)
+  }
+
   .test-filter {
     filter: invert(68%) sepia(79%) saturate(6268%) hue-rotate(204deg) brightness(102%) contrast(93%);
   }
-
 
   .navbar-container {
     @apply min-h-[85px] flex px-8 text-ndcWhite z-50 fixed w-full bg-gradient-to-b from-ndcDark/75 via-ndcDark/50 to-transparent
@@ -40,6 +43,12 @@ a {
   .std-button {
     @apply w-20 md:w-28 rounded-sm bg-blue-700 text-base py-1 md:py-2 font-semibold active:scale-95 transition-all duration-100;
     @apply hover:bg-blue-700/40
+  }
+
+  .active-page {
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(45deg, rgb(65, 153, 255) , rgb(36, 50, 131));
+    border-image-slice: 1;
   }
   
   .panel-content {
@@ -56,15 +65,19 @@ a {
   }
   
   .overlay-header {
-    @apply font-['Ethnocentric'] text-sm sm:text-2xl self-center relative top-20 md:top-24 z-20
+    @apply font-['Ethnocentric'] text-sm sm:text-xl self-center relative top-24 md:top-28 z-20
   }
   
   .panel-page-slider {
-    @apply  w-full flex flex-col justify-center items-center space-y-2
+    @apply  w-full flex flex-col justify-center items-center space-y-3
+  }
+
+  .arrow-button {
+    @apply  animate-bounce hover:animate-none active:animate-none cursor-pointer active:border-b-0 border-b-[2.8px]  hover:border-b-blue-800 border-white/50 aspect-square ease-in-out hover:bg-white/5 active:scale-[0.8] transition-all duration-[25ms] relative h-10 rounded-full
   }
   
   .page-slider {
-    @apply  flex-grow w-[1px] md:w-[2px] shadow-md h-8 md:h-14  transition-all duration-500 backdrop-blur-md
+    @apply  flex-grow aspect-square shadow-md h-2 lg:h-3 rounded-full  transition-all duration-500 backdrop-blur-md
   }
   
   .overlay {

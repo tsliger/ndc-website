@@ -1,10 +1,12 @@
 import gsap from "gsap";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import Image from "next/image";
 import { useRouter } from 'next/router'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+const PageSlider = dynamic(() => import('./PanelSlider'))
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
@@ -170,40 +172,34 @@ export default function Slideshow({
           (styles, item) =>
             item && (
               <animated.div style={styles} className="overlay" ref={overlay}>
-                <p className="overlay-header drop-shadow-md text-center px-2">
+                <p className="overlay-header drop-shadow-md text-center px-8 lg:px-2 ">
                   {headerState}
                 </p>
                 <div
-                  className={`w-6 md:w-16 h-full  absolute ${
-                    sliderPosition === "right" ? "right-0" : "left-0"
+                  className={`w-8 lg:w-12 h-full  absolute ${
+                    sliderPosition === "right" ? "right-2" : "left-2"
                   }`}
                 >
                   <div className="h-full flex items-center">
                     <div className="panel-page-slider">
-                      {[...Array(panelCount)].map((e, i) => (
-                        <div
-                          key={i}
-                          className={`${
-                            currentSlide === i
-                              ? "bg-white/70 scale-x-[3]"
-                              : "bg-white/30 scale-x-100"
-                          } page-slider`}
-                        ></div>
-                      ))}
+                      <PageSlider currentSlide={currentSlide} panelCount={panelCount}/>
                     </div>
                   </div>
                 </div>
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end ">
                     <div className="flex flex-col justify-end">
-                      <div onClick={scrollDown} className="grid place-items-center transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
-                      <div className="border-b-[2px] hover:border-b-blue-800 aspect-square hover:bg-white/5 backdrop-blur-md active:scale-75 transition-all duration-75 ease-in-out relative h-10 rounded-full">
+                      <div className="grid place-items-center relative w-full mb-2 md:mb-6">
+                      <div onClick={scrollDown} className="arrow-button">
                         <Image
                           src="/arrow-down.png"
                           fill 
                           draggable={false}
                           className="select-none hover:test-filter object-contain p-[10px]"
                           alt={""}
+                          sizes="(max-width: 768px) 100vw,
+                          (max-width: 1200px) 50vw,
+                          33vw"
                         />
                       </div>
                       </div>

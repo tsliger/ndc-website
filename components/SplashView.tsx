@@ -82,23 +82,28 @@ export default function SplashView({
       <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">
         <div className="text-ndcWhite flex flex-col items-center h-full">
           <div ref={lightRef} className="h-[120px] z-50 w-full absolute translate-y-[-60px] md:translate-y-[-63px]">
-            <Image src="/light-bar.png" fill className="object-contain" alt={""} priority={true}/>
+            <Image src="/light-bar.png" fill className="object-contain" alt={""} priority={true} sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"/>
           </div>
           <p
             ref={textRef}
-            className="text-md md:text-lg w-full md:w-[700px] lg:w-[950px]  text-center flex-grow flex mt-6 md:mt-16 px-4 "
+            className="text-md md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center flex-grow flex mt-10 md:mt-16 px-12"
           >
             {splashText}
           </p>
           
-          <div ref={arrowRef} onClick={() => window.scrollBy(0, 100)} className="transition-all duration-300 animate-bounce hover:animate-none grid place-items-center relative cursor-pointer w-full mb-6" >
-            <div className="border-b-[2px] hover:border-b-blue-800 aspect-square ease-in-out hover:bg-white/5 active:scale-75 transition-all duration-75 relative h-10 rounded-full">
+          <div ref={arrowRef} className="grid place-items-center relative  w-full mb-2 md:mb-6" >
+            <div  onClick={() => window.scrollBy(0, 100)}  className="arrow-button">
               <Image
                 src="/arrow-down.png"
                 fill 
                 draggable={false}
                 className="select-none hover:test-filter object-contain p-[10px]"
                 alt={""}
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
               />
             </div>
           </div>

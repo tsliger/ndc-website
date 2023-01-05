@@ -36,11 +36,36 @@ export const Navlinks = (props) => {
       },
     });
   };
+  useEffect(() => {
+    // homeRef.current.style.setProperty('--visible-amount', "1")
+    switch(router.pathname)
+    {
+      case "/":
+        homeRef.current.style.setProperty('--visible-amount', "1")
+        capaRef.current.style.setProperty('--visible-amount', "0")
+        aboutRef.current.style.setProperty('--visible-amount', "0")
+        break;
+      
+      case '/capabilites': 
+        homeRef.current.style.setProperty('--visible-amount', "0")
+        capaRef.current.style.setProperty('--visible-amount', "1")
+        aboutRef.current.style.setProperty('--visible-amount', "0")
+        break;
+      
+      case '/about': 
+        homeRef.current.style.setProperty('--visible-amount', "0")
+        capaRef.current.style.setProperty('--visible-amount', "0")
+        aboutRef.current.style.setProperty('--visible-amount', "1")
+        break;
+
+    }
+    
+  }, [router.pathname])
 
 
   return (
     <>
-      <li className="active-bar">
+      <li ref={homeRef}>
         <Link href="/" legacyBehavior>
           <a
             className={`h-full z-[99] flex items-center ${
@@ -54,7 +79,7 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li>
+      <li ref={capaRef}>
         <Link href="/capabilites" legacyBehavior>
           <a
             className={`h-full z-[99] flex  items-center ${
@@ -67,7 +92,7 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li>
+      <li ref={aboutRef}>
         <Link href="/about" legacyBehavior>
           <a
             className={`h-full z-[99] flex items-center ${

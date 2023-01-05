@@ -13,10 +13,10 @@ const capabilitesSplash =
 const Content = ({ panelHeader, panelText }) => {
   return (
     <div className="flex flex-col items-center  panel-content overflow-hidden opacity-0">
-      <div className="font-['Ethnocentric'] text-3xl md:text-7xl mb-4">
+      <div className="font-['Ethnocentric'] text-3xl md:text-7xl mb-6">
         {panelHeader}
       </div>
-      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_44rem)] text-sm px-12 md:px-8 md:text-xl text-center ">
+      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_44rem)]  text-sm px-12 lg:px-8 md:text-xl text-center ">
         {panelText}
       </p>
     </div>
@@ -142,16 +142,16 @@ const DevelopmentContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 relative aspect-square">
+              <div className="w-24 md:w-50 relative aspect-square">
                 <Image
                     src={"/panel-imgs/capabilities/developone.png"}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain invert-[0.85]"
                 />
               </div>
-              <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="font-['Ethnocentric'] text-xl mb-4">Innovation</p>
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Innovation is a mindset at the National Defense Complex. Mixed
                 with technical expertise, deep operational experience and
                 imagination, complex war fighting solutions are solved and
@@ -159,16 +159,16 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square relative">
+              <div className="w-24 md:w-50 aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/developtwo.png"}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain invert-[0.85]"
                 />
               </div>
-              <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="font-['Ethnocentric'] text-xl mb-4">Engineering</p>
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Capabilities are engineered to withstand the harsh climate of an
                 austere environment. Engineers from all different backgrounds
                 work to mix creativity and technology to design and prototype
@@ -176,18 +176,18 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square relative">
+              <div className="w-24 md:w-50 aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/developthree.png"}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain invert-[0.85]"
                 />
               </div>
-              <p className="font-['Ethnocentric'] text-xl mb-2">
+              <p className="font-['Ethnocentric'] text-xl mb-4">
                 Manufacturing
               </p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Manufacturing is the overlap of innovation and engineering.
                 Integration of AI-enabled design and innovative fabrication
                 results in cutting-edge, top of the line capabilities being
@@ -221,11 +221,11 @@ const DeliveryContent = () => {
                       src={"/panel-imgs/capabilities/deliveryone.png"}
                       alt=""
                       fill
-                      className="object-contain"
+                      className="object-contain invert-[0.85]"
                   />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 The EUP-NDC sits directly on the former Kincheloe Air Force
                 Base. With direct access to the existing airport structure the
                 NDC has the capability to land a C-17, load it, and send it back
@@ -238,11 +238,11 @@ const DeliveryContent = () => {
                     src={"/panel-imgs/capabilities/deliverytwo.png"}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain invert-[0.85]"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 The EUP-NDC is strategically located just off I-75 in Kincheloe,
                 Michigan, and 22 miles from the US and Canada International
                 Bridge.
@@ -254,11 +254,11 @@ const DeliveryContent = () => {
                     src={"/panel-imgs/capabilities/deliverythree.png"}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain invert-[0.85]"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Just miles from the shore of Lake Superior, Lake Huron and Lake
                 Michigan the NDC provides the unique option of delivery
                 utilizing the natural geographic features of the area.
@@ -270,11 +270,11 @@ const DeliveryContent = () => {
                     src={"/panel-imgs/capabilities/deliveryfour.png"}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain invert-[0.85]"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Two miles from the NDC sits the Kincheloe Railway Station. With
                 direct access through partners of the NDC this allows for rapid
                 capbaility delivery where ever there is a rail way.

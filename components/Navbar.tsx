@@ -12,6 +12,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Navlinks = (props) => {
   const router = useRouter();
+  const homeRef = useRef(null)
+  const capaRef = useRef(null)
+  const aboutRef = useRef(null)
+
 
   const goToContact = () => {
     gsap.killTweensOf(window);
@@ -32,28 +36,55 @@ export const Navlinks = (props) => {
       },
     });
   };
+  useEffect(() => {
+    // homeRef.current.style.setProperty('--visible-amount', "1")
+    switch(router.pathname)
+    {
+      case "/":
+        homeRef.current.style.setProperty('--visible-amount', "1")
+        capaRef.current.style.setProperty('--visible-amount', "0")
+        aboutRef.current.style.setProperty('--visible-amount', "0")
+        break;
+      
+      case '/capabilites': 
+        homeRef.current.style.setProperty('--visible-amount', "0")
+        capaRef.current.style.setProperty('--visible-amount', "1")
+        aboutRef.current.style.setProperty('--visible-amount', "0")
+        break;
+      
+      case '/about': 
+        homeRef.current.style.setProperty('--visible-amount', "0")
+        capaRef.current.style.setProperty('--visible-amount', "0")
+        aboutRef.current.style.setProperty('--visible-amount', "1")
+        break;
+
+    }
+    
+  }, [router.pathname])
+
 
   return (
     <>
-      <li>
-        <Link href="/">
+      <li ref={homeRef}>
+        <Link href="/" legacyBehavior>
           <a
-            className={`h-full flex items-center ${
+            className={`h-full z-[99] flex items-center ${
               router.pathname === "/"
-                ? "text-blue-500 drop-shadow-none"
+                ? "text-blue-500 active-link drop-shadow-none"
                 : "text-inherit"
             }`}
+
           >
             Home
           </a>
         </Link>
       </li>
-      <li>
-        <Link href="/capabilites">
+      <li ref={capaRef}>
+        <Link href="/capabilites" legacyBehavior>
           <a
-            className={`h-full flex items-center ${
+            className={`h-full z-[99] flex  items-center ${
               router.pathname === "/capabilites"
-                ? "text-blue-500  drop-shadow-none"
+                ? "text-blue-500 active-link drop-shadow-none"
                 : "text-inherit"
             }`}
           >
@@ -61,12 +92,12 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li>
-        <Link href="/about">
+      <li ref={aboutRef}>
+        <Link href="/about" legacyBehavior>
           <a
-            className={`h-full flex items-center ${
+            className={`h-full z-[99] flex items-center ${
               router.pathname === "/about"
-                ? "text-blue-500 drop-shadow-none"
+                ? "text-blue-500  drop-shadow-none"
                 : "text-inherit"
             }`}
           >
@@ -74,7 +105,7 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li onClick={goToContact}>Contact</li>
+      <li className="z-[99]" onClick={goToContact}>Contact</li>
     </>
   );
 };
@@ -138,9 +169,11 @@ export default function Navbar() {
         </div>
         <div className="flex-grow" />
         <div className="items-center hidden lg:flex">
-          <ul className={styles.navList}>
-            <Navlinks closeDrawer={handleClose} />
-          </ul>
+          <span className="h-full w-full text-xl">
+            <ul className={styles.navList}>
+              <Navlinks closeDrawer={handleClose} />
+            </ul>
+          </span>
         </div>
         <div className="items-center justify-center flex lg:hidden  aspect-square">
           <div

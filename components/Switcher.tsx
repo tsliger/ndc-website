@@ -32,7 +32,7 @@ const Switcher = ({ children, duration = 2500 }) => {
   }, []);
 
   useEffect(() => {
-    if (windowSize < 900) {
+    if (windowSize <= 1024) {
       setEnabled(true);
     } else {
       setEnabled(false);

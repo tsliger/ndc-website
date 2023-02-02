@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { ImageProps } from "next/image";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 const Slideshow = dynamic(() => import('../components/Slideshow'))
 const SplashView = dynamic(() => import('../components/SplashView'))
 import PanelHelper from "../components/PanelHelper";
-import { ImageProps } from "next/image";
 
 const NaturalImage = (props: ImageProps) => {
   const [ratio, setRatio] = useState(16 / 9); // default to 16:9
@@ -17,7 +17,6 @@ const NaturalImage = (props: ImageProps) => {
       alt=""
       width={370}
       height={370 / ratio}
-      layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
       onLoadingComplete={({ naturalWidth, naturalHeight }) =>
         setRatio(naturalWidth / naturalHeight)
       }
@@ -32,18 +31,18 @@ const Content = () => {
   return (
     <>
       <div className="absolute h-full w-full flex">
-        <div className="h-full relative w-full md:w-7/12 self-start">
+        <div className="h-full relative w-full lg:w-7/12 self-start">
           <Image
             src={"/panel-imgs/about/kincheloe.png"}
-            objectFit={"cover"}
-            layout="fill"
+            fill
+            className="object-cover"
             alt=""
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8 panel-content">
             <p className="font-['Ethnocentric'] text-4xl md:text-6xl mb-6">
               LOCATION
             </p>
-            <p className="text-center text-md md:text-xl px-4 md:px-24 ">
+            <p className="text-center text-md md:text-lg px-4 md:px-24 ">
               The Eastern Upper Peninsula of Michigan is home to the Eastern
               Upper Peninsula National Defense Complex. The EUP-NDC sits on
               1700-acres of pre-existing strategic infrastructure and land
@@ -53,7 +52,7 @@ const Content = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-5/12 md:flex hidden flex-col items-center justify-center">
+        <div className="lg:w-5/12 lg:flex hidden flex-col items-center justify-center overflow-hidden">
           <NaturalImage
             src={"/panel-imgs/about/locationone.png"}
             alt=""
@@ -78,7 +77,7 @@ const ClimateContent = () => {
   return (
     <>
       <div className="absolute h-full w-full flex">
-        <div className="w-5/12 hidden md:flex flex-col items-center justify-center">
+        <div className="w-5/12 hidden lg:flex flex-col items-center justify-center overflow-hidden">
           <NaturalImage
             src={"/panel-imgs/about/climateone.png"}
             alt={"climate northern michigan"}
@@ -94,18 +93,18 @@ const ClimateContent = () => {
             alt={"climate northern michigan"}
           />
         </div>
-        <div className="h-full relative w-full md:w-7/12 self-start">
+        <div className="h-full relative w-full lg:w-7/12 saturate-[0.65] self-start">
           <Image
             src={"/panel-imgs/about/climateupscale.png"}
-            objectFit={"cover"}
-            layout="fill"
+            fill
+            className="object-cover opacity-50"
             alt={"climate"}
           />
           <div className="absolute h-full w-full flex flex-col justify-center items-center p-8  panel-content">
             <p className="font-['Ethnocentric'] text-3xl md:text-6xl mb-6">
               CLIMATE
             </p>
-            <p className="text-center text-sm md:text-xl px-4 md:px-24">
+            <p className="text-center text-sm md:text-lg px-4 lg:px-24">
               The climate of the Eastern Upper Peninsula acts as a
               differentiator amongst all other RDT&E defense enviornments across
               the nation. The temperature of the region scales from -37°F to
@@ -128,8 +127,8 @@ const ClimateContent = () => {
 const MissionContent = () => {
   return (
     <div className="flex flex-col items-center panel-content">
-      <div className="font-['Ethnocentric'] text-3xl md:text-8xl">Mission</div>
-      <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:mt-16 md:text-xl text-center md:text-justify">
+      <div className="font-['Ethnocentric'] text-3xl md:text-7xl">Mission</div>
+      <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:mt-16 md:text-lg text-center md:text-justify">
         &emsp;The Eastern Upper Peninsula - National Defense Complex (EUP-NDC)
         is a profound response to the Nation's call for innovation in support of
         the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research,
@@ -138,7 +137,7 @@ const MissionContent = () => {
         All-Domain (air, land, maritime, cyber, and space) Warfare fight versus
         sophisticated adversaries (i.e., China and Russia).
       </p>
-      <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:text-xl  text-center md:text-justify">
+      <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:text-lg  text-center md:text-justify">
         &emsp;Unlike other federally-funded RDT&E and RCD-D constructs, the
         EUP-NDC is unique in that it delivers comprehensive austere-capable
         All-Domain solutions (i.e., cradle to grave) from one centralized and
@@ -166,15 +165,16 @@ const FinalSlide = () => {
         win in tomorrow’s battlespace today.
       </p>
       <div className="flex justify-center items-center h-40 overflow-hidden">
-        <div className="w-[200px] md:w-[400px] relative">
+        <div className="w-[200px] md:w-[400px] relative h-20">
           <Image
             src="/anchor-systems-logo-white.png"
             alt=""
             title=""
-            width="100%"
-            height="100%"
-            layout="responsive"
-            objectFit="contain"
+            fill
+            className="object-contain w-auto"
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           />
         </div>
       </div>

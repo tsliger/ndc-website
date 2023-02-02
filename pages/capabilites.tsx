@@ -13,10 +13,10 @@ const capabilitesSplash =
 const Content = ({ panelHeader, panelText }) => {
   return (
     <div className="flex flex-col items-center  panel-content overflow-hidden opacity-0">
-      <div className="font-['Ethnocentric'] text-3xl md:text-8xl mb-4">
+      <div className="font-['Ethnocentric'] text-3xl md:text-7xl mb-6">
         {panelHeader}
       </div>
-      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_40rem)] text-sm px-12 md:px-8 md:text-xl text-center ">
+      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_44rem)]  text-sm px-12 lg:px-8 md:text-xl text-center ">
         {panelText}
       </p>
     </div>
@@ -32,7 +32,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdteone.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -42,7 +43,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtetwo.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -52,7 +54,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -62,7 +65,8 @@ const RDTEContent = () => {
             <div className="relative w-[120px] md:w-[200px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
-                layout={"fill"}
+                fill
+                className="object-contain"
                 alt={"rtde"}
               />
             </div>
@@ -71,7 +75,8 @@ const RDTEContent = () => {
         </Switcher>
       </div>
       <div className="z-50 h-16 w-full relative ">
-        <Image src="/light-bar-white.png" layout="fill" alt="" />
+        <Image src="/light-bar-white.png" fill
+                      className="object-contain"  alt="" />
       </div>
       <p className="w-full md:w-[700px] text-md md:text-xl text-center px-12 md:px-4">
         RDT&E is one of the five major appropriations used by the Department of
@@ -94,7 +99,8 @@ const RapidContent = () => {
                 <Image
                   src="/panel-imgs/capabilities/rapidone.png"
                   alt={"Develop"}
-                  layout={"fill"}
+                  fill
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -105,7 +111,8 @@ const RapidContent = () => {
               <Image
                 src="/panel-imgs/capabilities/rapidtwo.png"
                 alt={"Develop"}
-                layout={"fill"}
+                fill
+                className="object-contain"
               />
             </div>
             <p className="font-['Ethnocentric'] text-xl mt-2">Delivery</p>
@@ -113,7 +120,8 @@ const RapidContent = () => {
         </Switcher>
       </div>
       <div className="z-50 h-16 w-full relative ">
-        <Image src="/light-bar-white.png" layout="fill" alt=""/>
+        <Image src="/light-bar-white.png" fill
+                      className="object-contain" alt=""/>
       </div>
       <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center">
         The Eastern Upper Peninsula National Defense Complex has the ability to
@@ -134,18 +142,16 @@ const DevelopmentContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square ">
+              <div className="w-24 relative aspect-square">
                 <Image
-                  src={"/panel-imgs/capabilities/developone.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/developone.png"}
+                    alt=""
+                    fill
+                    className="object-contain invert-[0.85]"
                 />
               </div>
-              <p className="font-['Ethnocentric'] text-xl mb-2">Innovation</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="font-['Ethnocentric'] text-xl mb-4">Innovation</p>
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Innovation is a mindset at the National Defense Complex. Mixed
                 with technical expertise, deep operational experience and
                 imagination, complex war fighting solutions are solved and
@@ -153,18 +159,16 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square ">
+              <div className="w-24 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/developtwo.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/developtwo.png"}
+                    alt=""
+                    fill
+                    className="object-contain invert-[0.85]"
                 />
               </div>
-              <p className="font-['Ethnocentric'] text-xl mb-2">Engineering</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="font-['Ethnocentric'] text-xl mb-4">Engineering</p>
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Capabilities are engineered to withstand the harsh climate of an
                 austere environment. Engineers from all different backgrounds
                 work to mix creativity and technology to design and prototype
@@ -172,20 +176,18 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-36 md:w-50 aspect-square ">
+              <div className="w-24  aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/developthree.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/developthree.png"}
+                    alt=""
+                    fill
+                    className="object-contain invert-[0.85]"
                 />
               </div>
-              <p className="font-['Ethnocentric'] text-xl mb-2">
+              <p className="font-['Ethnocentric'] text-xl mb-4">
                 Manufacturing
               </p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Manufacturing is the overlap of innovation and engineering.
                 Integration of AI-enabled design and innovative fabrication
                 results in cutting-edge, top of the line capabilities being
@@ -195,12 +197,12 @@ const DevelopmentContent = () => {
           </Switcher>
         </div>
       </div>
-      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
+      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-20">
         <p className="mx-auto text-md md:text-3xl tracking-widest font-thin  translate-y-6 md:translate-y-4">
           DEVELOPMENT
         </p>
         <div className="z-50 h-16 w-full relative">
-          <Image src="/light-bar.png" layout="fill"  alt=""/>
+          <Image src="/light-bar.png" fill className="object-contain"  alt=""/>
         </div>
       </div>
     </>
@@ -214,18 +216,16 @@ const DeliveryContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square ">
-                <Image
-                  src={"/panel-imgs/capabilities/deliveryone.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
-                />
+              <div className="w-32 md:w-36 aspect-square relative">
+                  <Image
+                      src={"/panel-imgs/capabilities/deliveryone.png"}
+                      alt=""
+                      fill
+                      className="object-contain invert-[0.85]"
+                  />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 The EUP-NDC sits directly on the former Kincheloe Air Force
                 Base. With direct access to the existing airport structure the
                 NDC has the capability to land a C-17, load it, and send it back
@@ -233,54 +233,48 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square">
+              <div className="w-32 md:w-36 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/deliverytwo.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/deliverytwo.png"}
+                    alt=""
+                    fill
+                    className="object-contain invert-[0.85]"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 The EUP-NDC is strategically located just off I-75 in Kincheloe,
                 Michigan, and 22 miles from the US and Canada International
                 Bridge.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square">
+              <div className="w-32 md:w-36  aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/deliverythree.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/deliverythree.png"}
+                    alt=""
+                    fill
+                    className="object-contain invert-[0.85]"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Just miles from the shore of Lake Superior, Lake Huron and Lake
                 Michigan the NDC provides the unique option of delivery
                 utilizing the natural geographic features of the area.
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square">
+              <div className="w-32 md:w-36 aspect-square relative">
                 <Image
-                  src={"/panel-imgs/capabilities/deliveryfour.png"}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="contain"
-                  alt=""
+                    src={"/panel-imgs/capabilities/deliveryfour.png"}
+                    alt=""
+                    fill
+                    className="object-contain invert-[0.85]"
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-              <p className="w-[250px] text-md md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-lg text-center">
                 Two miles from the NDC sits the Kincheloe Railway Station. With
                 direct access through partners of the NDC this allows for rapid
                 capbaility delivery where ever there is a rail way.
@@ -289,12 +283,12 @@ const DeliveryContent = () => {
           </Switcher>
         </div>
       </div>
-      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-16">
+      <div className="w-full flex flex-col  absolute bottom-12 md:bottom-20">
         <p className="uppercase mx-auto text-md md:text-3xl tracking-widest font-thin translate-y-6 md:translate-y-4">
           Delivery
         </p>
         <div className="z-50 h-16 w-full relative">
-          <Image src="/light-bar.png" layout="fill" alt="" />
+          <Image src="/light-bar.png" fill className="object-contain" alt="" />
         </div>
       </div>
     </>
@@ -343,7 +337,7 @@ export default function capabilites() {
     <div className="flex flex-col">
       <Head>
         <title>EUP NDC - Capabilities</title>
-        <meta name="description" content="Generated by create next app" />
+        <meta name="description" content={capabilitesSplash} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SplashView

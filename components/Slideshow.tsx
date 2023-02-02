@@ -1,10 +1,12 @@
 import gsap from "gsap";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import Image from "next/image";
 import { useRouter } from 'next/router'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+const PageSlider = dynamic(() => import('./PanelSlider'))
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
@@ -30,7 +32,6 @@ export default function Slideshow({
   const [currentSlide, setSlide] = useState(0);
   const [panelCount, setPanelCount] = useState(0);
   const [headerState, setHeader] = useState('')
-  const router = useRouter()
 
   const transitions = useTransition(isOverlayOpen, {
     from: { opacity: 0 },
@@ -41,7 +42,8 @@ export default function Slideshow({
   });
 
   useEffect(() => {
-    var panels: any = gsap.utils.toArray(".panel"), scrollTween;
+    var panels: any = gsap.utils.toArray(".panel");
+    var scrollTween = null;
 
     function goToSection(i: number) {
       const didScrollToBottom =
@@ -50,8 +52,7 @@ export default function Slideshow({
       if (scrollTween != undefined || scrollTween != null) return
       
       if (!didScrollToBottom) {
-        scrollTween = true
-        const tween = gsap.to(window, {
+        scrollTween = gsap.to(window, {
           scrollTo: {
             y: i * innerHeight + panels[0].offsetTop,
             autoKill: false,
@@ -70,7 +71,10 @@ export default function Slideshow({
     setHeader(overviewHeader)
 
     let ctx = gsap.context(() => {
-      panels.forEach((panel: any, i: number) => {
+      for (let i = 0; i < panels.length; i++)
+      {
+        const panel = panels[i]
+      
         gsap.fromTo(
           panel,
           { x: 0, opacity: 0},
@@ -79,12 +83,11 @@ export default function Slideshow({
               trigger: panel,
               start: "top bottom-=50",
               end: "bottom top+=50",
-              onEnter: (self) => self.isActive && !scrollTween && goToSection(i),
-              onEnterBack: (self) => self.isActive && !scrollTween && goToSection(i),
+              onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
             }
           },
         )
-
+      
         gsap.to(
           (".panel-category"),
           { x: 0, opacity: 1, delay: 0.1, duration: 1,
@@ -106,8 +109,7 @@ export default function Slideshow({
           x: 0, opacity: 1, scale: 1, delay: 0, duration: 2.5, ease: 'sine'
         },
         )
-      });
-
+      }
 
       // Overlay trigger
       ScrollTrigger.create({
@@ -137,7 +139,7 @@ export default function Slideshow({
     }, comp); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
-  }, []);
+  }, [overviewHeader]);
 
   useEffect(() => {
     if (titles === null) return
@@ -154,6 +156,15 @@ export default function Slideshow({
     })
   }, [currentSlide, overviewHeader, titles])
 
+  const scrollDown = () => {
+    if ((currentSlide + 1) != panelCount)
+    {
+      window.scrollBy(0, 100)
+    } else {
+      window.scrollBy(0, 800)
+    }
+  }
+
   return (
     <>
       {isOverlayOpen &&
@@ -161,41 +172,36 @@ export default function Slideshow({
           (styles, item) =>
             item && (
               <animated.div style={styles} className="overlay" ref={overlay}>
-                <p className="overlay-header drop-shadow-md text-center px-2">
+                <p className="overlay-header drop-shadow-md text-center px-8 lg:px-2 ">
                   {headerState}
                 </p>
                 <div
-                  className={`w-6 md:w-16 h-full  absolute ${
-                    sliderPosition === "right" ? "right-0" : "left-0"
+                  className={`w-8 lg:w-12 h-full  absolute ${
+                    sliderPosition === "right" ? "right-2" : "left-2"
                   }`}
                 >
                   <div className="h-full flex items-center">
                     <div className="panel-page-slider">
-                      {[...Array(panelCount)].map((e, i) => (
-                        <div
-                          key={i}
-                          className={`${
-                            currentSlide === i
-                              ? "bg-white/70 scale-x-[3]"
-                              : "bg-white/30 scale-x-100"
-                          } page-slider`}
-                        ></div>
-                      ))}
+                      <PageSlider currentSlide={currentSlide} panelCount={panelCount}/>
                     </div>
                   </div>
                 </div>
                 <div className="absolute w-full h-full">
                   <div className="mx-auto h-full flex flex-col justify-end ">
                     <div className="flex flex-col justify-end">
-                      <div className="h-[13px] transition-all duration-300 animate-bounce hover:animate-none relative cursor-pointer w-full mb-6">
+                      <div className="grid place-items-center relative w-full mb-2 md:mb-6">
+                      <div onClick={scrollDown} className="arrow-button">
                         <Image
                           src="/arrow-down.png"
-                          layout="fill"
-                          objectFit="contain"
+                          fill 
                           draggable={false}
-                          className="select-none hover:test-filter"
+                          className="select-none hover:test-filter object-contain p-[10px]"
                           alt={""}
+                          sizes="(max-width: 768px) 100vw,
+                          (max-width: 1200px) 50vw,
+                          33vw"
                         />
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -209,3 +215,4 @@ export default function Slideshow({
     </>
   );
 }
+

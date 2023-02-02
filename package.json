@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "dependencies": {
     "@builder.io/partytown": "^0.7.3",
     "@chakra-ui/react": "^2.3.5",

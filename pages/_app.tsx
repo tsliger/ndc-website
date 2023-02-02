@@ -13,9 +13,9 @@ function MyApp({ Component, pageProps }) {
         <Script id="google-analytics" strategy="worker">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
+            function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
+          
             gtag('config', 'G-T1T5JR1FCF');
           `}
         </Script>

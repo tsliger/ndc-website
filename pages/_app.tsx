@@ -1,24 +1,12 @@
 import '../styles/globals.css'
 import dynamic from 'next/dynamic';
 const Layout = dynamic(() => import('../components/Layout'))
-import Script from 'next/script';
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 function MyApp({ Component, pageProps }) {
   return( 
       <Layout>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T1T5JR1FCF"
-          strategy="worker"
-        />
-        <Script id="google-analytics" strategy="worker">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-T1T5JR1FCF');
-          `}
-        </Script>
+        <GoogleAnalytics strategy="lazyOnload" />
         <Component {...pageProps} />
       </Layout>
     )

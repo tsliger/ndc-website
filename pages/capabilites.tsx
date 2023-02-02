@@ -142,7 +142,7 @@ const DevelopmentContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-24 md:w-50 relative aspect-square">
+              <div className="w-24 relative aspect-square">
                 <Image
                     src={"/panel-imgs/capabilities/developone.png"}
                     alt=""
@@ -159,7 +159,7 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-24 md:w-50 aspect-square relative">
+              <div className="w-24 aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/developtwo.png"}
                     alt=""
@@ -176,7 +176,7 @@ const DevelopmentContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-24 md:w-50 aspect-square relative">
+              <div className="w-24  aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/developthree.png"}
                     alt=""
@@ -216,7 +216,7 @@ const DeliveryContent = () => {
         <div className="flex space-x-24 panel-content">
           <Switcher duration={3000}>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square relative">
+              <div className="w-32 md:w-36 aspect-square relative">
                   <Image
                       src={"/panel-imgs/capabilities/deliveryone.png"}
                       alt=""
@@ -233,7 +233,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square relative">
+              <div className="w-32 md:w-36 aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/deliverytwo.png"}
                     alt=""
@@ -249,7 +249,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square relative">
+              <div className="w-32 md:w-36  aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/deliverythree.png"}
                     alt=""
@@ -265,7 +265,7 @@ const DeliveryContent = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 switcher-item">
-              <div className="w-48 md:w-56 aspect-square relative">
+              <div className="w-32 md:w-36 aspect-square relative">
                 <Image
                     src={"/panel-imgs/capabilities/deliveryfour.png"}
                     alt=""

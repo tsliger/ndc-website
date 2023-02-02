@@ -25,7 +25,7 @@ a {
   }
 
   .symbol-shadow {
-    filter: invert(70%)
+    filter: drop-shadow(2px 2px 1px rgba(255, 255, 255, 0.22)) drop-shadow(-2px -2px 1px rgba(255, 255, 255, 0.22)) invert(8%)
   }
 
   .test-filter {
@@ -73,7 +73,7 @@ a {
   }
 
   .arrow-button {
-    @apply  animate-bounce hover:animate-none active:animate-none cursor-pointer active:border-b-0 border-b-[2.8px]  hover:border-b-blue-800 border-white/50 aspect-square ease-in-out hover:bg-white/5 active:scale-[0.8] transition-all duration-[25ms] relative h-10 rounded-full
+    @apply animate-bounce hover:animate-none active:animate-none cursor-pointer active:border-b-0 border-b-[2.8px]  hover:border-b-blue-800 border-white/50 aspect-square ease-in-out hover:bg-white/5 active:scale-[0.8] transition-all duration-[25ms] relative h-10 rounded-full;
   }
   
   .page-slider {

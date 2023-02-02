@@ -45,12 +45,12 @@ const FrontPanel = ({
             <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center">
               <div className="flex flex-col panel-content md:mb-32 items-center">
                 <div className="p-16 md:p-56 -translate-y-8 md:translate-y-24 ">
-                  <div className="w-40 md:w-64  aspect-square relative top-12 md:top-0">
+                  <div className="w-40 md:w-56 aspect-square relative top-12 md:top-0">
                     <Image
                       src={symbolImage}
                       quality={50}
                       fill
-                      className="object-contain symbol-shadow"
+                      className="object-contain symbol-shadow "
                       alt=""
                     />
                   </div>

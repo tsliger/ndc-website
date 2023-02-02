@@ -52,7 +52,7 @@ const Content = () => {
             </p>
           </div>
         </div>
-        <div className="lg:w-5/12 lg:flex hidden flex-col items-center justify-center">
+        <div className="lg:w-5/12 lg:flex hidden flex-col items-center justify-center overflow-hidden">
           <NaturalImage
             src={"/panel-imgs/about/locationone.png"}
             alt=""
@@ -77,7 +77,7 @@ const ClimateContent = () => {
   return (
     <>
       <div className="absolute h-full w-full flex">
-        <div className="w-5/12 hidden lg:flex flex-col items-center justify-center">
+        <div className="w-5/12 hidden lg:flex flex-col items-center justify-center overflow-hidden">
           <NaturalImage
             src={"/panel-imgs/about/climateone.png"}
             alt={"climate northern michigan"}

@@ -165,6 +165,7 @@ export default function Navbar() {
             height={53}
             draggable={false}
             alt={""}
+            priority={true}
           />
         </div>
         <div className="flex-grow" />

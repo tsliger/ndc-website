@@ -27,8 +27,14 @@ export default function SplashView({
     // Creates text effect on load
     gsap.fromTo(
       textRef.current,
-      { opacity: 0, y: -25, scale: 0.95, },
-      { opacity: 1, duration: 2, y: 0, delay: 0.5, scale: 1, ease: "sine" }
+      { opacity: 0 },
+      { opacity: 1, duration: 2,  delay: 0.75, ease: "sine" }
+    );
+
+    gsap.fromTo(
+      textRef.current,
+      { y: -25, scale: 0.95, },
+      { duration: 2, y: 0, scale: 1, ease: "sine" }
     );
 
     gsap.fromTo (
@@ -79,8 +85,8 @@ export default function SplashView({
           />
         </div>
       </div>
-      <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark">
-        <div className="text-ndcWhite flex flex-col items-center h-full">
+      <div className="z-10 h-1/2 md:h-2/6 bg-ndcDark flex">
+        <div className="text-ndcWhite flex flex-col items-center flex-grow">
           <div ref={lightRef} className="h-[120px] z-50 w-full absolute translate-y-[-60px] md:translate-y-[-63px]">
             <Image src="/light-bar.png" fill className="object-contain" alt={""} priority={true} sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -88,12 +94,12 @@ export default function SplashView({
           </div>
           <p
             ref={textRef}
-            className="text-md md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center flex-grow flex mt-10 md:mt-16 px-12"
+            className="text-sm md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center  flex py-10 px-8 md:px-12 "
           >
             {splashText}
           </p>
           
-          <div ref={arrowRef} className="grid place-items-center relative  w-full mb-2 md:mb-6" >
+          <div ref={arrowRef} className="grid place-items-center relative  w-full flex-grow" >
             <div  onClick={() => window.scrollBy(0, 100)}  className="arrow-button">
               <Image
                 src="/arrow-down.png"

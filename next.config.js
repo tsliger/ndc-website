@@ -6,6 +6,7 @@ const nextConfig = {
   experimental: {
     nextScriptWorkers: true,
   },
+  transpilePackages: ['sharp', 'yup', 'formik', 'nextjs-google-analytics'],
 }
 
 

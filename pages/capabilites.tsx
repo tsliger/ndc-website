@@ -74,7 +74,7 @@ const RDTEContent = () => {
           </div>
         </Switcher>
       </div>
-      <div className="z-50 h-16 w-full relative ">
+      <div className="z-50 h-16 w-full relative">
         <Image src="/light-bar-white.png" fill
                       className="object-contain"  alt="" />
       </div>

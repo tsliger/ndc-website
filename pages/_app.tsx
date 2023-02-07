@@ -5,10 +5,12 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 
 function MyApp({ Component, pageProps }) {
   return( 
+    <>
+      <GoogleAnalytics strategy="lazyOnload" />
       <Layout>
-        <GoogleAnalytics strategy="lazyOnload" />
         <Component {...pageProps} />
       </Layout>
+    </>
     )
 }
 

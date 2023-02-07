@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useEffect, useState, useRef, useCallback } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
-import { animated, useSpring, useTransition, config } from "react-spring";
+import { animated, useSpring } from "react-spring";
 import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +16,6 @@ export const Navlinks = (props) => {
   const capaRef = useRef(null)
   const aboutRef = useRef(null)
 
-
   const goToContact = () => {
     gsap.killTweensOf(window);
     ScrollTrigger.disable();
@@ -25,7 +24,7 @@ export const Navlinks = (props) => {
       props.closeDrawer();
     }
 
-    const tween = gsap.to(window, {
+    gsap.to(window, {
       scrollTo: { y: document.body.scrollHeight, autoKill: false },
       delay: 0.15,
       duration: 0.5,
@@ -36,8 +35,8 @@ export const Navlinks = (props) => {
       },
     });
   };
+  
   useEffect(() => {
-    // homeRef.current.style.setProperty('--visible-amount', "1")
     switch(router.pathname)
     {
       case "/":
@@ -125,9 +124,8 @@ export default function Navbar() {
         ease: 'sine'
       })
       .progress(1);
-
-
-    ScrollTrigger.create({
+    
+    const trig = ScrollTrigger.create({
       start: "top -60%",
       end: 99999,
       onUpdate: (self: any) => {

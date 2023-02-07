@@ -52,6 +52,7 @@ const FrontPanel = ({
                       fill
                       className="object-contain symbol-shadow "
                       alt=""
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 </div>

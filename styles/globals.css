@@ -65,7 +65,7 @@ a {
   }
   
   .overlay-header {
-    @apply font-['Ethnocentric'] text-sm sm:text-xl self-center relative top-24 md:top-28 z-20
+    @apply font-['Ethnocentric'] text-sm sm:text-xl self-center relative top-12 md:top-16  z-20
   }
   
   .panel-page-slider {

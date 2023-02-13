@@ -3,10 +3,11 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { animated, useTransition } from "react-spring";
 import Image from "next/image";
-import { useRouter } from 'next/router'
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 const PageSlider = dynamic(() => import('./PanelSlider'))
+import { navState } from "./states";
+import { useRecoilValue } from 'recoil'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 gsap.config({
@@ -32,6 +33,8 @@ export default function Slideshow({
   const [currentSlide, setSlide] = useState(0);
   const [panelCount, setPanelCount] = useState(0);
   const [headerState, setHeader] = useState('')
+  const isNavDown = useRecoilValue(navState);
+
 
   const transitions = useTransition(isOverlayOpen, {
     from: { opacity: 0 },
@@ -172,7 +175,7 @@ export default function Slideshow({
           (styles, item) =>
             item && (
               <animated.div style={styles} className="overlay" ref={overlay}>
-                <p className="overlay-header drop-shadow-md text-center px-8 lg:px-2 ">
+                <p className={`${!isNavDown ? '' : 'translate-y-12'} transition-transform ease-in-out duration-500  overlay-header drop-shadow-md text-center px-8 lg:px-2 `}>
                   {headerState}
                 </p>
                 <div

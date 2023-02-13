@@ -94,12 +94,12 @@ export default function SplashView({
           </div>
           <p
             ref={textRef}
-            className="text-sm md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center  flex py-10 px-8 md:px-12 "
+            className="text-sm max-h-[50%] md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center  flex py-10 px-8 md:px-12 "
           >
             {splashText}
           </p>
           
-          <div ref={arrowRef} className="grid place-items-center relative  w-full flex-grow" >
+          <div ref={arrowRef} className="flex justify-center items-end pb-6  relative  w-full flex-grow" >
             <div  onClick={() => window.scrollBy(0, 100)}  className="arrow-button">
               <Image
                 src="/arrow-down.png"

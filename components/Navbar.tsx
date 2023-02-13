@@ -2,11 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
 import gsap from "gsap";
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { animated, useSpring } from "react-spring";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { navState } from "./states";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,6 +116,9 @@ export default function Navbar() {
   const navRef = useRef(null);
   const drawerStyle = useSpring({ opacity: isDrawerOpen ? 1 : 0 });
   const router = useRouter();
+  const [currDirection, setDirection] = useState(0)
+  const [navStatus, setNavState] = useRecoilState(navState)
+  let dir = 0
 
   useEffect(() => {
     const showAnim = gsap
@@ -121,18 +126,35 @@ export default function Navbar() {
         yPercent: -100,
         paused: true,
         duration: 0.5,
-        ease: 'sine'
+        ease: "sine.inOut",
       })
-      .progress(1);
+      
+    showAnim.progress(1)
     
     const trig = ScrollTrigger.create({
       start: "top -60%",
       end: 99999,
       onUpdate: (self: any) => {
         self.direction === -1 ? showAnim.play() : showAnim.reverse();
+        if (dir !== self.direction) {
+          setDirection(self.direction)
+          dir = self.direction
+        }
       },
     });
   }, []);
+
+  useEffect(() => {
+    switch(currDirection) {
+      case 1:
+        setNavState(false)
+        break;
+
+      case -1:
+        setNavState(true)
+        break;
+    }
+  }, [currDirection])
 
   useEffect(() => {
     setDrawer(false);

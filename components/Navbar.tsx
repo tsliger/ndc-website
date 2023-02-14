@@ -118,7 +118,6 @@ export default function Navbar() {
   const router = useRouter();
   const [currDirection, setDirection] = useState(0)
   const [navStatus, setNavState] = useRecoilState(navState)
-  let dir = 0
 
   useEffect(() => {
     const showAnim = gsap
@@ -136,9 +135,9 @@ export default function Navbar() {
       end: 99999,
       onUpdate: (self: any) => {
         self.direction === -1 ? showAnim.play() : showAnim.reverse();
-        if (dir !== self.direction) {
+        if (navRef.current.direction !== self.direction) {
           setDirection(self.direction)
-          dir = self.direction
+          navRef.current.direction = self.direction
         }
       },
     });
@@ -154,7 +153,7 @@ export default function Navbar() {
         setNavState(true)
         break;
     }
-  }, [currDirection])
+  }, [currDirection, setNavState])
 
   useEffect(() => {
     setDrawer(false);

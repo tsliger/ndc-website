@@ -1,31 +1,20 @@
-import React, { useState } from "react";
-import { ImageProps } from "next/image";
+import React from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
+import PanelHelper from "../components/PanelHelper";
+import { 
+  locationContent, 
+  missionBlurb, 
+  climateContent, 
+  splashText, 
+  missionOne, 
+  missionTwo, 
+  finalContent 
+} from "../content/aboutContent";
 const Slideshow = dynamic(() => import('../components/Slideshow'))
 const SplashView = dynamic(() => import('../components/SplashView'))
-import PanelHelper from "../components/PanelHelper";
-
-const NaturalImage = (props: ImageProps) => {
-  const [ratio, setRatio] = useState(16 / 9); // default to 16:9
-
-  return (
-    <Image
-      {...props}
-      // set the dimension (affected by layout)
-      alt=""
-      width={370}
-      height={370 / ratio}
-      onLoadingComplete={({ naturalWidth, naturalHeight }) =>
-        setRatio(naturalWidth / naturalHeight)
-      }
-    />
-  );
-};
-
-const missionBlurb =
-  "Designing, developing, and delivering emergent Next-Generation war fighting capabilities able to defeat threats with speed, precision, and lethality across a myriad of complex, austere, and globally contested environments on Earth and beyond.";
+const NaturalImage = dynamic(() => import('../components/NaturalImage'))
 
 const Content = () => {
   return (
@@ -43,12 +32,7 @@ const Content = () => {
               LOCATION
             </p>
             <p className="text-center text-md md:text-lg px-4 md:px-24 ">
-              The Eastern Upper Peninsula of Michigan is home to the Eastern
-              Upper Peninsula National Defense Complex. The EUP-NDC sits on
-              1700-acres of pre-existing strategic infrastructure and land
-              within and directly adjacent to Chippewa County International
-              Airport in Kincheloe, Michigan. This infrastructure once served as
-              a Strategic Air Command (SAC) base (Kincheloe AB) form 1942-1977.
+              {locationContent}
             </p>
           </div>
         </div>
@@ -105,17 +89,7 @@ const ClimateContent = () => {
               CLIMATE
             </p>
             <p className="text-center text-sm md:text-lg px-4 lg:px-24">
-              The climate of the Eastern Upper Peninsula acts as a
-              differentiator amongst all other RDT&E defense enviornments across
-              the nation. The temperature of the region scales from -37°F to
-              98°F, with a majority of the year spent under an abundance of snow
-              and ice in result of the lake effect snow coming off of Lake
-              Superior. Lake Superior is deepest and coldest of the Great Lakes
-              and is the largest fresh water lake by area, accounting for 10% of
-              the entire worlds surface freshwater, Lake Superior acts as a main
-              differentiator for the EUP-NDC. The EUP provides defense
-              contractors the unique opportunity to design and test their
-              defense solutions in an organic austere environment.
+              {climateContent}
             </p>
           </div>
         </div>
@@ -129,21 +103,10 @@ const MissionContent = () => {
     <div className="flex flex-col items-center panel-content">
       <div className="font-['Ethnocentric'] text-3xl md:text-7xl">Mission</div>
       <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:mt-16 md:text-lg text-center md:text-justify">
-        &emsp;The Eastern Upper Peninsula - National Defense Complex (EUP-NDC)
-        is a profound response to the Nation's call for innovation in support of
-        the Warfighter. The EUP-NDC is a bold, first-of-its-kind Research,
-        Development, Testing and Evaluation (RDT&E) complex and Rapid Capability
-        Development – Delivery (RCD-D) platform, purpose-built for the
-        All-Domain (air, land, maritime, cyber, and space) Warfare fight versus
-        sophisticated adversaries (i.e., China and Russia).
+        &emsp;{missionOne}
       </p>
       <p className="w-full md:w-[800px] text-sm px-6 mt-4 md:text-lg  text-center md:text-justify">
-        &emsp;Unlike other federally-funded RDT&E and RCD-D constructs, the
-        EUP-NDC is unique in that it delivers comprehensive austere-capable
-        All-Domain solutions (i.e., cradle to grave) from one centralized and
-        secure location, dramatically increasing efficiency, maximizing cost
-        effectiveness, while ultimately accelerating the delivery technical and
-        tactical advantage to the Warfighter.
+        &emsp;{missionTwo}
       </p>
     </div>
   );
@@ -156,13 +119,7 @@ const FinalSlide = () => {
         THE TEAM
       </div>
       <p className="w-full md:w-[600px] text-sm px-8 md:p-0 md:text-lg text-center">
-        The EUP-NDC is an Anchor Systems Initiative. Anchor Systems is a
-        national defense technology integrator specializing in the integration
-        of emergent technology and applied engineering. Anchor Systems is
-        mission focused on the design development and delivery of next
-        generation war fighting capabilities, specifically in accelerating the
-        critical capabilities necessary for America’s warfighters to fight and
-        win in tomorrow’s battlespace today.
+        {finalContent}
       </p>
       <div className="flex justify-center items-center h-40 overflow-hidden">
         <div className="w-[200px] md:w-[400px] relative h-20">
@@ -182,8 +139,7 @@ const FinalSlide = () => {
   );
 };
 
-const splashText =
-  "Designing, developing, and delivering emergent Next-Generation war fighting capabilities able to defeat threats with speed, precision, and lethality across a myriad of complex, austere, and globally contested environments on Earth and beyond.";
+
 
 export default function about() {
   const panelList = [

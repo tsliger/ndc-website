@@ -97,7 +97,7 @@ const ContactForm = () => {
     return (
       <div className="w-[48rem] z-50 h-full">
         <div className="flex">
-          <h1 className="font-['Ethnocentric'] text-lg md:text-2xl mb-6 flex-grow">
+          <h1 className="font-['Ethnocentric'] text-lg md:text-xl mb-6 flex-grow">
             CONTACT
           </h1>
           <p className="px-4 text-red-500 text-sm md:text-md uppercase text-center">{currentError}</p>

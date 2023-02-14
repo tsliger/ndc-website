@@ -5,34 +5,39 @@ import { Navlinks } from "./Navbar";
 import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 const ContactForm = dynamic(() => import('./ContactForm'))
 
+const redirect = () => {
+  window.location.href = 'https://www.anchorsystems.tech/';
+}
+
 // Defines the footer layout
 export default function Footer() {
   return (
+    <>
+    <div className="absolute h-16 -translate-y-16 bg-gradient-to-b from-transparent to-[#0b0a0a] w-full">
+      
+    </div>
     <footer className="min-h-[585px]">
       <div className="flex p-8 flex-col lg:flex-row  lg:items-start overflow-hidden">
         <div className="flex-grow flex flex-col">
           <div className="overflow-hidden h-24 flex  items-center">
-            <div className="w-56 md:w-72">
+            <div className="relative w-56 md:w-72 z-50 h-full">
               <Image
-                src={"/ndc-logo-white.png"}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="contain"
-                className="-translate-x-4"
-                alt={"ndc logo"}
-              />
+                  src={"/ndc-logo-white.png"}
+                  alt=""
+                  fill
+                  className="object-contain -translate-x-4"
+                />
             </div>
           </div>
           <div className="mt-8 flex flex-col lg:flex-row">
             <div>
-              <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Explore</h1>
+              <h1 className="font-['Ethnocentric'] text-lg md:text-xl">Explore</h1>
               <ul className="footerNavList">
                 <Navlinks />
               </ul>
             </div>
             <div className="relative lg:left-32 space-y-8 mt-8 lg:mt-0">
-              <h1 className="font-['Ethnocentric'] text-lg md:text-2xl">Connect</h1>
+              <h1 className="font-['Ethnocentric'] text-lg md:text-xl">Connect</h1>
               <BsFacebook className="social-icon" style={{ marginTop: 25 }} size={32} />
               <BsTwitter className="social-icon" style={{ marginTop: 25 }} size={32} />
               <BsLinkedin className="social-icon" style={{ marginTop: 25 }} size={32} />
@@ -50,10 +55,11 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Anchor Systems</p>
         </div>
         <div className="flex-grow"/>
-        <div className="">
+        <div onClick={redirect} className="hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer active:scale-95">
           <Image src={'/anchor-white.png'} width={136} height={136} draggable={false} alt=""/>
         </div>
       </div>
     </footer>
+    </>
   );
 }

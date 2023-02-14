@@ -6,12 +6,28 @@ return (
     <div className="min-h-screen panel">
         {imageSrc && (
         <div className="w-full h-full absolute">
-            <Image quality={50} src={imageSrc} layout={"fill"} objectFit={"cover"} alt="" />
+            <Image
+                src={imageSrc}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
         </div>
         )}
         {vignette && (
         <div className="w-full h-full absolute">
-            <Image  src={'/panel-imgs/home/vignette.png'} layout={"fill"} objectFit={"cover"} alt="" />
+            <Image
+                src={"/panel-imgs/home/vignette.png"}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
         </div>
         )}
         <div className="absolute h-full w-full flex flex-col justify-center items-center px-4">

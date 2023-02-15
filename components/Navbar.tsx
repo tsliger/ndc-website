@@ -12,18 +12,18 @@ import { navState } from "./states";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Navlinks = (props) => {
+export const Navlinks = ({ closeDrawer }) => {
   const router = useRouter();
-  const homeRef = useRef(null)
-  const capaRef = useRef(null)
-  const aboutRef = useRef(null)
+  const homeRef = useRef(null);
+  const capaRef = useRef(null);
+  const aboutRef = useRef(null);
 
   const goToContact = () => {
     gsap.killTweensOf(window);
     ScrollTrigger.disable();
 
-    if (props.closeDrawer) {
-      props.closeDrawer();
+    if (closeDrawer) {
+      closeDrawer();
     }
 
     gsap.to(window, {
@@ -32,37 +32,33 @@ export const Navlinks = (props) => {
       duration: 0.5,
       ease: "sine",
       onComplete: () => {
-        gsap.killTweensOf(window)
+        gsap.killTweensOf(window);
         ScrollTrigger.enable();
       },
     });
   };
-  
+
   useEffect(() => {
-    switch(router.pathname)
-    {
+    switch (router.pathname) {
       case "/":
-        homeRef.current.style.setProperty('--visible-amount', "1")
-        capaRef.current.style.setProperty('--visible-amount', "0")
-        aboutRef.current.style.setProperty('--visible-amount', "0")
-        break;
-      
-      case '/capabilites': 
-        homeRef.current.style.setProperty('--visible-amount', "0")
-        capaRef.current.style.setProperty('--visible-amount', "1")
-        aboutRef.current.style.setProperty('--visible-amount', "0")
-        break;
-      
-      case '/about': 
-        homeRef.current.style.setProperty('--visible-amount', "0")
-        capaRef.current.style.setProperty('--visible-amount', "0")
-        aboutRef.current.style.setProperty('--visible-amount', "1")
+        homeRef.current.style.setProperty("--visible-amount", "1");
+        capaRef.current.style.setProperty("--visible-amount", "0");
+        aboutRef.current.style.setProperty("--visible-amount", "0");
         break;
 
+      case "/capabilites":
+        homeRef.current.style.setProperty("--visible-amount", "0");
+        capaRef.current.style.setProperty("--visible-amount", "1");
+        aboutRef.current.style.setProperty("--visible-amount", "0");
+        break;
+
+      case "/about":
+        homeRef.current.style.setProperty("--visible-amount", "0");
+        capaRef.current.style.setProperty("--visible-amount", "0");
+        aboutRef.current.style.setProperty("--visible-amount", "1");
+        break;
     }
-    
-  }, [router.pathname])
-
+  }, [router.pathname]);
 
   return (
     <>
@@ -74,7 +70,6 @@ export const Navlinks = (props) => {
                 ? "text-blue-500 active-link drop-shadow-none"
                 : "text-inherit"
             }`}
-
           >
             Home
           </a>
@@ -106,7 +101,9 @@ export const Navlinks = (props) => {
           </a>
         </Link>
       </li>
-      <li className="z-[99]" onClick={goToContact}>Contact</li>
+      <li className="z-[99]" onClick={goToContact}>
+        Contact
+      </li>
     </>
   );
 };
@@ -116,44 +113,43 @@ export default function Navbar() {
   const navRef = useRef(null);
   const drawerStyle = useSpring({ opacity: isDrawerOpen ? 1 : 0 });
   const router = useRouter();
-  const [currDirection, setDirection] = useState(0)
-  const [navStatus, setNavState] = useRecoilState(navState)
+  const [currDirection, setDirection] = useState(0);
+  const [navStatus, setNavState] = useRecoilState(navState);
 
   useEffect(() => {
-    const showAnim = gsap
-      .from(navRef.current, {
-        yPercent: -100,
-        paused: true,
-        duration: 0.5,
-        ease: "sine.inOut",
-      })
-      
-    showAnim.progress(1)
-    
-    const trig = ScrollTrigger.create({
+    const showAnim = gsap.from(navRef.current, {
+      yPercent: -100,
+      paused: true,
+      duration: 0.5,
+      ease: "sine.inOut",
+    });
+
+    showAnim.progress(1);
+
+    ScrollTrigger.create({
       start: "top -60%",
       end: 99999,
       onUpdate: (self: any) => {
         self.direction === -1 ? showAnim.play() : showAnim.reverse();
         if (navRef.current.direction !== self.direction) {
-          setDirection(self.direction)
-          navRef.current.direction = self.direction
+          setDirection(self.direction);
+          navRef.current.direction = self.direction;
         }
       },
     });
   }, []);
 
   useEffect(() => {
-    switch(currDirection) {
+    switch (currDirection) {
       case 1:
-        setNavState(false)
+        setNavState(false);
         break;
 
       case -1:
-        setNavState(true)
+        setNavState(true);
         break;
     }
-  }, [currDirection, setNavState])
+  }, [currDirection, setNavState]);
 
   useEffect(() => {
     setDrawer(false);

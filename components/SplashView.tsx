@@ -25,34 +25,25 @@ export default function SplashView({
 
   useEffect(() => {
     // Creates text effect on load
-    gsap.fromTo(
-      textRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 2,  delay: 0.75, ease: "sine" }
-    );
-
-    gsap.fromTo(
-      textRef.current,
-      { y: -25, scale: 0.95, },
-      { duration: 2, y: 0, scale: 1, ease: "sine" }
-    );
-
+    gsap.to(textRef.current, {opacity: 1, duration: 2, delay: 0.75, ease:"sine.inout"})
+    gsap.to(textRef.current, {duration: 2, y: 0, scale: 1, ease:"sine.inout"})
+ 
     gsap.fromTo (
       headerRef.current,
       {opacity: 0},
-      {opacity: 1, duration: 1.25, delay: 0.1}
+      {opacity: 1, duration: 1.25, delay: 0.1, ease: 'sine.inout'}
     )
 
     gsap.fromTo (
       lightRef.current,
       {opacity: 0, scaleX: 0.45},
-      {opacity: 1, duration: 3, delay: 0.15, scaleX: 1, ease: 'sine'}
+      {opacity: 1, duration: 3, delay: 0.5, scaleX: 1, ease: 'sine.inout'}
     )
 
     gsap.fromTo (
       arrowRef.current,
       {opacity: 0},
-      { opacity: 1, duration: 0.5, delay: 0.75 }
+      { opacity: 1, duration: 0.5, delay: 0.75, ease: 'sine.inout' }
     )
   }, []);
 
@@ -78,7 +69,7 @@ export default function SplashView({
             onInit={(typewriter)=> {
               typewriter
               .typeString(splashHeader)
-              .pauseFor(500)
+              .pauseFor(300)
               .start();
               }
             }
@@ -94,7 +85,7 @@ export default function SplashView({
           </div>
           <p
             ref={textRef}
-            className="text-sm max-h-[50%] md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center  flex py-10 px-8 md:px-12 "
+            className="-translate-y-6 scale-95 opacity-0 text-sm max-h-[50%] md:text-lg w-full md:max-w-[700px] lg:max-w-[950px]  text-center  flex py-10 px-8 md:px-12 "
           >
             {splashText}
           </p>

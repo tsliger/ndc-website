@@ -38,3 +38,6 @@ sendgrid.env
 
 .env
 .env*
+
+# visual studio code
+/.vscode/

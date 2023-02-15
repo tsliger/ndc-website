@@ -12,7 +12,7 @@ import { navState } from "./states";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Navlinks = ({ closeDrawer }) => {
+export const Navlinks = (props) => {
   const router = useRouter();
   const homeRef = useRef(null);
   const capaRef = useRef(null);
@@ -22,8 +22,8 @@ export const Navlinks = ({ closeDrawer }) => {
     gsap.killTweensOf(window);
     ScrollTrigger.disable();
 
-    if (closeDrawer) {
-      closeDrawer();
+    if (props.closeDrawer) {
+      props.closeDrawer();
     }
 
     gsap.to(window, {

@@ -27,10 +27,10 @@ import {
 const Content = ({ panelHeader, panelText }) => {
   return (
     <div className="flex flex-col items-center  panel-content overflow-hidden opacity-0">
-      <div className="font-['Ethnocentric'] text-3xl md:text-7xl mb-6">
+      <div className="font-['Ethnocentric'] text-3xl md:text-6xl mb-6">
         {panelHeader}
       </div>
-      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_44rem)]  text-sm px-12 lg:px-8 md:text-xl text-center ">
+      <p className="w-full lg:w-[800px] xl:w-[calc(100%_-_44rem)]  text-sm px-12 lg:px-8 md:text-lg text-center ">
         {panelText}
       </p>
     </div>
@@ -43,7 +43,7 @@ const RDTEContent = () => {
       <div className="w-full flex justify-center overflow-hidden space-x-4 lg:space-x-20">
         <Switcher>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[200px] aspect-square">
+            <div className="relative w-[120px] md:w-[150px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdteone.png"
                 fill
@@ -57,7 +57,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Research</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[200px] aspect-square">
+            <div className="relative w-[120px] md:w-[150px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtetwo.png"
                 fill
@@ -71,7 +71,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Development</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[200px] aspect-square">
+            <div className="relative w-[120px] md:w-[150px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtethree.png"
                 fill
@@ -82,7 +82,7 @@ const RDTEContent = () => {
             <p className="font-['Ethnocentric'] text-xl">Testing</p>
           </div>
           <div className="flex flex-col items-center space-y-2 switcher-item">
-            <div className="relative w-[120px] md:w-[200px] aspect-square">
+            <div className="relative w-[120px] md:w-[150px] aspect-square">
               <Image
                 src="/panel-imgs/capabilities/rdtefour.png"
                 fill
@@ -103,7 +103,7 @@ const RDTEContent = () => {
                       (max-width: 1200px) 50vw,
                       33vw" />
       </div>
-      <p className="w-full md:w-[700px] text-md md:text-xl text-center px-12 md:px-4">
+      <p className="w-full md:w-[700px] text-md md:text-lg text-center px-12 md:px-4">
         RDT&E is one of the five major appropriations used by the Department of
         Defense. The EUP-NDC allows for research, development, testing and
         evaluation in an austere environment that is capable of all domain
@@ -156,7 +156,7 @@ const RapidContent = () => {
                       (max-width: 1200px) 50vw,
                       33vw"/>
       </div>
-      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-xl text-center">
+      <p className="w-full px-12 md:px-4 md:w-[700px] text-md md:text-lg text-center">
         {rapidBlurb}
       </p>
     </div>
@@ -182,7 +182,7 @@ const DevelopmentContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-4">Innovation</p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {developOne}
               </p>
             </div>
@@ -199,7 +199,7 @@ const DevelopmentContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-4">Engineering</p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {developTwo}
               </p>
             </div>
@@ -218,7 +218,7 @@ const DevelopmentContent = () => {
               <p className="font-['Ethnocentric'] text-xl mb-4">
                 Manufacturing
               </p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {developThree}
               </p>
             </div>
@@ -258,7 +258,7 @@ const DeliveryContent = () => {
                   />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Air</p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {deliveryOne}
               </p>
             </div>
@@ -275,7 +275,7 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Land</p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {deliveryTwo}
               </p>
             </div>
@@ -292,7 +292,7 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Maritime</p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {deliveryThree}
               </p>
             </div>
@@ -309,7 +309,7 @@ const DeliveryContent = () => {
                 />
               </div>
               <p className="font-['Ethnocentric'] text-xl mb-2">Rail</p>
-              <p className="w-[250px] text-sm md:text-lg text-center">
+              <p className="w-[250px] text-sm md:text-base text-center">
                 {deliveryFour}
               </p>
             </div>

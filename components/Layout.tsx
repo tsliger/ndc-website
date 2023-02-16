@@ -8,7 +8,9 @@ export default function Layout(props) {
   return ( 
     <div className='layout'>
       <Navbar />
+        <div className="min-h-screen">
         {children}
+        </div>
       <Footer />
     </div>
   )

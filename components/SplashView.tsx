@@ -60,7 +60,7 @@ export default function SplashView({
             <Image src={imageSrc} quality={65} fill className="object-cover"  alt={""} />
           </div>
         )}
-        <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-4xl md:text-6xl lg:text-7xl z-50">
+        <div ref={headerRef} className="select-none m-auto font-['Ethnocentric'] text-3xl md:text-6xl lg:text-7xl z-50">
           <Typewriter
             options={{
               cursor: ' '

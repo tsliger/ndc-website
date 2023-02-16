@@ -30,7 +30,7 @@ export const Navlinks = (props) => {
       scrollTo: { y: document.body.scrollHeight, autoKill: false },
       delay: 0.15,
       duration: 0.5,
-      ease: "sine",
+      ease: "sine.inout",
       onComplete: () => {
         gsap.killTweensOf(window);
         ScrollTrigger.enable();

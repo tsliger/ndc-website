@@ -48,33 +48,33 @@ const FrontPanel = ({
           </p>
         </div>
         <div className="absolute w-full h-full ">
-          <div className="mx-auto px-8 lg:w-[64rem] h-full flex flex-col justify-center">
-            <div className="flex flex-col panel-content md:mb-32 items-center">
-              <div className="p-16 md:p-56 -translate-y-2 md:translate-y-36 ">
-                <div className="w-40 md:w-56 aspect-square relative top-12 md:top-0">
-                  <Image
-                    src={symbolImage}
-                    quality={50}
-                    fill
-                    className="object-contain symbol-shadow "
-                    alt=""
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+          <div className="mx-auto lg:w-[64rem] h-full flex flex-col justify-center translate-y-8">
+            <div className="flex flex-col panel-content items-center">
+              <div className="max-h-28 mb-6 flex items-center">
+                <div className="h-36 md:h-44 aspect-square relative">
+                    <Image
+                      src={symbolImage}
+                      quality={50}
+                      fill
+                      className="object-contain symbol-shadow "
+                      alt=""
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                 </div>
               </div>
-              <div className="relative flex flex-col -translate-y-16 md:-translate-y-24 p-8 to-transparent">
-                <div className="text-sm md:text-lg p-4 md:p-0 text-center lg:mb-4 drop-shadow-sm">
+              <div className="relative flex flex-col p-8 to-transparent">
+                <div className="text-sm md:text-lg md:p-0 md:px-12 px-6 text-center drop-shadow-sm">
                   <p>{blurbText}</p>
                 </div>
-                <div className="z-50 w-full relative h-12 panel-light -translate-y-4">
+                <div className="z-50 w-full relative h-20 panel-light">
                   <Image
                     src="/light-bar-white.png"
                     fill
                     className="object-contain"
                     alt=""
                     sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+                    (max-width: 1200px) 50vw,
+                    33vw"
                   />
                 </div>
               </div>

@@ -37,12 +37,12 @@ a {
   }
   
   .footerNavList > li {
-    @apply space-y-6 md:text-lg mt-4 font-semibold cursor-pointer select-none hover:text-blue-600 transition-all duration-150
+    @apply space-y-6 ease-in-out md:text-lg mt-4 font-semibold cursor-pointer select-none hover:text-blue-500 transition-all duration-150
   }
   
   .std-button {
     @apply w-20 md:w-28 rounded-sm bg-blue-700 text-base py-1 md:py-2 font-semibold active:scale-95 transition-all duration-100;
-    @apply hover:bg-blue-700/40
+    @apply hover:bg-blue-700/40 ease-in-out
   }
 
   .active-page {
@@ -61,7 +61,7 @@ a {
   }
   
   .social-icon {
-    @apply hover:text-blue-500 transition-all duration-150 cursor-pointer
+    @apply hover:text-blue-500 transition-all duration-150 cursor-pointer 
   }
   
   .overlay-header {

@@ -17,7 +17,7 @@ const FrontPanel = ({
       <div className="w-full h-full absolute opacity-50">
         <Image
           src={backgroundImage}
-          quality={35}
+          quality={65}
           fill
           className="object-cover"
           alt=""

@@ -225,9 +225,11 @@ const ContactForm = () => {
                 theme="dark"
               />
             )}
-            <button type="submit" className="std-button">
-              Submit
-            </button>
+            <div className="flex justify-end">
+              <button type="submit" className="std-button">
+                Submit
+              </button>
+            </div>
           </Stack>
         </form>
       </div>

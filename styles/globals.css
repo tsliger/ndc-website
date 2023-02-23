@@ -41,8 +41,14 @@ a {
   }
   
   .std-button {
-    @apply w-20 md:w-28 rounded-sm bg-blue-700 text-base py-1 md:py-2 font-semibold active:scale-95 transition-all duration-100;
-    @apply hover:bg-blue-700/40 ease-in-out
+    background-image: linear-gradient(45deg, rgb(65, 153, 255) , rgb(36, 50, 131));
+    @apply w-20 md:w-28 rounded-sm  text-base py-1 md:py-2 font-semibold active:scale-95 transition-all duration-150 text-gray-900;
+    @apply ease-in-out hover:text-white
+  }
+
+  .std-button:hover {
+    background-size: 155%;
+    transition: all 150ms ease-in-out
   }
 
   .active-page {
@@ -87,7 +93,7 @@ a {
   .switcher-item {
     grid-area: 1/1/1;
   }
-  
+
   .overlay-div::after {
     content: ""; 
     position: absolute;

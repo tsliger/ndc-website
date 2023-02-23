@@ -6,7 +6,7 @@ import { BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 const ContactForm = dynamic(() => import("./ContactForm"));
 
 const redirect = () => {
-  window.location.href = "https://www.anchorsystems.tech/";
+  window.open("https://www.anchorsystems.tech/", '_blank');
 };
 
 // Defines the footer layout
@@ -43,17 +43,17 @@ export default function Footer() {
                 <BsFacebook
                   className="social-icon"
                   style={{ marginTop: 25 }}
-                  size={32}
+                  size={28}
                 />
                 <BsTwitter
                   className="social-icon"
                   style={{ marginTop: 25 }}
-                  size={32}
+                  size={28}
                 />
                 <BsLinkedin
                   className="social-icon"
                   style={{ marginTop: 25 }}
-                  size={32}
+                  size={28}
                 />
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function Footer() {
             <ContactForm />
           </div>
         </div>
-        <div className="flex pb-4 px-8 items-center overflow-hidden h-32 md:h-20">
+        <div className="flex px-8 py-8 items-center overflow-hidden h-32 md:h-20">
           <div className="text-[#f5f5f5] text-sm">
             <p>4657 Industrial Park Drive, Kincheloe, MI 49788</p>
             <p>906-240-1180</p>
@@ -71,7 +71,7 @@ export default function Footer() {
           <div className="flex-grow" />
           <div
             onClick={redirect}
-            className="hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer active:scale-95"
+            className="transition-all duration-300 ease-in-out cursor-pointer active:scale-95"
           >
             <Image
               src={"/anchor-white.png"}

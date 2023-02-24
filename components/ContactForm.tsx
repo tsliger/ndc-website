@@ -216,17 +216,17 @@ const ContactForm = () => {
                 value={formik.values.description}
               />
             </InputGroup>
-            {recaptchaNeeded && (
-              <ReCAPTCHA
-                sitekey={"6LdsJ8siAAAAANsR96YeWDkCTUYtYdBksmh5pgFK"}
-                onChange={handleCaptchaChange}
-                ref={_reCaptchaRef}
-                id="captcha"
-                theme="dark"
-              />
-            )}
-            <div className="flex justify-end">
-              <button type="submit" className="std-button">
+            <div className="flex-col flex items-end">
+              {recaptchaNeeded && (
+                <ReCAPTCHA
+                  sitekey={"6LdsJ8siAAAAANsR96YeWDkCTUYtYdBksmh5pgFK"}
+                  onChange={handleCaptchaChange}
+                  ref={_reCaptchaRef}
+                  id="captcha"
+                  theme="dark"
+                />
+              )}
+              <button type="submit" className="std-button mt-3">
                 Submit
               </button>
             </div>

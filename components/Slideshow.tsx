@@ -175,7 +175,7 @@ export default function Slideshow({
           (styles, item) =>
             item && (
               <animated.div style={styles} className="overlay" ref={overlay}>
-                <p className={`${!isNavDown ? '' : 'translate-y-12'} transition-transform ease-in-out duration-500  overlay-header drop-shadow-md text-center px-8 lg:px-2 `}>
+                <p className={`${!isNavDown ? '' : 'translate-y-8 scale-75'} origin-top transition-transform ease-in-out duration-500  overlay-header drop-shadow-md text-center px-8 lg:px-2 `}>
                   {headerState}
                 </p>
                 <div

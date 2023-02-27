@@ -7,6 +7,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { HiOutlinePhone, HiOutlineMail, HiOutlineUser } from "react-icons/hi";
+import { MdOutlineShortText } from "react-icons/md"
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import dynamic from "next/dynamic";
@@ -123,7 +124,7 @@ const ContactForm = () => {
                 <Input
                   width={"100%"}
                   pl="3rem"
-                  className="bg-white/10 p-4 text-sm md:text-base"
+                  className="bg-white/10 p-4 text-sm md:text-base rounded-sm"
                   placeholder="First Name"
                   id="firstName"
                   onChange={processChange}
@@ -144,7 +145,7 @@ const ContactForm = () => {
                 <Input
                   width={"100%"}
                   pl="3rem"
-                  className="bg-white/10 p-4 text-sm md:text-base"
+                  className="bg-white/10 p-4 text-sm md:text-base rounded-sm"
                   placeholder="Last Name"
                   id="lastName"
                   onChange={processChange}
@@ -166,7 +167,7 @@ const ContactForm = () => {
                 width={"100%"}
                 type="tel"
                 pl="3rem"
-                className="bg-white/10 p-4 text-sm md:text-base"
+                className="bg-white/10 p-4 text-sm md:text-base rounded-sm"
                 placeholder="Phone Number"
                 id="phoneNumber"
                 onChange={processChange}
@@ -187,7 +188,7 @@ const ContactForm = () => {
                 width={"100%"}
                 type="email"
                 pl="3rem"
-                className="bg-white/10 p-4 text-sm md:text-base"
+                className="bg-white/10 p-4 text-sm md:text-base rounded-sm"
                 placeholder="Email"
                 id="email"
                 onChange={processChange}
@@ -200,14 +201,14 @@ const ContactForm = () => {
                 pt={20}
                 children={
                   <div className="flex  items-start pl-4">
-                    <HiOutlineMail size={16} />
+                    <MdOutlineShortText size={16} />
                   </div>
                 }
               />
               <Textarea
                 width={"100%"}
                 pl="3rem"
-                className="bg-white/10 p-4 text-sm md:text-base"
+                className="bg-white/10 p-4 text-sm md:text-base rounded-sm"
                 minHeight={100}
                 resize={"none"}
                 id="description"

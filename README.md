@@ -14,4 +14,4 @@ Check out the live demo of the website: [eup-ndc.tech](https://eup-ndc.tech/)
 
 ## Screenshots
 
-![ndc-website homepage](https://i.ibb.co/QCQHbJR/Screenshot-2023-06-01-at-09-03-18-EUP-NDC-min.png)
+![ndc-website homepage](https://i.imgur.com/vWSkYOA.png)
